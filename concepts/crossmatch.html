@@ -1,0 +1,889 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Data Lab without a login: matching by index ranges" href="datalab-healpix.html"><link rel="prev" title="The Targets Pipeline" href="targets-pipeline.html">
+        <link rel="canonical" href="https://nmcardoso.github.io/mosaics-docs/concepts/crossmatch.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Crossmatching a table of positions - MOSAICS 2.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">MOSAICS 2.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">MOSAICS 2.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/install.html">Installation &amp; Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/recipes.html">End-to-End Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/run-a-worker.html">Run a worker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core concepts</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="runs.html">Long Runs, Resume &amp; Failure Sidecars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archives.html">Archive Rate Limits, Mirrors &amp; Multi-Node Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surveys-and-configs.html">Surveys, Entrypoints &amp; the Prefix Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cutout-backends.html">Cutout Backends &amp; Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spectra.html">Variable-Length Spectra &amp; Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="targets-pipeline.html">The Targets Pipeline</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Crossmatching a table of positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datalab-healpix.html">Data Lab without a login: matching by index ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="field-of-view.html">Field of view: the size of a galaxy’s cutout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Command-line reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cutout.html"><code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span></code> — Image Cutout Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/query.html"><code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> — Catalogue Queries &amp; SSA Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/spectrum.html"><code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> — 1D Spectrum Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/targets.html"><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> — Multi-Survey Target Selection &amp; Crossmatch Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/crossmatch.html"><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code> — Match a Table Against Surveys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/fov.html"><code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code> — Cutout Size for a Galaxy Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/hipscat.html"><code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span></code> — Aladin HiPS Catalogue Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/proxy.html"><code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span></code> — Distributed Multi-Node Request Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/reports.html"><code class="docutils literal notranslate"><span class="pre">mosaics-report</span></code> — Post-Hoc Scientific Reports</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/inputs.html">Input Table Formats &amp; Coordinate Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/cutout-dataset.html">Cutout Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/spectrum-dataset.html">Spectrum Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/targets-catalogue.html">Targets Production Catalogue Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/crossmatch.html">Crossmatch Output Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/reading-outputs.html">Reading Output Datasets in Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration &amp; Surveys</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Survey Configuration Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../surveys/index.html">Survey Reference</a><input aria-label="Toggle navigation of Survey Reference" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/2dfgrs.html">2dF Galaxy Redshift Survey (<code class="docutils literal notranslate"><span class="pre">2dfgrs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/6dfgs.html">6dF Galaxy Survey DR3 (<code class="docutils literal notranslate"><span class="pre">6dfgs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/delve2.html">DELVE DR2 (<code class="docutils literal notranslate"><span class="pre">delve2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/denis3.html">DENIS DR3 (<code class="docutils literal notranslate"><span class="pre">denis3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/desi1.html">DESI DR1 (<code class="docutils literal notranslate"><span class="pre">desi1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/euclidq1.html">Euclid Q1 (<code class="docutils literal notranslate"><span class="pre">euclidq1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/gaia3.html">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/galex.html">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/hasp.html">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/hsc3.html">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/hst2.html">Hubble Source Catalog v2 (<code class="docutils literal notranslate"><span class="pre">hst2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/kids3.html">Kilo-Degree Survey DR3 (<code class="docutils literal notranslate"><span class="pre">kids3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/lamost11.html">LAMOST DR11 MRS (<code class="docutils literal notranslate"><span class="pre">lamost11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ls10.html">DESI Legacy Imaging Surveys DR10 (<code class="docutils literal notranslate"><span class="pre">ls10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ls11.html">DESI Legacy Imaging Surveys DR11 (<code class="docutils literal notranslate"><span class="pre">ls11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/lsstdp1.html">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/lsstdp2.html">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/pristine1.html">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ps1.html">Pan-STARRS1 (<code class="docutils literal notranslate"><span class="pre">ps1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/sdss16.html">Sloan Digital Sky Survey DR16 (<code class="docutils literal notranslate"><span class="pre">sdss16</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/sdss17.html">Sloan Digital Sky Survey DR17 (<code class="docutils literal notranslate"><span class="pre">sdss17</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/sdss20.html">Sloan Digital Sky Survey DR20 (<code class="docutils literal notranslate"><span class="pre">sdss20</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/skymapper4.html">SkyMapper DR4 (<code class="docutils literal notranslate"><span class="pre">skymapper4</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/twomass.html">2MASS Extended Source Catalog (<code class="docutils literal notranslate"><span class="pre">twomass</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ukidss10.html">UKIDSS DR10 (<code class="docutils literal notranslate"><span class="pre">ukidss10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ukidss11.html">UKIDSS DR11 (<code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ukidss9.html">UKIDSS LAS DR9 (<code class="docutils literal notranslate"><span class="pre">ukidss9</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/unions.html">UNIONS DR5 (<code class="docutils literal notranslate"><span class="pre">unions</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/unwise.html">unWISE NEO11 (<code class="docutils literal notranslate"><span class="pre">unwise</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/vhs5.html">VISTA Hemisphere Survey DR5 (<code class="docutils literal notranslate"><span class="pre">vhs5</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/viking.html">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/wise.html">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reports/index.html">Post-Hoc Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for-agents.html">Using This Documentation with an LLM Agent</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="crossmatching-a-table-of-positions">
+<h1>Crossmatching a table of positions<a class="headerlink" href="#crossmatching-a-table-of-positions" title="Link to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">run</span></code> takes <strong>a table of positions</strong> (a CSV, Parquet, FITS or VOTable file, any columns) and <strong>one or more surveys</strong>, and writes the table back with each survey’s columns joined on. This page explains what a run does, how a survey says how it is to be matched, which adapter finds the pairs, and what to do when part of a run fails. The flags are in the <a class="reference internal" href="../cli/crossmatch.html"><span class="std std-doc">command reference</span></a> and the files it writes in the <a class="reference internal" href="../data-model/crossmatch.html"><span class="std std-doc">output schema</span></a>.</p>
+<section id="what-a-run-does">
+<h2>What a run does<a class="headerlink" href="#what-a-run-does" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Reads the input</strong> and finds its position columns (<code class="docutils literal notranslate"><span class="pre">--ra-col</span></code>, <code class="docutils literal notranslate"><span class="pre">--dec-col</span></code>, or inferred). A row without a finite position is never sent anywhere and comes back unmatched.</p></li>
+<li><p><strong>Resolves each survey</strong> from the roster (the survey files named by <code class="docutils literal notranslate"><span class="pre">--survey</span></code> or by <code class="docutils literal notranslate"><span class="pre">surveys:</span></code> in a job file, less <code class="docutils literal notranslate"><span class="pre">exclude:</span></code>): its catalogue, its <code class="docutils literal notranslate"><span class="pre">column_mapping</span></code>, its radius.</p></li>
+<li><p><strong>Checks before it spends anything.</strong> The columns every survey will add are settled, and two surveys (or a survey and the input) claiming one output name are refused; so is <code class="docutils literal notranslate"><span class="pre">--fov</span></code> on a survey that does not add the columns it needs. The only requests sent at this point list a table’s columns.</p></li>
+<li><p><strong>Matches the surveys one after another.</strong> Each survey’s matching is cut into <strong>tasks</strong>, each owning some of the input rows; a task is one upload, one cell, one set of index ranges. Finished tasks are cached beside the output.</p></li>
+<li><p><strong>Reduces the pairs.</strong> Every pair inside the radius is found; the nearest counterpart is kept per input row (<code class="docutils literal notranslate"><span class="pre">--all-matches</span></code> keeps every pair, for one survey).</p></li>
+<li><p><strong>Joins the result onto the whole input</strong> as a chain of left joins, so an input row never moves, and writes the table, the run account, the report and, if a task failed, the failures file.</p></li>
+</ol>
+<pre  class="mermaid">
+        flowchart TD
+  IN[&quot;Input table&lt;br/&gt;(any columns, with positions)&quot;] --&gt; A[&quot;1. Read the input,&lt;br/&gt;find the position columns&quot;]
+  A --&gt; B[&quot;2. Resolve each survey:&lt;br/&gt;catalogue, column map, radius&quot;]
+  B --&gt; C[&quot;3. Check before spending:&lt;br/&gt;output names, --fov columns&quot;]
+  C --&gt; D[&quot;4. Match the surveys&lt;br/&gt;one after another&quot;]
+  D --&gt; E[&quot;5. Reduce the pairs:&lt;br/&gt;nearest per input row, or all&quot;]
+  E --&gt; F[&quot;6. Chain of left joins&lt;br/&gt;onto the whole input&quot;]
+  F --&gt; OUT[(&quot;Output table, run account,&lt;br/&gt;report, failures file&quot;)]
+    </pre><p>Only <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">ra,</span> <span class="pre">dec)</span></code> leaves your machine. The archive’s columns are joined back onto the full input here.</p>
+</section>
+<section id="the-survey-s-crossmatch-section">
+<h2>The survey’s <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> section<a class="headerlink" href="#the-survey-s-crossmatch-section" title="Link to this heading">¶</a></h2>
+<p>A survey file describes how it is matched in its <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> section, next to the <code class="docutils literal notranslate"><span class="pre">column_mapping</span></code> that names the columns it brings:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">crossmatch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3 arcsec</span>
+<span class="w">  </span><span class="nt">radius_note</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSF FWHM 6.1 to 12.0 arcsec in W1-W4; positions of high-S/N sources accurate to 50 mas.</span>
+<span class="w">  </span><span class="nt">strategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">upload</span><span class="w">        </span><span class="c1"># or: extract</span>
+<span class="w">  </span><span class="nt">moc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">allwise-moc.fits</span><span class="w">   </span><span class="c1"># optional footprint, for --filter-moc</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>One radius per survey.</strong> The radius is a property of the survey’s depth and astrometry, so it lives with the survey and carries the note saying what it rests on. A match uses the survey’s radius (the <em>library</em> value), unless a job’s <code class="docutils literal notranslate"><span class="pre">overrides:</span></code> changes it or <code class="docutils literal notranslate"><span class="pre">--radius</span></code> names one for a single survey. The report says which of the three it used.</p></li>
+<li><p><strong>Prefixes.</strong> The survey’s columns come behind its prefix (<code class="docutils literal notranslate"><span class="pre">wise_mag_w1</span></code>), followed by <code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;_dist_arcsec</span></code>, the separation to the counterpart, and <code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;_nmatch</span></code>, how many counterparts lay inside the radius. <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> changes a prefix for one survey and <code class="docutils literal notranslate"><span class="pre">--no-prefix</span></code> removes them (two surveys then may not share a column name).</p></li>
+<li><p><strong>Columns.</strong> <code class="docutils literal notranslate"><span class="pre">column_mapping</span></code> maps remote column names to aliases and the loader adds the prefix. A key may be a pattern: <code class="docutils literal notranslate"><span class="pre">'[ugriz]pmag':</span> <span class="pre">mag_psf_{1}</span></code> selects the five columns and names each with the letter it matched. Patterns need the table’s column list, so they work where an archive can be asked for it; <code class="docutils literal notranslate"><span class="pre">--columns</span></code> replaces the map for one survey with remote names or patterns.</p></li>
+<li><p><strong>Strategy.</strong> <code class="docutils literal notranslate"><span class="pre">upload</span></code> sends the positions to the archive and gets the pairs back. <code class="docutils literal notranslate"><span class="pre">extract</span></code> is for a small catalogue, or for a selection that joins several tables and so cannot be an upload join: it fetches the survey’s rows over each occupied HEALPix cell and the cells touching it, once, and matches here. An extract that reaches the service’s row cap fails that cell and names the cap; it never falls back to uploading silently.</p></li>
+</ul>
+<p>A spectroscopic survey is matched through its <code class="docutils literal notranslate"><span class="pre">target_selection</span></code> query, so its quality cuts apply and the columns are the query’s aliases.</p>
+</section>
+<section id="which-adapter-finds-the-pairs">
+<h2>Which adapter finds the pairs<a class="headerlink" href="#which-adapter-finds-the-pairs" title="Link to this heading">¶</a></h2>
+<p>The adapter is the <code class="docutils literal notranslate"><span class="pre">adapter</span></code> of the survey’s catalogue entry. You change it with <code class="docutils literal notranslate"><span class="pre">overrides:</span></code> in a job file, or with an extension file that extends the library file and replaces the <code class="docutils literal notranslate"><span class="pre">catalog</span></code> list.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Adapter</p></th>
+<th class="head"><p>How the pairs are found</p></th>
+<th class="head"><p>Needs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tap</span></code>, <code class="docutils literal notranslate"><span class="pre">lsst</span></code></p></td>
+<td><p>The positions are uploaded to a TAP service and joined there.</p></td>
+<td><p>the service; a token for Rubin (<code class="docutils literal notranslate"><span class="pre">LSST_TOKEN</span></code> or <code class="docutils literal notranslate"><span class="pre">--lsst-token</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">adl</span></code>, <code class="docutils literal notranslate"><span class="pre">crossid</span></code></p></td>
+<td><p>The positions are uploaded to Astro Data Lab or SkyServer and joined there.</p></td>
+<td><p>a login (<code class="docutils literal notranslate"><span class="pre">DATALAB_USER</span></code>, <code class="docutils literal notranslate"><span class="pre">DATALAB_PASSWORD</span></code>); Data Lab accounts can no longer be authenticated</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">adl-healpix</span></code></p></td>
+<td><p>Rows in the sky pixels around the positions are fetched from Data Lab’s public TAP by index range; the match is made here.</p></td>
+<td><p>nothing; see <a class="reference internal" href="datalab-healpix.html"><span class="std std-doc">Data Lab without a login</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lsdb</span></code></p></td>
+<td><p>A partitioned (HATS) catalogue is read partition by partition and matched with LSDB.</p></td>
+<td><p>the catalogue’s location</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">local</span></code>, <code class="docutils literal notranslate"><span class="pre">nersc</span></code></p></td>
+<td><p>A catalogue downloaded once is matched on this machine with DuckDB.</p></td>
+<td><p>disk for the file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre  class="mermaid">
+        flowchart LR
+  IN[&quot;Input positions&quot;] --&gt; AD{&quot;The survey's&lt;br/&gt;adapter&quot;}
+  AD -- &quot;tap, lsst, adl, crossid&quot; --&gt; U[&quot;Upload the positions;&lt;br/&gt;the archive joins them&quot;]
+  AD -- &quot;adl-healpix&quot; --&gt; R[&quot;Fetch the rows of the sky pixels&lt;br/&gt;around the positions (index ranges)&quot;]
+  AD -- &quot;lsdb&quot; --&gt; H[&quot;Read the HATS partitions&lt;br/&gt;that cover the positions&quot;]
+  AD -- &quot;local, nersc&quot; --&gt; D[&quot;Range join with DuckDB&lt;br/&gt;on a downloaded file&quot;]
+  U --&gt; P[&quot;Pairs inside the radius&quot;]
+  R --&gt; M1[&quot;Match here&lt;br/&gt;(great-circle separation)&quot;] --&gt; P
+  H --&gt; M2[&quot;Match with LSDB&quot;] --&gt; P
+  D --&gt; P
+  P --&gt; N[&quot;Nearest counterpart per row&lt;br/&gt;(or every pair)&quot;]
+    </pre><p>Credentials are never read from YAML.</p>
+</section>
+<section id="footprints">
+<h2>Footprints<a class="headerlink" href="#footprints" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">moc</span> <span class="pre">--survey</span> <span class="pre">X</span> <span class="pre">-o</span> <span class="pre">X-moc.fits</span></code> builds a survey’s footprint as a Multi-Order Coverage map from its footprint table. <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">--filter-moc</span></code> then leaves rows outside it out of the upload: they cannot match, and the archive is spared the bytes. The report counts them.</p>
+</section>
+<section id="when-part-of-a-run-fails">
+<h2>When part of a run fails<a class="headerlink" href="#when-part-of-a-run-fails" title="Link to this heading">¶</a></h2>
+<p>An individual task is allowed to fail. After its retries (with a growing, jittered wait that honours <code class="docutils literal notranslate"><span class="pre">Retry-After</span></code>), the task is recorded, its rows are left empty for that survey, the survey is marked <strong>incomplete</strong> in the account and the report, and the other tasks and surveys go on. The failed tasks are listed in <code class="docutils literal notranslate"><span class="pre">&lt;stem&gt;.failures.parquet</span></code>.</p>
+<pre  class="mermaid">
+        flowchart TD
+  T[&quot;A task&lt;br/&gt;(one upload, cell or set of ranges)&quot;] --&gt; OK{&quot;Succeeds?&quot;}
+  OK -- yes --&gt; CA[&quot;Cached next to the output&quot;]
+  OK -- no --&gt; RL{&quot;Retries left?&quot;}
+  RL -- yes --&gt; WT[&quot;Wait: growing and jittered,&lt;br/&gt;honouring Retry-After&quot;] --&gt; T
+  RL -- no --&gt; ST{&quot;--strict?&quot;}
+  ST -- yes --&gt; FL[&quot;The run fails;&lt;br/&gt;no table is written&quot;]
+  ST -- no --&gt; RC[&quot;Recorded in the failures file;&lt;br/&gt;rows left empty; survey marked incomplete&quot;]
+  RC --&gt; GO[&quot;Other tasks and surveys go on&quot;]
+    </pre><p>Running the same command again repeats only what is missing, because finished tasks are cached next to the output, under <code class="docutils literal notranslate"><span class="pre">.mosaics-crossmatch/&lt;output-stem&gt;/</span></code>. <code class="docutils literal notranslate"><span class="pre">--overwrite-cache</span></code> ignores the cache. <code class="docutils literal notranslate"><span class="pre">--strict</span></code> turns a failed task into a failed run instead, and no table is written.</p>
+</section>
+<section id="limits-of-the-archives">
+<h2>Limits of the archives<a class="headerlink" href="#limits-of-the-archives" title="Link to this heading">¶</a></h2>
+<p>Each archive’s published or observed limits are enforced in the run, not left to retries: windowed rate limiters for Rubin and the public Data Lab TAP, a per-host cap on concurrent requests (<code class="docutils literal notranslate"><span class="pre">--workers</span></code>, <code class="docutils literal notranslate"><span class="pre">--limit-share</span></code>), and an upload sized from a real measurement rather than assumed (Rubin caps one upload near 33 MB). See <a class="reference internal" href="archives.html"><span class="std std-doc">archive limits</span></a>. Every request, retry and wait is counted, and the report shows what each survey cost its archive.</p>
+</section>
+<section id="extending-a-shipped-survey-for-a-crossmatch">
+<h2>Extending a shipped survey for a crossmatch<a class="headerlink" href="#extending-a-shipped-survey-for-a-crossmatch" title="Link to this heading">¶</a></h2>
+<p>The shipped survey files are a library you extend rather than edit. To match <code class="docutils literal notranslate"><span class="pre">wise</span></code> at 2 arcseconds against your own copy of a table, write a survey file that extends it:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_wise.yaml</span>
+<span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">surveys/wise.yaml</span>
+<span class="nt">crossmatch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2 arcsec</span>
+<span class="nt">catalog</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wise</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">photometric</span>
+<span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tap</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/tap</span>
+<span class="w">      </span><span class="nt">table</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.allwise_copy</span>
+</pre></div>
+</div>
+<p>and name it: <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">run</span> <span class="pre">--survey</span> <span class="pre">my_wise</span> <span class="pre">-i</span> <span class="pre">targets.csv</span> <span class="pre">-o</span> <span class="pre">out.parquet</span></code>. The slug stays <code class="docutils literal notranslate"><span class="pre">wise</span></code>, so the columns keep their prefix. The same changes can be made for one run with <code class="docutils literal notranslate"><span class="pre">overrides:</span></code> in a job file, which is what the recipes show.</p>
+</section>
+<section id="seeing-the-effective-configuration">
+<h2>Seeing the effective configuration<a class="headerlink" href="#seeing-the-effective-configuration" title="Link to this heading">¶</a></h2>
+<p>Every run logs the configuration it ended up with: the job files in play, each argument with where its value came from (default, flag or a file), and the survey definitions after the overrides, with what each override changed. The run account stores the same, so the report can say it.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="datalab-healpix.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Data Lab without a login: matching by index ranges</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="targets-pipeline.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">The Targets Pipeline</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, N. M. Cardoso
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Crossmatching a table of positions</a><ul>
+<li><a class="reference internal" href="#what-a-run-does">What a run does</a></li>
+<li><a class="reference internal" href="#the-survey-s-crossmatch-section">The survey’s <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> section</a></li>
+<li><a class="reference internal" href="#which-adapter-finds-the-pairs">Which adapter finds the pairs</a></li>
+<li><a class="reference internal" href="#footprints">Footprints</a></li>
+<li><a class="reference internal" href="#when-part-of-a-run-fails">When part of a run fails</a></li>
+<li><a class="reference internal" href="#limits-of-the-archives">Limits of the archives</a></li>
+<li><a class="reference internal" href="#extending-a-shipped-survey-for-a-crossmatch">Extending a shipped survey for a crossmatch</a></li>
+<li><a class="reference internal" href="#seeing-the-effective-configuration">Seeing the effective configuration</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c95eb2c2"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = "pre.mermaid {\n    /* Same as .mermaid-container > pre */\n    display: block;\n    width: 100%;\n}\n\npre.mermaid > svg {\n    /* Same as .mermaid-container > pre > svg */\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}";
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = ".mermaid-container {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n}\n\n.mermaid-container > pre {\n    display: block;\n    width: 100%;\n}\n\n.mermaid-container > pre > svg {\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}\n\n.mermaid-fullscreen-btn {\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.3);\n    border-radius: 4px;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: all 0.2s;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n    font-size: 14px;\n    line-height: 1;\n    padding: 0;\n    color: #333;\n}\n\n.mermaid-fullscreen-btn:hover {\n    opacity: 100% !important;\n    background: rgba(255, 255, 255, 1);\n    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-btn.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.3);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-btn.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal {\n    display: none;\n    position: fixed !important;\n    top: 0 !important;\n    left: 0 !important;\n    width: 95vw;\n    height: 100vh;\n    background: rgba(255, 255, 255, 0.98);\n    z-index: 9999;\n    padding: 20px;\n    overflow: auto;\n}\n\n.mermaid-fullscreen-modal.dark-theme {\n    background: rgba(0, 0, 0, 0.98);\n}\n\n.mermaid-fullscreen-modal.active {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen {\n    position: relative;\n    width: 95vw;\n    height: 90vh;\n    max-width: 95vw;\n    max-height: 90vh;\n    background: white;\n    border-radius: 8px;\n    padding: 20px;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);\n    overflow: auto;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen.dark-theme {\n    background: #1a1a1a;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);\n}\n\n.mermaid-container-fullscreen pre.mermaid {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen .mermaid svg {\n    height: 100% !important;\n    width: 100% !important;\n    cursor: grab;\n}\n\n.mermaid-fullscreen-close {\n    position: fixed !important;\n    top: 20px !important;\n    right: 20px !important;\n    width: 40px;\n    height: 40px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    border-radius: 50%;\n    cursor: pointer;\n    z-index: 10000;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);\n    transition: all 0.2s;\n    font-size: 24px;\n    line-height: 1;\n    color: #333;\n}\n\n.mermaid-fullscreen-close:hover {\n    background: white;\n    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-close.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.2);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-close.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal .mermaid-fullscreen-btn {\n    display: none !important;\n}";
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+let _lazyObserver = null;
+let _renderQueue = Promise.resolve();
+let closeModal = () => {};
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Apply d3 zoom to each SVG. Idempotent: an SVG already wrapped is skipped,
+// so this is safe to call both for the initial batch and for diagrams that
+// render lazily once they become visible.
+const addZoomToSvgs = (svgs) => {
+    svgs.each(function() {
+        if (this.getAttribute('data-zoom-applied') === 'true') return;
+        var svg = d3.select(this);
+        svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+        var inner = svg.select("g");
+        var zoom = d3.zoom().on("zoom", function(event) {
+            inner.attr("transform", event.transform);
+        });
+        svg.call(zoom);
+        this.setAttribute('data-zoom-applied', 'true');
+    });
+};
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        // Disconnect any previous lazy rendering observer
+        if (_lazyObserver) {
+            _lazyObserver.disconnect();
+            _lazyObserver = null;
+        }
+
+        all_mermaids.forEach((el) => {
+            el.removeAttribute('data-mermaid-deferred');
+            el.removeAttribute('data-mermaid-render-failed');
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+
+        // Separate visible and hidden elements. Mermaid's layout engine measures
+        // text dimensions via the DOM, which fails for elements hidden by a parent
+        // (e.g., Reveal.js non-active slides, sphinx-design unopened tabs),
+        // producing broken SVGs. Render visible elements now, defer hidden ones.
+        const visible = [];
+        const hidden = [];
+        all_mermaids.forEach((el) => {
+            // offsetParent is null for display:none ancestors.
+            // getClientRects().length > 0 catches position:fixed elements
+            // (which also have null offsetParent but are still visible).
+            if (el.offsetParent !== null || el.getClientRects().length > 0) {
+                visible.push(el);
+            } else {
+                hidden.push(el);
+                el.setAttribute('data-mermaid-deferred', 'true');
+            }
+        });
+
+        if (visible.length > 0) {
+            try {
+                await mermaid.run({ nodes: visible });
+            } catch (e) {
+                console.error("Mermaid rendering failed:", e);
+            }
+        }
+
+        // Lazily render hidden elements when they become visible.
+        // Uses a promise chain (_renderQueue) to serialize rendering,
+        // since IntersectionObserver may report multiple entries at once
+        // and mermaid.run() is not safe to call concurrently.
+        if (hidden.length > 0) {
+            if (typeof IntersectionObserver === 'undefined') {
+                console.warn("IntersectionObserver not available; hidden mermaid diagrams will not render.");
+            } else {
+                _renderQueue = Promise.resolve();
+                _lazyObserver = new IntersectionObserver((entries) => {
+                    for (const entry of entries) {
+                        if (entry.isIntersecting && entry.target.getAttribute("data-processed") !== "true") {
+                            _lazyObserver.unobserve(entry.target);
+                            const el = entry.target;
+                            _renderQueue = _renderQueue.then(async () => {
+                                try {
+                                    await mermaid.run({ nodes: [el] });
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    // Apply zoom to the now-rendered diagram, matching
+                                    // the decoration visible diagrams receive.
+                                    if (false) {
+                                        addZoomToSvgs(d3.selectAll("").select(function() {
+                                            return this.querySelector("svg");
+                                        }));
+                                    }
+                                } catch (e) {
+                                    console.error("Mermaid deferred rendering failed:", e);
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    el.setAttribute('data-mermaid-render-failed', 'true');
+                                }
+                            });
+                        }
+                    }
+                });
+                hidden.forEach((el) => _lazyObserver.observe(el));
+            }
+        }
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    // Exclude deferred (hidden) and render-failed elements from completion checks
+    const mermaids_active = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])");
+    const mermaids_processed = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])[data-processed='true']");
+
+    if (false) {
+        const mermaids_to_add_zoom = 0 === -1 ? mermaids_active.length : 0;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("").select(function() {
+                return this.querySelector("svg");
+            });
+            // Wait until every active (visible) diagram has rendered. Deferred
+            // diagrams are excluded, so a fixed d3_node_count that counts a
+            // hidden diagram no longer loops forever waiting for its SVG.
+            if(mermaids_active.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            }
+            addZoomToSvgs(svgs);
+        }
+    } else if(mermaids_active.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if (!true) return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = "\u26f6";
+        fullscreenBtn.style.opacity = "50%";
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scrollX, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.display = 'block';
+
+                if (false) {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+
+
+const load = async () => {
+    initStyles();
+
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...{"startOnLoad": false},
+                ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...{"startOnLoad": false},
+    ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    </body>
+</html>

@@ -1,0 +1,1363 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Post-Hoc Reports" href="../reports/index.html"><link rel="prev" title="VISTA Kilo-degree Infrared Galaxy Survey (viking)" href="viking.html">
+        <link rel="canonical" href="https://nmcardoso.github.io/mosaics-docs/surveys/wise.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>AllWISE (wise) - MOSAICS 2.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">MOSAICS 2.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">MOSAICS 2.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/install.html">Installation &amp; Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/recipes.html">End-to-End Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/run-a-worker.html">Run a worker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/runs.html">Long Runs, Resume &amp; Failure Sidecars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/archives.html">Archive Rate Limits, Mirrors &amp; Multi-Node Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/surveys-and-configs.html">Surveys, Entrypoints &amp; the Prefix Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/cutout-backends.html">Cutout Backends &amp; Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/spectra.html">Variable-Length Spectra &amp; Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/targets-pipeline.html">The Targets Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/crossmatch.html">Crossmatching a table of positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/datalab-healpix.html">Data Lab without a login: matching by index ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/field-of-view.html">Field of view: the size of a galaxy’s cutout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Command-line reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cutout.html"><code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span></code> — Image Cutout Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/query.html"><code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> — Catalogue Queries &amp; SSA Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/spectrum.html"><code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> — 1D Spectrum Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/targets.html"><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> — Multi-Survey Target Selection &amp; Crossmatch Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/crossmatch.html"><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code> — Match a Table Against Surveys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/fov.html"><code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code> — Cutout Size for a Galaxy Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/hipscat.html"><code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span></code> — Aladin HiPS Catalogue Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/proxy.html"><code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span></code> — Distributed Multi-Node Request Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/reports.html"><code class="docutils literal notranslate"><span class="pre">mosaics-report</span></code> — Post-Hoc Scientific Reports</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/inputs.html">Input Table Formats &amp; Coordinate Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/cutout-dataset.html">Cutout Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/spectrum-dataset.html">Spectrum Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/targets-catalogue.html">Targets Production Catalogue Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/crossmatch.html">Crossmatch Output Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/reading-outputs.html">Reading Output Datasets in Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration &amp; Surveys</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Survey Configuration Reference</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Survey Reference</a><input aria-label="Toggle navigation of Survey Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2dfgrs.html">2dF Galaxy Redshift Survey (<code class="docutils literal notranslate"><span class="pre">2dfgrs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6dfgs.html">6dF Galaxy Survey DR3 (<code class="docutils literal notranslate"><span class="pre">6dfgs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delve2.html">DELVE DR2 (<code class="docutils literal notranslate"><span class="pre">delve2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="denis3.html">DENIS DR3 (<code class="docutils literal notranslate"><span class="pre">denis3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desi1.html">DESI DR1 (<code class="docutils literal notranslate"><span class="pre">desi1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="euclidq1.html">Euclid Q1 (<code class="docutils literal notranslate"><span class="pre">euclidq1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gaia3.html">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="galex.html">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hasp.html">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hsc3.html">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hst2.html">Hubble Source Catalog v2 (<code class="docutils literal notranslate"><span class="pre">hst2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kids3.html">Kilo-Degree Survey DR3 (<code class="docutils literal notranslate"><span class="pre">kids3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lamost11.html">LAMOST DR11 MRS (<code class="docutils literal notranslate"><span class="pre">lamost11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls10.html">DESI Legacy Imaging Surveys DR10 (<code class="docutils literal notranslate"><span class="pre">ls10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls11.html">DESI Legacy Imaging Surveys DR11 (<code class="docutils literal notranslate"><span class="pre">ls11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lsstdp1.html">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lsstdp2.html">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pristine1.html">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ps1.html">Pan-STARRS1 (<code class="docutils literal notranslate"><span class="pre">ps1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss16.html">Sloan Digital Sky Survey DR16 (<code class="docutils literal notranslate"><span class="pre">sdss16</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss17.html">Sloan Digital Sky Survey DR17 (<code class="docutils literal notranslate"><span class="pre">sdss17</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss20.html">Sloan Digital Sky Survey DR20 (<code class="docutils literal notranslate"><span class="pre">sdss20</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skymapper4.html">SkyMapper DR4 (<code class="docutils literal notranslate"><span class="pre">skymapper4</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twomass.html">2MASS Extended Source Catalog (<code class="docutils literal notranslate"><span class="pre">twomass</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss10.html">UKIDSS DR10 (<code class="docutils literal notranslate"><span class="pre">ukidss10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss11.html">UKIDSS DR11 (<code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss9.html">UKIDSS LAS DR9 (<code class="docutils literal notranslate"><span class="pre">ukidss9</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unions.html">UNIONS DR5 (<code class="docutils literal notranslate"><span class="pre">unions</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unwise.html">unWISE NEO11 (<code class="docutils literal notranslate"><span class="pre">unwise</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vhs5.html">VISTA Hemisphere Survey DR5 (<code class="docutils literal notranslate"><span class="pre">vhs5</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viking.html">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reports/index.html">Post-Hoc Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for-agents.html">Using This Documentation with an LLM Agent</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="allwise-wise">
+<h1>AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)<a class="headerlink" href="#allwise-wise" title="Link to this heading">¶</a></h1>
+<!-- generated:survey-page -->
+<p>The AllWISE Source Catalog is a comprehensive full-sky mid-infrared astronomical catalogue containing 747,634,026 sources detected by NASA’s Wide-field Infrared Survey Explorer (WISE). It combines data from the 4-band cryogenic, 3-band cryo, and NEOWISE post-cryogenic survey phases in the W1 (3.4 µm), W2 (4.6 µm), W3 (12 µm), and W4 (22 µm) mid-infrared passbands.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">mosaics</span></code>, <code class="docutils literal notranslate"><span class="pre">wise</span></code> serves as a standalone mid-infrared catalogue source, crossmatched through Astro Data Lab’s TAP service against table <code class="docutils literal notranslate"><span class="pre">allwise.source</span></code>. The extraction provides profile-fit (PSF) Vega magnitudes (<code class="docutils literal notranslate"><span class="pre">wise_mag_w1</span></code> through <code class="docutils literal notranslate"><span class="pre">wise_mag_w4</span></code>), photometric errors, signal-to-noise ratios, reduced chi-squared fit metrics, blend flags, and per-band contamination/quality flags across all four WISE bands.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>What MOSAICS extracts</p></td>
+<td><p>Catalogue: <code class="docutils literal notranslate"><span class="pre">wise</span></code> (photometric, <code class="docutils literal notranslate"><span class="pre">adl-healpix</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Archives</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">datalab.noirlab.edu</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Bands / wavelength range</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">w1</span></code> (<code class="docutils literal notranslate"><span class="pre">WISE/WISE.W1</span></code>), <code class="docutils literal notranslate"><span class="pre">w2</span></code> (<code class="docutils literal notranslate"><span class="pre">WISE/WISE.W2</span></code>), <code class="docutils literal notranslate"><span class="pre">w3</span></code> (<code class="docutils literal notranslate"><span class="pre">WISE/WISE.W3</span></code>), <code class="docutils literal notranslate"><span class="pre">w4</span></code> (<code class="docutils literal notranslate"><span class="pre">WISE/WISE.W4</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Used by</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> (crossmatch), <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Crossmatch radius</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code> arcsec. PSF FWHM 6.1, 6.8, 7.4 and 12.0 arcsec in W1-W4 (AllWISE Explanatory Supplement, I.2.a); positions of high signal-to-noise, unconfused sources accurate to about 50 mas (Sect. II.1). Value set by the author (HG2, 2026-10-19); the instrument-based proposal was 5 arcsec.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<section id="the-shipped-file">
+<h3>The shipped file<a class="headerlink" href="#the-shipped-file" title="Link to this heading">¶</a></h3>
+<p>Source: <code class="docutils literal notranslate"><span class="pre">defs/surveys/wise.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># AllWISE -- photometry.</span>
+<span class="c1">#</span>
+<span class="c1"># The catalogue, as distinct from `unwise`, which is a reprocessing of the same</span>
+<span class="c1"># imaging into coadds this project takes cutouts from.</span>
+
+<span class="nt">survey_slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wise</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AllWISE</span>
+
+<span class="nt">catalog</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wise</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">photometric</span>
+<span class="w">    </span><span class="c1"># Astro Data Lab's public TAP, by ranges of the table's `nest4096` index: no login, no</span>
+<span class="w">    </span><span class="c1"># upload; the rows that come back are a superset of the matches and the match itself is</span>
+<span class="w">    </span><span class="c1"># made here by haversine separation (HG3, 2026-10-20: Data Lab accounts can no longer be</span>
+<span class="w">    </span><span class="c1"># authenticated, so the `adl` upload route is unusable). `nest4096` checked in</span>
+<span class="w">    </span><span class="c1"># TAP_SCHEMA on 2026-10-20.</span>
+<span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adl-healpix</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">table</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">allwise.source</span>
+
+<span class="c1"># Crossmatch: the radius a table of positions is matched within, and what it rests on.</span>
+<span class="nt">crossmatch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3 arcsec</span>
+<span class="w">  </span><span class="nt">radius_note</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">PSF FWHM 6.1, 6.8, 7.4 and 12.0 arcsec in W1-W4 (AllWISE Explanatory Supplement, I.2.a);</span>
+<span class="w">    </span><span class="no">positions of high signal-to-noise, unconfused sources accurate to about 50 mas (Sect.</span>
+<span class="w">    </span><span class="no">II.1). Value set by the author (HG2, 2026-10-19); the instrument-based proposal was 5</span>
+<span class="w">    </span><span class="no">arcsec.</span>
+
+<span class="nt">photometric_system</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filters</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># The same passbands as ls11's W1-W4, but Vega magnitudes rather than AB</span>
+<span class="w">    </span><span class="c1"># nanomaggies.</span>
+<span class="w">    </span><span class="nt">w1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WISE/WISE.W1</span>
+<span class="w">    </span><span class="nt">w2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WISE/WISE.W2</span>
+<span class="w">    </span><span class="nt">w3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WISE/WISE.W3</span>
+<span class="w">    </span><span class="nt">w4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WISE/WISE.W4</span>
+<span class="w">  </span><span class="nt">vega_offsets</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># The team's own values, recorded in Tractor headers as WISEAB1-4. SVO's</span>
+<span class="w">    </span><span class="c1"># zero points imply 2.673/3.313/5.148/6.594 -- uniformly 0.026 mag lower,</span>
+<span class="w">    </span><span class="c1"># a different Vega spectrum normalisation rather than a mismatched</span>
+<span class="w">    </span><span class="c1"># passband. The team's values are used because they are what the surveys</span>
+<span class="w">    </span><span class="c1"># calibrated against, and what ls11's already-AB W1-W4 were converted</span>
+<span class="w">    </span><span class="c1"># with.</span>
+<span class="w">    </span><span class="nt">w1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.699</span>
+<span class="w">    </span><span class="nt">w2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.339</span>
+<span class="w">    </span><span class="nt">w3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.174</span>
+<span class="w">    </span><span class="nt">w4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.620</span>
+<span class="w">  </span><span class="nt">measurements</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">system</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vega_mag</span>
+<span class="w">      </span><span class="nt">apertures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">default</span><span class="p p-Indicator">]</span>
+
+<span class="c1"># AllWISE source catalogue: mid-infrared W1-W4 profile-fit photometry.</span>
+<span class="c1"># Table: allwise.source (Astro Data Lab TAP)</span>
+<span class="c1"># Crossmatched spatially against target_candidates on (ra, dec).</span>
+<span class="c1">#</span>
+<span class="c1"># `mpro` is the profile-fit (PSF) magnitude and is the only photometry family</span>
+<span class="c1"># taken from AllWISE, so the aperture token is omitted: `wise_mag_w1`, not</span>
+<span class="c1"># `wise_mag_pro_w1`.</span>
+<span class="c1">#</span>
+<span class="c1"># Magnitudes are VEGA. This is the standalone AllWISE photometry -- do NOT</span>
+<span class="c1"># confuse it with ls11's W1-W4, which are unWISE forced photometry already</span>
+<span class="c1"># converted to AB by the Legacy Survey pipeline. Applying the Vega-to-AB</span>
+<span class="c1"># offsets to those a second time is the most common error in multi-survey work.</span>
+<span class="nt">column_mapping</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">designation</span><span class="p">:</span><span class="w"> </span><span class="s">'id'</span><span class="w">            </span><span class="c1"># sexagesimal source name, the AllWISE identifier</span>
+<span class="w">  </span><span class="nt">ra</span><span class="p">:</span><span class="w"> </span><span class="s">'ra'</span><span class="w">                     </span><span class="c1"># right ascension, J2000, deg</span>
+<span class="w">  </span><span class="nt">dec</span><span class="p">:</span><span class="w"> </span><span class="s">'dec'</span><span class="w">                   </span><span class="c1"># declination, J2000, deg</span>
+<span class="w">  </span><span class="c1"># sigra: 'ra_err'            # uncertainty in the right ascension, arcsec</span>
+<span class="w">  </span><span class="c1"># sigdec: 'dec_err'          # uncertainty in the declination, arcsec</span>
+
+<span class="w">  </span><span class="nt">w1mpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w1'</span><span class="w">             </span><span class="c1"># W1 profile-fit magnitude, Vega mag</span>
+<span class="w">  </span><span class="nt">w1sigmpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w1_err'</span><span class="w">      </span><span class="c1"># error on the W1 profile-fit magnitude, mag</span>
+<span class="w">  </span><span class="nt">w1snr</span><span class="p">:</span><span class="w"> </span><span class="s">'snr_w1'</span><span class="w">              </span><span class="c1"># W1 signal-to-noise ratio</span>
+<span class="w">  </span><span class="nt">w1rchi2</span><span class="p">:</span><span class="w"> </span><span class="s">'chi2_w1'</span><span class="w">           </span><span class="c1"># reduced chi-squared of the W1 profile fit</span>
+<span class="w">  </span><span class="nt">w2mpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w2'</span><span class="w">             </span><span class="c1"># W2 profile-fit magnitude, Vega mag</span>
+<span class="w">  </span><span class="nt">w2sigmpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w2_err'</span><span class="w">      </span><span class="c1"># error on the W2 profile-fit magnitude, mag</span>
+<span class="w">  </span><span class="nt">w2snr</span><span class="p">:</span><span class="w"> </span><span class="s">'snr_w2'</span><span class="w">              </span><span class="c1"># W2 signal-to-noise ratio</span>
+<span class="w">  </span><span class="nt">w2rchi2</span><span class="p">:</span><span class="w"> </span><span class="s">'chi2_w2'</span><span class="w">           </span><span class="c1"># reduced chi-squared of the W2 profile fit</span>
+<span class="w">  </span><span class="nt">w3mpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w3'</span><span class="w">             </span><span class="c1"># W3 profile-fit magnitude, Vega mag</span>
+<span class="w">  </span><span class="nt">w3sigmpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w3_err'</span><span class="w">      </span><span class="c1"># error on the W3 profile-fit magnitude, mag</span>
+<span class="w">  </span><span class="nt">w3snr</span><span class="p">:</span><span class="w"> </span><span class="s">'snr_w3'</span><span class="w">              </span><span class="c1"># W3 signal-to-noise ratio</span>
+<span class="w">  </span><span class="nt">w3rchi2</span><span class="p">:</span><span class="w"> </span><span class="s">'chi2_w3'</span><span class="w">           </span><span class="c1"># reduced chi-squared of the W3 profile fit</span>
+<span class="w">  </span><span class="nt">w4mpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w4'</span><span class="w">             </span><span class="c1"># W4 profile-fit magnitude, Vega mag</span>
+<span class="w">  </span><span class="nt">w4sigmpro</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_w4_err'</span><span class="w">      </span><span class="c1"># error on the W4 profile-fit magnitude, mag</span>
+<span class="w">  </span><span class="nt">w4snr</span><span class="p">:</span><span class="w"> </span><span class="s">'snr_w4'</span><span class="w">              </span><span class="c1"># W4 signal-to-noise ratio</span>
+<span class="w">  </span><span class="nt">w4rchi2</span><span class="p">:</span><span class="w"> </span><span class="s">'chi2_w4'</span><span class="w">           </span><span class="c1"># reduced chi-squared of the W4 profile fit</span>
+
+<span class="w">  </span><span class="nt">w1sat</span><span class="p">:</span><span class="w"> </span><span class="s">'sat_w1'</span><span class="w">              </span><span class="c1"># fraction of W1 pixels that are saturated</span>
+<span class="w">  </span><span class="nt">w2sat</span><span class="p">:</span><span class="w"> </span><span class="s">'sat_w2'</span><span class="w">              </span><span class="c1"># fraction of W2 pixels that are saturated</span>
+<span class="w">  </span><span class="nt">w3sat</span><span class="p">:</span><span class="w"> </span><span class="s">'sat_w3'</span><span class="w">              </span><span class="c1"># fraction of W3 pixels that are saturated</span>
+<span class="w">  </span><span class="nt">w4sat</span><span class="p">:</span><span class="w"> </span><span class="s">'sat_w4'</span><span class="w">              </span><span class="c1"># fraction of W4 pixels that are saturated</span>
+
+<span class="w">  </span><span class="nt">rchi2</span><span class="p">:</span><span class="w"> </span><span class="s">'chi2'</span><span class="w">                </span><span class="c1"># reduced chi-squared of the joint profile fit</span>
+<span class="w">  </span><span class="nt">nb</span><span class="p">:</span><span class="w"> </span><span class="s">'nb'</span><span class="w">                     </span><span class="c1"># number of blend components fitted</span>
+<span class="w">  </span><span class="nt">na</span><span class="p">:</span><span class="w"> </span><span class="s">'na'</span><span class="w">                     </span><span class="c1"># active deblending flag</span>
+<span class="w">  </span><span class="nt">cc_flags</span><span class="p">:</span><span class="w"> </span><span class="s">'cc_flags'</span><span class="w">         </span><span class="c1"># per-band contamination and confusion flags</span>
+<span class="w">  </span><span class="nt">ext_flg</span><span class="p">:</span><span class="w"> </span><span class="s">'ext_flg'</span><span class="w">           </span><span class="c1"># extended source flag</span>
+<span class="w">  </span><span class="nt">var_flg</span><span class="p">:</span><span class="w"> </span><span class="s">'var_flg'</span><span class="w">           </span><span class="c1"># per-band variability flags</span>
+<span class="w">  </span><span class="nt">ph_qual</span><span class="p">:</span><span class="w"> </span><span class="s">'ph_qual'</span><span class="w">           </span><span class="c1"># per-band photometric quality flags</span>
+<span class="w">  </span><span class="nt">moon_lev</span><span class="p">:</span><span class="w"> </span><span class="s">'moon_lev'</span><span class="w">         </span><span class="c1"># per-band fraction of frames affected by moonlight</span>
+<span class="w">  </span><span class="nt">det_bit</span><span class="p">:</span><span class="w"> </span><span class="s">'det_bit'</span><span class="w">           </span><span class="c1"># bitwise per-band detection flag</span>
+</pre></div>
+</div>
+</section>
+<section id="schema-of-this-file">
+<h3>Schema of this file<a class="headerlink" href="#schema-of-this-file" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key present</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">survey_slug</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Canonical lowercase identifier for the survey and default column prefix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Human-readable survey and data-release name used in logs, plans, and reports.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catalog</span></code></p></td>
+<td><p>list of catalog entries</p></td>
+<td><p>no</p></td>
+<td><p>[]</p></td>
+<td><p>Remote or local catalogues queried for target extraction or crossmatching.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">crossmatch</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>How a table of positions is matched against this survey. Required for a survey with an <code class="docutils literal notranslate"><span class="pre">lsdb</span></code> catalog; <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> null removes it, and a survey without it takes no part in <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">photometric_system</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>Passband SVO filter identifiers, flux/magnitude homogenisation rules, and image pixel calibration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">column_mapping</span></code></p></td>
+<td><p>mapping (remote_column -&gt; alias)</p></td>
+<td><p>no</p></td>
+<td><p>{}</p></td>
+<td><p>Projection and column renaming applied when crossmatching against this survey’s photometric catalogue. The loader adds the catalog’s prefix to every alias, or the hosted survey’s for the columns under its <code class="docutils literal notranslate"><span class="pre">provides</span></code> key.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adapter-parameters">
+<h3>Adapter parameters<a class="headerlink" href="#adapter-parameters" title="Link to this heading">¶</a></h3>
+<p><strong>Catalogue <code class="docutils literal notranslate"><span class="pre">wise</span></code> (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">adl-healpix</span></code>):</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Allowed Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">table</span></code></p></td>
+<td><p>str</p></td>
+<td><p>—</p></td>
+<td><p>Fully qualified table on Astro Data Lab that carries a HEALPix NESTED index column (e.g. <code class="docutils literal notranslate"><span class="pre">gaia_dr3.gaia_source</span></code>, <code class="docutils literal notranslate"><span class="pre">allwise.source</span></code>, <code class="docutils literal notranslate"><span class="pre">ls_dr11.tractor</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">service</span></code></p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">datalab</span></code> (the public TAP at <code class="docutils literal notranslate"><span class="pre">https://datalab.noirlab.edu/tap</span></code>, no login)</p></td>
+<td><p>A full TAP endpoint or a shorthand of the TAP services, for a test archive.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">remote_ra_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>found by UCD (<code class="docutils literal notranslate"><span class="pre">pos.eq.ra</span></code>), then by name</p></td>
+<td><p>Remote right ascension column name (<code class="docutils literal notranslate"><span class="pre">mean_fiber_ra</span></code> for <code class="docutils literal notranslate"><span class="pre">desi_dr1.zpix</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remote_dec_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>found by UCD (<code class="docutils literal notranslate"><span class="pre">pos.eq.dec</span></code>), then by name</p></td>
+<td><p>Remote declination column name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">index_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nest4096</span></code></p></td>
+<td><p>The table’s HEALPix NESTED index. Its values are checked against the returned positions on the first query of every run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">index_order</span></code></p></td>
+<td><p>int</p></td>
+<td><p>12 (the order of <code class="docutils literal notranslate"><span class="pre">nest4096</span></code>)</p></td>
+<td><p>The HEALPix order of <code class="docutils literal notranslate"><span class="pre">index_column</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">max_rows_per_query</span></code></p></td>
+<td><p>int</p></td>
+<td><p>50000</p></td>
+<td><p>Most rows one query may return. A query whose result reaches it is split and asked again, never truncated.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">max_ranges_per_query</span></code></p></td>
+<td><p>int</p></td>
+<td><p>50</p></td>
+<td><p>Most index ranges one query may carry. The public TAP times out well above this (probed at 100 and 500).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rows_per_deg2</span></code></p></td>
+<td><p>float</p></td>
+<td><p>None (counted by a few <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code> queries)</p></td>
+<td><p>The table’s mean source density per square degree. When given, the planner sends no counting query.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="common-changes">
+<h3>Common changes<a class="headerlink" href="#common-changes" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Disable catalogue crossmatching</strong>: To omit AllWISE catalogue crossmatching in an entrypoint configuration:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">overrides</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">surveys/wise</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">catalog</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wise</span>
+<span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Filter on photometric quality</strong>: To retain only unblended, high signal-to-noise sources with clean photometric quality flags in W1 and W2:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">overrides</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">surveys/wise</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">catalog_filters</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">clean_w1w2</span><span class="p">:</span><span class="w"> </span><span class="s">"wise_ph_qual</span><span class="nv"> </span><span class="s">LIKE</span><span class="nv"> </span><span class="s">'AA%'</span><span class="nv"> </span><span class="s">AND</span><span class="nv"> </span><span class="s">wise_sat_w1</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">AND</span><span class="nv"> </span><span class="s">wise_sat_w2</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">0"</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Modify crossmatch parameters</strong>: To adjust spatial crossmatch search radius or join constraints, override <code class="docutils literal notranslate"><span class="pre">catalog[0].adapter_params</span></code> in your entrypoint YAML.</p></li>
+</ul>
+</section>
+<section id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Link to this heading">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>surveys/wise<span class="w"> </span>-i<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>wise_matched.parquet
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.targets<span class="w"> </span>--config<span class="w"> </span>defs/targets.yaml<span class="w"> </span>-o<span class="w"> </span>./targets_run<span class="w"> </span>--dec-range<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>--plan<span class="w"> </span>plan.yaml
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-served-by-the-archive">
+<h2>Data served by the archive<a class="headerlink" href="#data-served-by-the-archive" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Standalone AllWISE vs unWISE forced photometry</strong>: AllWISE provides standalone, profile-fit (PSF) magnitudes in the Vega system derived from WISE coadded atlas images. In contrast, <code class="docutils literal notranslate"><span class="pre">unwise</span></code> forced photometry is delivered via the DESI Legacy Imaging Surveys DR11 pipeline (<code class="docutils literal notranslate"><span class="pre">provides.unwise</span></code> in <code class="docutils literal notranslate"><span class="pre">defs/surveys/ls11.yaml</span></code>) in AB nanomaggies at optical source positions. Researchers must never apply AllWISE Vega-to-AB offsets to <code class="docutils literal notranslate"><span class="pre">unwise</span></code> fluxes, which are already on the AB system (<span class="math notranslate nohighlight">\(m_\mathrm{AB} = 22.5 - 2.5 \log_{10}(\mathrm{nanomaggy})\)</span>).</p></li>
+<li><p><strong>Photometry family</strong>: Only profile-fit magnitudes (<code class="docutils literal notranslate"><span class="pre">w*mpro</span></code>) are extracted from <code class="docutils literal notranslate"><span class="pre">allwise.source</span></code>; aperture photometry is omitted. Consequently, column aliases omit aperture tokens (e.g. <code class="docutils literal notranslate"><span class="pre">wise_mag_w1</span></code>, <code class="docutils literal notranslate"><span class="pre">wise_mag_w1_err</span></code>).</p></li>
+<li><p><strong>Vega-to-AB zero-point offsets</strong>: Official AllWISE team values (recorded in Tractor headers as WISEAB1–4) are: <span class="math notranslate nohighlight">\(W1: +2.699\)</span>, <span class="math notranslate nohighlight">\(W2: +3.339\)</span>, <span class="math notranslate nohighlight">\(W3: +5.174\)</span>, <span class="math notranslate nohighlight">\(W4: +6.620\)</span> mag. These offsets are preferred over theoretical SVO zero points (which differ by a uniform <span class="math notranslate nohighlight">\(-0.026\)</span> mag due to Vega spectrum normalisation) because they match the calibration used across legacy survey reductions.</p></li>
+<li><p><strong>Quality and blending indicators</strong>: The catalogue provides essential diagnostics including photometric quality (<code class="docutils literal notranslate"><span class="pre">wise_ph_qual</span></code>), number of blend components (<code class="docutils literal notranslate"><span class="pre">wise_nb</span></code>), active deblending (<code class="docutils literal notranslate"><span class="pre">wise_na</span></code>), contamination/confusion flags (<code class="docutils literal notranslate"><span class="pre">wise_cc_flags</span></code>), and fractional moonlight contamination (<code class="docutils literal notranslate"><span class="pre">wise_moon_lev</span></code>), which should be consulted to filter blended or spurious sources.</p></li>
+<li><p><strong>Cutouts</strong>: <code class="docutils literal notranslate"><span class="pre">wise</span></code> is a catalogue-only survey in <code class="docutils literal notranslate"><span class="pre">mosaics</span></code>. Mid-infrared image cutouts are handled by <code class="docutils literal notranslate"><span class="pre">unwise</span></code> using unblurred NEO11 coadds.</p></li>
+</ul>
+<section id="catalogue-allwise-source">
+<h3>Catalogue: <code class="docutils literal notranslate"><span class="pre">allwise.source</span></code><a class="headerlink" href="#catalogue-allwise-source" title="Link to this heading">¶</a></h3>
+<p>AllWISE Source Table (747,634,026 rows)</p>
+<p><strong>Service URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://datalab.noirlab.edu/tap</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>UCD</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">designation</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id</span></code></p></td>
+<td><p>Unique source ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.ra;meta.main</span></code></p></td>
+<td><p>Right Ascension (ICRS)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.dec;meta.main</span></code></p></td>
+<td><p>Declination (ICRS)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">htm9</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>HTM index (order 9 =&gt; ~10 arcmin size)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w4cc_map_str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion string</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ring256</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>HEALPIX index (Nsides 256, Ring scheme =&gt; ~14 arcmin size)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nest4096</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>HEALPIX index (Nsides 4096, Nest scheme =&gt; ~52 arcsec size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">random_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Random ID in the range 0.0 =&gt; 100.0</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>One-sigma uncertaintly in RA from non-moving source extraction</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sigdec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>One-sigma uncertaintly in Dec from non-moving source extraction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigradec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>The co-sigma of equatorial position uncertainties sigra/sigdec</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">glon</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.gal.lon</span></code></p></td>
+<td><p>Galactic Longitude</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">glat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.gal.lat</span></code></p></td>
+<td><p>Galactic Latitude</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">elon</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.ecl.lon</span></code></p></td>
+<td><p>Ecliptic Longitude</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">elat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.ecl.lat</span></code></p></td>
+<td><p>Ecliptic Latitude</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wx</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pix</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>X-pixel coord of source in Atlas image</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pix</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Y-pixel coord of source in Atlas image</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cntr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:BIGINT</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Unique ID number for this object in the AllWISE Catalog/Reject t</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">source_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Unique source ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">coadd_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Atlas Tile identifier from which source was extracted</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">src</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Sequential number of the source extraction in the Atlas Tile</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w1mpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">phot.mag;em.IR.3-4um</span></code></p></td>
+<td><p>W1 magnitude measured with profile-fitting photometry</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w1sigmpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W1 measurement uncertainty in mag units</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w1snr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W1 S/N ratio</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w1rchi2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of the W1 measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w2mpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">phot.mag;em.IR.4-8um</span></code></p></td>
+<td><p>W2 magnitude measured with profile-fitting photometry</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w2sigmpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W2 measurement uncertainty in mag units</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w2snr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W2 S/N ratio</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w2rchi2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of the W2 measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w3mpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">phot.flux.density;em.IR.8-15um</span></code></p></td>
+<td><p>W3 magnitude measured with profile-fitting photometry</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w3sigmpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W3 measurement uncertainty in mag units</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w3snr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W3 S/N ratio</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w3rchi2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of the W3 measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w4mpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">phot.flux.density;em.IR.15-30um</span></code></p></td>
+<td><p>W4 magnitude measured with profile-fitting photometry</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w4sigmpro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W4 measurement uncertainty in mag units</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w4snr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>W4 S/N ratio</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w4rchi2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of the W4 measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rchi2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Combined reduced chi^w in all bands</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nb</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.number</span></code></p></td>
+<td><p>Number of PSF components used simultaneously in profile-fitting</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">na</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.number</span></code></p></td>
+<td><p>Active deblending flag (0 = source not actively deblended, 1 = s</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w1sat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">instr.saturation</span></code></p></td>
+<td><p>Saturated pixel fraction, W1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w2sat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">instr.saturation</span></code></p></td>
+<td><p>Saturated pixel fraction, W2</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w3sat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">instr.saturation</span></code></p></td>
+<td><p>Saturated pixel fraction, W3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w4sat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">instr.saturation</span></code></p></td>
+<td><p>Saturated pixel fraction, W4</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">satnum</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">instr.saturation</span></code></p></td>
+<td><p>Minimum sample at which saturation occurs in each band</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ra_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>RA at epoch MJD=55400.0 (2010.5589) from the profile-fitting mea</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dec_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:DOUBLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Declination at epoch MJD=55400.0 (2010.5589) from the profile-fi</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sigra_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>One-sigma uncertaintly in ra_pm</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigdec_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>One-sigma uncertaintly in dec_pm</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w4cc_map</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion map for this source in W4</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigradec_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>The co-sigma of the equatorial position uncertainties from the p</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pmra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mas/yr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Apparent motion in RA for this source</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigpmra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mas/yr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in RA motion estimation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pmdec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mas/yr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Apparent motion in Dec for this source</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigpmdec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mas/yr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in Dec motion estimation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w1rchi2_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of W1 including motion estimation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w2rchi2_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of W2 including motion estimation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w3rchi2_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of W3 including motion estimation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w4rchi2_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi^2 of W4 including motion estimation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rchi2_pm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Combined reduced chi^2 in all bands including motion estimation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pmcode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>This is a five character string that encodes information about f</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cc_flags</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion flag</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rel</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Small separation, same-Tile detection flag</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ext_flg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Extended source flag</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">var_flg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Variability flag</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ph_qual</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Photometric quality flag</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">det_bit</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Bit-encoded integer indicating bands in which a source has a w?s</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">moon_lev</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Scattered moonlight contamination flag</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w1nm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame detection count – no. of individual 7.7s exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w1m</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame coverage – no. of individual 7.2s W1 exposures on</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w2nm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame detection count – no. of individual 7.7s exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w2m</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame coverage – no. of individual 7.2s W2 exposures on</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w3nm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame detection count – no. of individual 7.7s exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w3m</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame coverage – no. of individual 7.2s W3 exposures on</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w4nm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame detection count – no. of individual 7.7s exposure</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w4m</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Integer frame coverage – no. of individual 7.2s W4 exposures on</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w1cov</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Mean pixel coverage in W1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w2cov</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Mean pixel coverage in W2</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w3cov</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Mean pixel coverage in W3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w4cov</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Mean pixel coverage in W4</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w1cc_map</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion map for this source in W1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w1cc_map_str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion string</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w2cc_map</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion map for this source in W2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w2cc_map_str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion string</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">w3cc_map</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion map for this source in W3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w3cc_map_str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:CHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Contamination and confusion string</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">best_use_cntr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:BIGINT</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Cntr identification value of the source extraction that was sele</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ngrp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:SMALLINT</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Excess number of positionally associated duplicate resolution gr</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tmass_key</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>2MASS PSC association. Unique identifier of the closest source i</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">r_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Distance separating the positions of the WISE source and associa</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pa_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Position angle (degrees E of N) of the vector from the WISE sour</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">n_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>The number of 2MASS PSC entries found within a 3arcsec radius of</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">j_m_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>2MASS J-band magnitude or magnitude upper limit of the associate</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">j_msig_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>2MASS J-band corrected photometric uncertainty of the associated</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">h_m_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>2MASS H-band magnitude or magnitude upper limit of the associate</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">h_msig_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>2MASS H-band corrected photometric uncertainty of the associated</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">k_m_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>2MASS K-band magnitude or magnitude upper limit of the associate</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">k_msig_2mass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:REAL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>2MASS K-band corrected photometric uncertainty of the associated</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spt_ind</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:INTEGER</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Level 7 HTM spatial index key</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">htm20</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">adql:BIGINT</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Level 20 HTM spatial index key</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="images">
+<h3>Images<a class="headerlink" href="#images" title="Link to this heading">¶</a></h3>
+<p>No image cutout backends are configured for this survey.</p>
+</section>
+<section id="spectra">
+<h3>Spectra<a class="headerlink" href="#spectra" title="Link to this heading">¶</a></h3>
+<p>No 1D spectroscopic backends are configured for this survey.</p>
+</section>
+</section>
+<section id="references-and-acknowledgement">
+<h2>References and acknowledgement<a class="headerlink" href="#references-and-acknowledgement" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Wright, E. L. et al. (2010), <em>The Wide-field Infrared Survey Explorer (WISE): Mission Description and Initial On-orbit Performance</em>, <em>AJ</em>, 140, 1868 (<code class="docutils literal notranslate"><span class="pre">doi:10.1088/0004-6256/140/6/1868</span></code>).</p></li>
+<li><p>Cutri, R. M. et al. (2013), <em>Explanatory Supplement to the AllWISE Data Release Products</em>, Tech. Rep., IPAC/Caltech.</p></li>
+<li><p>Mainzer, A. et al. (2011), <em>Preliminary Results from NEOWISE: An Enhancement to the Wide-field Infrared Survey Explorer</em>, <em>ApJ</em>, 731, 53 (<code class="docutils literal notranslate"><span class="pre">doi:10.3847/1538-4357/731/1/53</span></code>).</p></li>
+<li><p>Astro Data Lab AllWISE documentation: <a class="reference external" href="https://datalab.noirlab.edu/">https://datalab.noirlab.edu/</a></p></li>
+</ul>
+<p>This publication makes use of data products from the Wide-field Infrared Survey Explorer, which is a joint project of the University of California, Los Angeles, and the Jet Propulsion Laboratory/California Institute of Technology, funded by the National Aeronautics and Space Administration. This research uses services or data provided by the Astro Data Lab at NSF NOIRLab. NOIRLab is operated by the Association of Universities for Research in Astronomy (AURA), Inc. under a cooperative agreement with the National Science Foundation.</p>
+</section>
+<section id="provenance-of-this-page">
+<h2>Provenance of this page<a class="headerlink" href="#provenance-of-this-page" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source ID</p></th>
+<th class="head"><p>Kind</p></th>
+<th class="head"><p>Service / Endpoint</p></th>
+<th class="head"><p>Query or URL</p></th>
+<th class="head"><p>Retrieved (UTC)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catalog_allwise</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tap_table</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://datalab.noirlab.edu/tap</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">column_name,</span> <span class="pre">datatype,</span> <span class="pre">unit,</span> <span class="pre">ucd,</span> <span class="pre">description</span> <span class="pre">FROM</span> <span class="pre">TAP_SCHEMA.columns</span> <span class="pre">WHERE</span> <span class="pre">table_name</span> <span class="pre">=</span> <span class="pre">'allwise.source'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2026-10-18T16:42:05Z</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /generated -->
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../reports/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Post-Hoc Reports</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="viking.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, N. M. Cardoso
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a><ul>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#the-shipped-file">The shipped file</a></li>
+<li><a class="reference internal" href="#schema-of-this-file">Schema of this file</a></li>
+<li><a class="reference internal" href="#adapter-parameters">Adapter parameters</a></li>
+<li><a class="reference internal" href="#common-changes">Common changes</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-served-by-the-archive">Data served by the archive</a><ul>
+<li><a class="reference internal" href="#catalogue-allwise-source">Catalogue: <code class="docutils literal notranslate"><span class="pre">allwise.source</span></code></a></li>
+<li><a class="reference internal" href="#images">Images</a></li>
+<li><a class="reference internal" href="#spectra">Spectra</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references-and-acknowledgement">References and acknowledgement</a></li>
+<li><a class="reference internal" href="#provenance-of-this-page">Provenance of this page</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c95eb2c2"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

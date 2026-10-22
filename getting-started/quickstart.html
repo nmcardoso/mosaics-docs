@@ -1,0 +1,441 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="End-to-End Recipes" href="recipes.html"><link rel="prev" title="Installation &amp; Credentials" href="install.html">
+        <link rel="canonical" href="https://nmcardoso.github.io/mosaics-docs/getting-started/quickstart.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Quickstart - MOSAICS 2.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">MOSAICS 2.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">MOSAICS 2.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation &amp; Credentials</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">End-to-End Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-a-worker.html">Run a worker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/runs.html">Long Runs, Resume &amp; Failure Sidecars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/archives.html">Archive Rate Limits, Mirrors &amp; Multi-Node Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/surveys-and-configs.html">Surveys, Entrypoints &amp; the Prefix Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/cutout-backends.html">Cutout Backends &amp; Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/spectra.html">Variable-Length Spectra &amp; Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/targets-pipeline.html">The Targets Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/crossmatch.html">Crossmatching a table of positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/datalab-healpix.html">Data Lab without a login: matching by index ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/field-of-view.html">Field of view: the size of a galaxy’s cutout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Command-line reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cutout.html"><code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span></code> — Image Cutout Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/query.html"><code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> — Catalogue Queries &amp; SSA Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/spectrum.html"><code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> — 1D Spectrum Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/targets.html"><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> — Multi-Survey Target Selection &amp; Crossmatch Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/crossmatch.html"><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code> — Match a Table Against Surveys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/fov.html"><code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code> — Cutout Size for a Galaxy Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/hipscat.html"><code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span></code> — Aladin HiPS Catalogue Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/proxy.html"><code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span></code> — Distributed Multi-Node Request Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/reports.html"><code class="docutils literal notranslate"><span class="pre">mosaics-report</span></code> — Post-Hoc Scientific Reports</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/inputs.html">Input Table Formats &amp; Coordinate Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/cutout-dataset.html">Cutout Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/spectrum-dataset.html">Spectrum Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/targets-catalogue.html">Targets Production Catalogue Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/crossmatch.html">Crossmatch Output Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/reading-outputs.html">Reading Output Datasets in Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration &amp; Surveys</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Survey Configuration Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../surveys/index.html">Survey Reference</a><input aria-label="Toggle navigation of Survey Reference" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/2dfgrs.html">2dF Galaxy Redshift Survey (<code class="docutils literal notranslate"><span class="pre">2dfgrs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/6dfgs.html">6dF Galaxy Survey DR3 (<code class="docutils literal notranslate"><span class="pre">6dfgs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/delve2.html">DELVE DR2 (<code class="docutils literal notranslate"><span class="pre">delve2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/denis3.html">DENIS DR3 (<code class="docutils literal notranslate"><span class="pre">denis3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/desi1.html">DESI DR1 (<code class="docutils literal notranslate"><span class="pre">desi1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/euclidq1.html">Euclid Q1 (<code class="docutils literal notranslate"><span class="pre">euclidq1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/gaia3.html">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/galex.html">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/hasp.html">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/hsc3.html">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/hst2.html">Hubble Source Catalog v2 (<code class="docutils literal notranslate"><span class="pre">hst2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/kids3.html">Kilo-Degree Survey DR3 (<code class="docutils literal notranslate"><span class="pre">kids3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/lamost11.html">LAMOST DR11 MRS (<code class="docutils literal notranslate"><span class="pre">lamost11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ls10.html">DESI Legacy Imaging Surveys DR10 (<code class="docutils literal notranslate"><span class="pre">ls10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ls11.html">DESI Legacy Imaging Surveys DR11 (<code class="docutils literal notranslate"><span class="pre">ls11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/lsstdp1.html">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/lsstdp2.html">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/pristine1.html">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ps1.html">Pan-STARRS1 (<code class="docutils literal notranslate"><span class="pre">ps1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/sdss16.html">Sloan Digital Sky Survey DR16 (<code class="docutils literal notranslate"><span class="pre">sdss16</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/sdss17.html">Sloan Digital Sky Survey DR17 (<code class="docutils literal notranslate"><span class="pre">sdss17</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/sdss20.html">Sloan Digital Sky Survey DR20 (<code class="docutils literal notranslate"><span class="pre">sdss20</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/skymapper4.html">SkyMapper DR4 (<code class="docutils literal notranslate"><span class="pre">skymapper4</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/twomass.html">2MASS Extended Source Catalog (<code class="docutils literal notranslate"><span class="pre">twomass</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ukidss10.html">UKIDSS DR10 (<code class="docutils literal notranslate"><span class="pre">ukidss10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ukidss11.html">UKIDSS DR11 (<code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/ukidss9.html">UKIDSS LAS DR9 (<code class="docutils literal notranslate"><span class="pre">ukidss9</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/unions.html">UNIONS DR5 (<code class="docutils literal notranslate"><span class="pre">unions</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/unwise.html">unWISE NEO11 (<code class="docutils literal notranslate"><span class="pre">unwise</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/vhs5.html">VISTA Hemisphere Survey DR5 (<code class="docutils literal notranslate"><span class="pre">vhs5</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/viking.html">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surveys/wise.html">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reports/index.html">Post-Hoc Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for-agents.html">Using This Documentation with an LLM Agent</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h1>
+<p>This walk-through runs the three core workflows—image cutouts, 1D spectra, and catalogue queries—using the sample target lists shipped in <code class="docutils literal notranslate"><span class="pre">test/</span></code>.</p>
+<section id="preview-and-fetch-multi-survey-image-cutouts">
+<h2>1. Preview and fetch multi-survey image cutouts<a class="headerlink" href="#preview-and-fetch-multi-survey-image-cutouts" title="Link to this heading">¶</a></h2>
+<p>Given a table with target positions (<code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">ra</span></code>, <code class="docutils literal notranslate"><span class="pre">dec</span></code>), <code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span> <span class="pre">full</span></code> routes your requested surveys and passbands across the enabled cutout backends defined in <code class="docutils literal notranslate"><span class="pre">defs/full.yaml</span></code>.</p>
+<p>First, inspect the routing plan without making any network requests (<code class="docutils literal notranslate"><span class="pre">--plan</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.cutout<span class="w"> </span>full<span class="w"> </span>-t<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>cutouts.lance<span class="w"> </span>--config<span class="w"> </span>defs/cutout.yaml<span class="w"> </span>--size<span class="w"> </span><span class="m">96</span><span class="w"> </span>--fov-unit<span class="w"> </span>arcmin<span class="w"> </span>--plan
+</pre></div>
+</div>
+<p>Run the extraction (writing batches to <code class="docutils literal notranslate"><span class="pre">cutouts.lance</span></code> as they complete so an interrupted run can be resumed with <code class="docutils literal notranslate"><span class="pre">--resume</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.cutout<span class="w"> </span>full<span class="w"> </span>-t<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>cutouts.lance<span class="w"> </span>--config<span class="w"> </span>defs/cutout.yaml<span class="w"> </span>--size<span class="w"> </span><span class="m">96</span><span class="w"> </span>--fov-unit<span class="w"> </span>arcmin<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">128</span>
+</pre></div>
+</div>
+</section>
+<section id="fetch-1d-spectra-for-a-target-table">
+<h2>2. Fetch 1D spectra for a target table<a class="headerlink" href="#fetch-1d-spectra-for-a-target-table" title="Link to this heading">¶</a></h2>
+<p>Each spectroscopic survey in <code class="docutils literal notranslate"><span class="pre">defs/surveys/</span></code> has its own subcommand under <code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> (plus <code class="docutils literal notranslate"><span class="pre">full</span></code> to run multiple spectroscopic surveys into one Lance dataset).</p>
+<p>For example, to fetch SDSS DR17 coadded spectra for a table carrying <code class="docutils literal notranslate"><span class="pre">sdss17_plate</span></code>, <code class="docutils literal notranslate"><span class="pre">sdss17_mjd</span></code>, <code class="docutils literal notranslate"><span class="pre">sdss17_fiberid</span></code> (or to run all configured spectroscopic adapters with <code class="docutils literal notranslate"><span class="pre">full</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.spectrum<span class="w"> </span>sdss17<span class="w"> </span>-t<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>sdss17_spectra.lance<span class="w"> </span>--snr-floor<span class="w"> </span><span class="m">2</span>.0
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.spectrum<span class="w"> </span>full<span class="w"> </span>-t<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>all_spectra.lance<span class="w"> </span>--config<span class="w"> </span>defs/full.yaml<span class="w"> </span>--snr-floor<span class="w"> </span><span class="m">2</span>.0
+</pre></div>
+</div>
+</section>
+<section id="query-a-remote-astronomical-catalogue">
+<h2>3. Query a remote astronomical catalogue<a class="headerlink" href="#query-a-remote-astronomical-catalogue" title="Link to this heading">¶</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> to run a cone search, a sky box (<code class="docutils literal notranslate"><span class="pre">region</span></code>), or a custom ADQL/SQL query against any supported provider (<code class="docutils literal notranslate"><span class="pre">tap</span></code>, <code class="docutils literal notranslate"><span class="pre">adl</span></code>, <code class="docutils literal notranslate"><span class="pre">sciserver</span></code>, <code class="docutils literal notranslate"><span class="pre">crossid</span></code>, <code class="docutils literal notranslate"><span class="pre">local</span></code>, <code class="docutils literal notranslate"><span class="pre">nersc</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.query<span class="w"> </span>cone<span class="w"> </span>--provider<span class="w"> </span>tap<span class="w"> </span>--service<span class="w"> </span>vizier<span class="w"> </span>--table<span class="w"> </span><span class="s2">"VII/259/6dfgs"</span><span class="w"> </span>--columns<span class="w"> </span>6dFGS<span class="w"> </span>RAJ2000<span class="w"> </span>DEJ2000<span class="w"> </span>cz<span class="w"> </span>--ra<span class="w"> </span><span class="m">180</span>.0<span class="w"> </span>--dec<span class="w"> </span>-10.0<span class="w"> </span>--radius<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>-o<span class="w"> </span>6dfgs_cone.parquet
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.query<span class="w"> </span>region<span class="w"> </span>--provider<span class="w"> </span>adl<span class="w"> </span>--table<span class="w"> </span>gaia_dr3.gaia_source<span class="w"> </span>--ra-range<span class="w"> </span><span class="m">180</span>.0<span class="w"> </span><span class="m">180</span>.2<span class="w"> </span>--dec-range<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>--columns<span class="w"> </span>source_id<span class="w"> </span>ra<span class="w"> </span>dec<span class="w"> </span>phot_g_mean_mag<span class="w"> </span>-o<span class="w"> </span>gaia_box.parquet
+</pre></div>
+</div>
+</section>
+<section id="match-a-table-against-surveys-and-size-its-cutouts">
+<h2>4. Match a table against surveys, and size its cutouts<a class="headerlink" href="#match-a-table-against-surveys-and-size-its-cutouts" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">run</span></code> joins the columns of one or more surveys onto a table of positions; with <code class="docutils literal notranslate"><span class="pre">--fov</span></code> it also adds the size of the cutout that frames each galaxy of one of them. The shipped <code class="docutils literal notranslate"><span class="pre">wise</span></code> file needs no login:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>surveys/wise<span class="w"> </span>-i<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>matched.parquet<span class="w"> </span>--dry-run
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>extensions/ls11-datalab<span class="w"> </span>-i<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>galaxies.parquet<span class="w"> </span>--fov<span class="w"> </span>ls11
+</pre></div>
+</div>
+<p>The first prints what it would send and sends nothing. See <a class="reference internal" href="../concepts/crossmatch.html"><span class="std std-doc">crossmatching</span></a> and <a class="reference internal" href="../concepts/field-of-view.html"><span class="std std-doc">field of view</span></a>.</p>
+</section>
+<section id="build-a-multi-survey-target-catalogue">
+<h2>5. Build a multi-survey target catalogue<a class="headerlink" href="#build-a-multi-survey-target-catalogue" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> runs the eight-stage target selection and multi-survey crossmatch pipeline over declination strips (<code class="docutils literal notranslate"><span class="pre">--dec-range</span></code>), writing sky-cell stores that resume automatically and producing a homogenised Parquet/Lance catalogue alongside a <code class="docutils literal notranslate"><span class="pre">scireport</span></code> bundle and PDF report:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.targets<span class="w"> </span>--config<span class="w"> </span>defs/targets.yaml<span class="w"> </span>-o<span class="w"> </span>./targets_run<span class="w"> </span>--dec-range<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>--plan<span class="w"> </span>plan.yaml
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.targets<span class="w"> </span>--config<span class="w"> </span>defs/targets.yaml<span class="w"> </span>-o<span class="w"> </span>./targets_run<span class="w"> </span>--dec-range<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span><span class="m">1</span>.0
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="recipes.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">End-to-End Recipes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="install.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Installation &amp; Credentials</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, N. M. Cardoso
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#preview-and-fetch-multi-survey-image-cutouts">1. Preview and fetch multi-survey image cutouts</a></li>
+<li><a class="reference internal" href="#fetch-1d-spectra-for-a-target-table">2. Fetch 1D spectra for a target table</a></li>
+<li><a class="reference internal" href="#query-a-remote-astronomical-catalogue">3. Query a remote astronomical catalogue</a></li>
+<li><a class="reference internal" href="#match-a-table-against-surveys-and-size-its-cutouts">4. Match a table against surveys, and size its cutouts</a></li>
+<li><a class="reference internal" href="#build-a-multi-survey-target-catalogue">5. Build a multi-survey target catalogue</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c95eb2c2"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>

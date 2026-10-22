@@ -1,0 +1,1031 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Subaru HSC-SSP PDR3 (hsc3)" href="hsc3.html"><link rel="prev" title="GALEX GR6+7 (galex)" href="galex.html">
+        <link rel="canonical" href="https://nmcardoso.github.io/mosaics-docs/surveys/hasp.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>HST Advanced Spectral Products (HASP) (hasp) - MOSAICS 2.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">MOSAICS 2.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">MOSAICS 2.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/install.html">Installation &amp; Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/recipes.html">End-to-End Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/run-a-worker.html">Run a worker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/runs.html">Long Runs, Resume &amp; Failure Sidecars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/archives.html">Archive Rate Limits, Mirrors &amp; Multi-Node Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/surveys-and-configs.html">Surveys, Entrypoints &amp; the Prefix Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/cutout-backends.html">Cutout Backends &amp; Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/spectra.html">Variable-Length Spectra &amp; Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/targets-pipeline.html">The Targets Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/crossmatch.html">Crossmatching a table of positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/datalab-healpix.html">Data Lab without a login: matching by index ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/field-of-view.html">Field of view: the size of a galaxy’s cutout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Command-line reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cutout.html"><code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span></code> — Image Cutout Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/query.html"><code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> — Catalogue Queries &amp; SSA Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/spectrum.html"><code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> — 1D Spectrum Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/targets.html"><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> — Multi-Survey Target Selection &amp; Crossmatch Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/crossmatch.html"><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code> — Match a Table Against Surveys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/fov.html"><code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code> — Cutout Size for a Galaxy Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/hipscat.html"><code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span></code> — Aladin HiPS Catalogue Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/proxy.html"><code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span></code> — Distributed Multi-Node Request Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/reports.html"><code class="docutils literal notranslate"><span class="pre">mosaics-report</span></code> — Post-Hoc Scientific Reports</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/inputs.html">Input Table Formats &amp; Coordinate Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/cutout-dataset.html">Cutout Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/spectrum-dataset.html">Spectrum Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/targets-catalogue.html">Targets Production Catalogue Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/crossmatch.html">Crossmatch Output Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/reading-outputs.html">Reading Output Datasets in Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration &amp; Surveys</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Survey Configuration Reference</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Survey Reference</a><input aria-label="Toggle navigation of Survey Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2dfgrs.html">2dF Galaxy Redshift Survey (<code class="docutils literal notranslate"><span class="pre">2dfgrs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6dfgs.html">6dF Galaxy Survey DR3 (<code class="docutils literal notranslate"><span class="pre">6dfgs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delve2.html">DELVE DR2 (<code class="docutils literal notranslate"><span class="pre">delve2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="denis3.html">DENIS DR3 (<code class="docutils literal notranslate"><span class="pre">denis3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desi1.html">DESI DR1 (<code class="docutils literal notranslate"><span class="pre">desi1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="euclidq1.html">Euclid Q1 (<code class="docutils literal notranslate"><span class="pre">euclidq1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gaia3.html">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="galex.html">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hsc3.html">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hst2.html">Hubble Source Catalog v2 (<code class="docutils literal notranslate"><span class="pre">hst2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kids3.html">Kilo-Degree Survey DR3 (<code class="docutils literal notranslate"><span class="pre">kids3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lamost11.html">LAMOST DR11 MRS (<code class="docutils literal notranslate"><span class="pre">lamost11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls10.html">DESI Legacy Imaging Surveys DR10 (<code class="docutils literal notranslate"><span class="pre">ls10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls11.html">DESI Legacy Imaging Surveys DR11 (<code class="docutils literal notranslate"><span class="pre">ls11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lsstdp1.html">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lsstdp2.html">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pristine1.html">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ps1.html">Pan-STARRS1 (<code class="docutils literal notranslate"><span class="pre">ps1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss16.html">Sloan Digital Sky Survey DR16 (<code class="docutils literal notranslate"><span class="pre">sdss16</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss17.html">Sloan Digital Sky Survey DR17 (<code class="docutils literal notranslate"><span class="pre">sdss17</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss20.html">Sloan Digital Sky Survey DR20 (<code class="docutils literal notranslate"><span class="pre">sdss20</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skymapper4.html">SkyMapper DR4 (<code class="docutils literal notranslate"><span class="pre">skymapper4</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twomass.html">2MASS Extended Source Catalog (<code class="docutils literal notranslate"><span class="pre">twomass</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss10.html">UKIDSS DR10 (<code class="docutils literal notranslate"><span class="pre">ukidss10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss11.html">UKIDSS DR11 (<code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss9.html">UKIDSS LAS DR9 (<code class="docutils literal notranslate"><span class="pre">ukidss9</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unions.html">UNIONS DR5 (<code class="docutils literal notranslate"><span class="pre">unions</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unwise.html">unWISE NEO11 (<code class="docutils literal notranslate"><span class="pre">unwise</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vhs5.html">VISTA Hemisphere Survey DR5 (<code class="docutils literal notranslate"><span class="pre">vhs5</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viking.html">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wise.html">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reports/index.html">Post-Hoc Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for-agents.html">Using This Documentation with an LLM Agent</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="hst-advanced-spectral-products-hasp-hasp">
+<h1>HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)<a class="headerlink" href="#hst-advanced-spectral-products-hasp-hasp" title="Link to this heading">¶</a></h1>
+<!-- generated:survey-page -->
+<p>The Hubble Advanced Spectral Products (HASP) program, hosted at the Mikulski Archive for Space Telescopes (MAST), provides automated coadditions of one-dimensional ultraviolet and optical spectra obtained with the Cosmic Origins Spectrograph (COS) and the Space Telescope Imaging Spectrograph (STIS) aboard the Hubble Space Telescope (HST). The spectral coadds span 1150 Å to 10270 Å with resolving powers ranging from <span class="math notranslate nohighlight">\(R \sim 1,500\)</span> to <span class="math notranslate nohighlight">\(45,000\)</span> depending on the grating combination. HASP covers targeted pointings across the entire sky wherever HST performed spectroscopic observations with COS and STIS.</p>
+<p>In MOSAICS, HASP provides the corpus’s only ultraviolet spectroscopy, crucial for resolving the Lyman-<span class="math notranslate nohighlight">\(\alpha\)</span> forest, interstellar and intergalactic absorption features, and hot-star and accretion-disc continua below 3000 Å. It participates in target selection via <code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> using an ADQL query against MAST TAP, and in 1D spectral extraction via <code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span> <span class="pre">hasp</span></code>, which downloads and decodes the coadded <code class="docutils literal notranslate"><span class="pre">*_cspec.fits</span></code> products.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>What MOSAICS extracts</p></td>
+<td><p>Catalogue: <code class="docutils literal notranslate"><span class="pre">hasp</span></code> (spectroscopic, <code class="docutils literal notranslate"><span class="pre">tap</span></code>); Spectra: <code class="docutils literal notranslate"><span class="pre">url</span></code> (flux,error,wavelength,mask)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Archives</p></td>
+<td><p>mast (<code class="docutils literal notranslate"><span class="pre">https://mast.stsci.edu/vo-tap/api/v0.1/caom/</span></code>), <code class="docutils literal notranslate"><span class="pre">archive.stsci.edu</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Bands / wavelength range</p></td>
+<td><p>spectroscopy (calibration <code class="docutils literal notranslate"><span class="pre">absolute</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Used by</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> (spectroscopic selection), <code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span> <span class="pre">hasp</span></code> / <code class="docutils literal notranslate"><span class="pre">full</span></code>, <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code>, <code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Crossmatch radius</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code> arcsec. PROVISIONAL. The COS primary science aperture is 2.5 arcsec in diameter (COS Instrument Handbook, Sect. 3.1); the STIS slit widths were not looked up, and nothing was found on which coordinates the HASP products carry or how accurate they are. The radius covers COS only.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<section id="the-shipped-file">
+<h3>The shipped file<a class="headerlink" href="#the-shipped-file" title="Link to this heading">¶</a></h3>
+<p>Source: <code class="docutils literal notranslate"><span class="pre">defs/surveys/hasp.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># HST spectral coadds from HASP -- spectroscopy.</span>
+<span class="c1">#</span>
+<span class="c1"># A different thing from `hst2`, which carries both the Hubble Source Catalog</span>
+<span class="c1"># photometry and the Hubble Legacy Archive imaging.</span>
+
+<span class="nt">survey_slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HST Advanced Spectral Products (HASP)</span>
+
+<span class="nt">catalog</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spectroscopic</span>
+<span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tap</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mast</span>
+<span class="w">      </span><span class="nt">table</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dbo.obspointing</span>
+<span class="w">      </span><span class="nt">dialect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">top</span>
+
+<span class="c1"># No catalog_filters: unlike the other six spectroscopic surveys, HASP has no</span>
+<span class="c1"># redshift column at all -- it coadds whichever HST spectra fall on a target,</span>
+<span class="c1"># a different population from the redshift surveys, which is also why it is</span>
+<span class="c1"># absent from spectroscopic_system.redshift_rank below. There is nothing here</span>
+<span class="c1"># for a `{prefix}_z BETWEEN ...` cut to test.</span>
+
+<span class="c1"># Crossmatch: the radius a table of positions is matched within, and what it rests on.</span>
+<span class="nt">crossmatch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3 arcsec</span>
+<span class="w">  </span><span class="nt">radius_note</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">PROVISIONAL. The COS primary science aperture is 2.5 arcsec in diameter (COS Instrument</span>
+<span class="w">    </span><span class="no">Handbook, Sect. 3.1); the STIS slit widths were not looked up, and nothing was found on</span>
+<span class="w">    </span><span class="no">which coordinates the HASP products carry or how accurate they are. The radius covers</span>
+<span class="w">    </span><span class="no">COS only.</span>
+<span class="w">  </span><span class="c1"># The selection joins two tables and groups them, which cannot be rewritten as an upload</span>
+<span class="w">  </span><span class="c1"># join. The query's header counts about 46,293 rows when it was written (no COUNT(*) was</span>
+<span class="w">  </span><span class="c1"># run for this setting), few enough to fetch over the cells the input occupies.</span>
+<span class="w">  </span><span class="nt">strategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extract</span>
+
+<span class="nt">target_selection</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">catalog_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp</span>
+<span class="w">  </span><span class="nt">query</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spec_hst_hasp.sql</span>
+<span class="w">  </span><span class="c1"># Both joined tables have an s_ra, so the appended spatial filter has to</span>
+<span class="w">  </span><span class="c1"># say which one it means; the query's own header spells this out.</span>
+<span class="w">  </span><span class="nt">ra_column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">o.s_ra</span>
+<span class="w">  </span><span class="nt">dec_column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">o.s_dec</span>
+
+<span class="nt">spectra</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">url</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">url_column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hst_access_url</span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp</span>
+<span class="w">    </span><span class="c1"># HASP publishes an ERROR column but no mask of its own. `mask` is</span>
+<span class="w">    </span><span class="c1"># computed from the flux's finiteness and its signal-to-noise, so it</span>
+<span class="w">    </span><span class="c1"># is listed here even though the archive has nothing named that.</span>
+<span class="w">    </span><span class="nt">arrays</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">flux</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">error</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">wavelength</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">mask</span><span class="p p-Indicator">]</span>
+
+<span class="nt">spectroscopic_system</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># An HST slit, not a fibre. Null means unknown and deliberately not</span>
+<span class="w">  </span><span class="c1"># guessed, as for euclidq1.</span>
+<span class="w">  </span><span class="nt">fiber_diameter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">  </span><span class="c1"># Deliberately absent rather than null: a HASP coadd abuts whichever COS</span>
+<span class="w">  </span><span class="c1"># and STIS dispersers observed the target, so it is resolved per row --</span>
+<span class="w">  </span><span class="c1"># see PER_ROW_DISPERSERS in mosaics/pipelines/targets/spec.py -- and a</span>
+<span class="w">  </span><span class="c1"># survey-wide constant would erase that. Note the difference from</span>
+<span class="w">  </span><span class="c1"># fiber_diameter, where null is a *value* meaning "no such thing exists".</span>
+<span class="w">  </span><span class="nt">disperser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">  </span><span class="c1"># Absent from the redshift tiebreak: HASP coadds are a different</span>
+<span class="w">  </span><span class="c1"># population from the redshift surveys above.</span>
+<span class="w">  </span><span class="nt">redshift_rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">  </span><span class="nt">flux_scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0e17</span><span class="w">          </span><span class="c1"># native erg/s/cm2/Angstrom</span>
+<span class="w">  </span><span class="nt">flux_calibration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absolute</span>
+</pre></div>
+</div>
+<p>Target-selection query (<code class="docutils literal notranslate"><span class="pre">defs/surveys/spec_hst_hasp.sql</span></code>):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- HST COS and STIS spectra from the Hubble Advanced Spectral Products (HASP).</span>
+<span class="c1">--</span>
+<span class="c1">-- Provider: tap --service mast (MAST CAOM, ADQL).</span>
+<span class="c1">--   uv run -m mosaics.cli.query sql --provider tap --service mast \</span>
+<span class="c1">--     --path sql/hst_hasp_spectra.sql --ra-col o.s_ra --dec-col o.s_dec \</span>
+<span class="c1">--     -o hasp.parquet</span>
+<span class="c1">--</span>
+<span class="c1">-- Note the *qualified* --ra-col: both joined tables have an s_ra, so the</span>
+<span class="c1">-- spatial filter the splitter appends is ambiguous unless it says which one.</span>
+<span class="c1">--</span>
+<span class="c1">-- Retrieval contract for `mosaics.cli.spectrum hst`: access_url is the direct</span>
+<span class="c1">-- download and is also the resume key, since it is what uniquely identifies a</span>
+<span class="c1">-- product.</span>
+<span class="c1">--   uv run -m mosaics.cli.spectrum hst --targets hasp.parquet \</span>
+<span class="c1">--     --url-column access_url --id-col access_url -o hasp.lance</span>
+<span class="c1">--</span>
+<span class="c1">-- This is the corpus's only ultraviolet spectroscopy. GALEX contributes two UV</span>
+<span class="c1">-- broad bands but nothing else resolves the Lyman-alpha forest, the</span>
+<span class="c1">-- interstellar and intergalactic absorption lines, or the hot-star and</span>
+<span class="c1">-- accretion-disc continua below 3000 A.</span>
+<span class="c1">--</span>
+<span class="c1">-- The join is the whole point of this query. dbo.obspointing carries</span>
+<span class="c1">-- provenance_name, which is the only way to identify a HASP product, but has</span>
+<span class="c1">-- no access_url; ivoa.obscore carries access_url but not provenance_name.</span>
+<span class="c1">-- Going the other way -- scanning obscore for access_url LIKE '%cspec%' --</span>
+<span class="c1">-- is a full-table scan that returns 504. Filtering access_url *after* the</span>
+<span class="c1">-- join is cheap, because the join has already narrowed the rows to HASP.</span>
+<span class="c1">--</span>
+<span class="c1">-- The GROUP BY is not cosmetic. CAOM sometimes registers one product under</span>
+<span class="c1">-- two observation ids (a target and its '-corr' reprocessing, say), so a</span>
+<span class="c1">-- plain join returns the same access_url twice -- 531 duplicates in 46,293</span>
+<span class="c1">-- rows when this was written. That makes access_url unusable as a resume key,</span>
+<span class="c1">-- which mosaics rejects outright rather than working around. One row per</span>
+<span class="c1">-- product is the honest shape of this catalogue.</span>
+<span class="c1">--</span>
+<span class="c1">-- It does not remove every duplicate, and cannot. A spatially split run</span>
+<span class="c1">-- groups within each declination slice, and the two registrations of one</span>
+<span class="c1">-- product can carry slightly different coordinates and so land in different</span>
+<span class="c1">-- slices -- 45 of 45,807 rows survived this way. Drop them before retrieval:</span>
+<span class="c1">--</span>
+<span class="c1">--   frame.drop_duplicates('access_url')</span>
+<span class="c1">--</span>
+<span class="c1">-- A HASP spectrum can abut several gratings with discontinuous resolution, so</span>
+<span class="c1">-- instrument_name and filters are carried as tokens; filters holds the</span>
+<span class="c1">-- semicolon-separated grating list, e.g. 'G130M;G750L'.</span>
+<span class="c1">--</span>
+<span class="c1">-- HASP fluxes are absolutely calibrated in erg/s/cm2/A, so unlike LAMOST and</span>
+<span class="c1">-- 6dFGS nothing needs rescaling downstream.</span>
+
+<span class="k">SELECT</span>
+<span class="w">  </span><span class="k">c</span><span class="p">.</span><span class="n">access_url</span><span class="w">                  </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_url</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">obs_id</span><span class="p">)</span><span class="w">                 </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_id</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">s_ra</span><span class="p">)</span><span class="w">                   </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_ra</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">s_dec</span><span class="p">)</span><span class="w">                  </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_dec</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">target_name</span><span class="p">)</span><span class="w">            </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_name</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">target_classification</span><span class="p">)</span><span class="w">  </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_class</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">instrument_name</span><span class="p">)</span><span class="w">        </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_instrument</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">filters</span><span class="p">)</span><span class="w">                </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_filters</span><span class="p">,</span>
+<span class="w">  </span><span class="k">MIN</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">proposal_id</span><span class="p">)</span><span class="w">            </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_proposal_id</span><span class="p">,</span>
+<span class="w">  </span><span class="c1">-- MAX(o.t_exptime)              AS hasp_exptime,</span>
+<span class="w">  </span><span class="c1">-- MIN(o.em_min)                 AS hasp_em_min,</span>
+<span class="w">  </span><span class="c1">-- MAX(o.em_max)                 AS hasp_em_max,</span>
+<span class="w">  </span><span class="k">MAX</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">calib_level</span><span class="p">)</span><span class="w">            </span><span class="k">AS</span><span class="w"> </span><span class="n">hasp_calib_level</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">'hasp'</span><span class="w">                        </span><span class="k">AS</span><span class="w"> </span><span class="ss">"sample"</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">obspointing</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">o</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">ivoa</span><span class="p">.</span><span class="n">obscore</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">obs_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">obs_id</span>
+<span class="k">WHERE</span>
+<span class="w">  </span><span class="n">o</span><span class="p">.</span><span class="n">obs_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HST'</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">provenance_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'HASP'</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">dataproduct_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'spectrum'</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">intentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'science'</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">t_exptime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">access_url</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%_cspec.fits'</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">access_url</span>
+</pre></div>
+</div>
+</section>
+<section id="schema-of-this-file">
+<h3>Schema of this file<a class="headerlink" href="#schema-of-this-file" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key present</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">survey_slug</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Canonical lowercase identifier for the survey and default column prefix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Human-readable survey and data-release name used in logs, plans, and reports.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catalog</span></code></p></td>
+<td><p>list of catalog entries</p></td>
+<td><p>no</p></td>
+<td><p>[]</p></td>
+<td><p>Remote or local catalogues queried for target extraction or crossmatching.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">crossmatch</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>How a table of positions is matched against this survey. Required for a survey with an <code class="docutils literal notranslate"><span class="pre">lsdb</span></code> catalog; <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> null removes it, and a survey without it takes no part in <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">target_selection</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>How this survey seeds or joins the candidate table in the targets pipeline.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spectra</span></code></p></td>
+<td><p>list of spectra entries</p></td>
+<td><p>no</p></td>
+<td><p>[]</p></td>
+<td><p>1D spectrum download backends (<code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">template</span></code>, <code class="docutils literal notranslate"><span class="pre">sparcl</span></code>, <code class="docutils literal notranslate"><span class="pre">desi-healpix</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spectroscopic_system</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>Spectrograph fibre diameter, disperser, redshift tiebreak rank, and flux calibration facts.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adapter-parameters">
+<h3>Adapter parameters<a class="headerlink" href="#adapter-parameters" title="Link to this heading">¶</a></h3>
+<p><strong>Catalogue <code class="docutils literal notranslate"><span class="pre">hasp</span></code> (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">tap</span></code>):</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Allowed Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">service</span></code></p></td>
+<td><p>str</p></td>
+<td><p>—</p></td>
+<td><p>Base URL of the IVOA TAP endpoint (e.g. <code class="docutils literal notranslate"><span class="pre">http://tapvizier.cds.unistra.fr/TAPVizieR/tap</span></code>, <code class="docutils literal notranslate"><span class="pre">https://mast.stsci.edu/vo-tap/api/v0.1/hasp/tap</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">table</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None (read from SQL query)</p></td>
+<td><p>Remote TAP table name (quoted when required by VizieR, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;VII/250/2dfgrs&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mode</span></code></p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spatial</span></code></p></td>
+<td><p>Crossmatch join mode (<code class="docutils literal notranslate"><span class="pre">spatial</span></code> or <code class="docutils literal notranslate"><span class="pre">relational</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">key_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None</p></td>
+<td><p>Local key column when <code class="docutils literal notranslate"><span class="pre">mode:</span> <span class="pre">relational</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">remote_key_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None</p></td>
+<td><p>Remote key column when <code class="docutils literal notranslate"><span class="pre">mode:</span> <span class="pre">relational</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remote_ra_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ra</span></code></p></td>
+<td><p>Remote right ascension column name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">remote_dec_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dec</span></code></p></td>
+<td><p>Remote declination column name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chunk_size</span></code></p></td>
+<td><p>int</p></td>
+<td><p>50000</p></td>
+<td><p>Positions uploaded per TAP crossmatch batch.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">use_async</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>false</p></td>
+<td><p>Submit queries as asynchronous UWS TAP jobs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dialect</span></code></p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">top</span></code></p></td>
+<td><p>SQL row-limit dialect (<code class="docutils literal notranslate"><span class="pre">top</span></code> for ADQL <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">TOP</span> <span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code> for <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">n</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chunk_mib</span></code></p></td>
+<td><p>float</p></td>
+<td><p>28.0 (the command line’s <code class="docutils literal notranslate"><span class="pre">--chunk-mib</span></code>)</p></td>
+<td><p>Byte budget of one inline upload, in MiB, for a service that cannot take the default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">footprint_table</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None</p></td>
+<td><p>A table with one <code class="docutils literal notranslate"><span class="pre">s_region</span></code> polygon per sky patch, from which <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">moc</span></code> builds the survey’s footprint.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>Spectra (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">url</span></code>, format <code class="docutils literal notranslate"><span class="pre">hasp</span></code>):</strong> configured <code class="docutils literal notranslate"><span class="pre">adapter_params</span></code>: <code class="docutils literal notranslate"><span class="pre">url_column='hst_access_url'</span></code>.</p></li>
+</ul>
+</section>
+<section id="common-changes">
+<h3>Common changes<a class="headerlink" href="#common-changes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Restrict or shift the spatial footprint in <code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> by passing declination bounds with <code class="docutils literal notranslate"><span class="pre">--dec-range</span> <span class="pre">&lt;min&gt;</span> <span class="pre">&lt;max&gt;</span></code>.</p></li>
+<li><p>Disable HASP spectral extraction in an entrypoint configuration by setting <code class="docutils literal notranslate"><span class="pre">overrides[surveys/hasp].spectra:</span> <span class="pre">[]</span></code>.</p></li>
+<li><p>Filter downloaded spectra downstream by instrument grating combinations using the tokenised <code class="docutils literal notranslate"><span class="pre">hasp_filters</span></code> column (e.g., isolating specific COS far-UV gratings such as <code class="docutils literal notranslate"><span class="pre">G130M</span></code> or STIS optical gratings).</p></li>
+</ul>
+</section>
+<section id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Link to this heading">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.spectrum<span class="w"> </span>hasp<span class="w"> </span>-t<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>hasp_spectra.lance
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>surveys/hasp<span class="w"> </span>-i<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>hasp_matched.parquet
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.targets<span class="w"> </span>--config<span class="w"> </span>defs/targets.yaml<span class="w"> </span>-o<span class="w"> </span>./targets_run<span class="w"> </span>--dec-range<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>--plan<span class="w"> </span>plan.yaml
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-served-by-the-archive">
+<h2>Data served by the archive<a class="headerlink" href="#data-served-by-the-archive" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Ambiguous coordinates in ADQL:</strong> Both <code class="docutils literal notranslate"><span class="pre">dbo.obspointing</span></code> (aliased as <code class="docutils literal notranslate"><span class="pre">o</span></code>) and <code class="docutils literal notranslate"><span class="pre">ivoa.obscore</span></code> (aliased as <code class="docutils literal notranslate"><span class="pre">c</span></code>) carry <code class="docutils literal notranslate"><span class="pre">s_ra</span></code> and <code class="docutils literal notranslate"><span class="pre">s_dec</span></code> columns. Spatial slice filters appended by <code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> must explicitly qualify the coordinates (<code class="docutils literal notranslate"><span class="pre">o.s_ra</span></code>, <code class="docutils literal notranslate"><span class="pre">o.s_dec</span></code>) to avoid ambiguous-column SQL errors.</p></li>
+<li><p><strong>Table join rationale and timeouts:</strong> <code class="docutils literal notranslate"><span class="pre">dbo.obspointing</span></code> carries the <code class="docutils literal notranslate"><span class="pre">provenance_name</span> <span class="pre">=</span> <span class="pre">'HASP'</span></code> flag needed to isolate HASP products but lacks direct access URLs, whereas <code class="docutils literal notranslate"><span class="pre">ivoa.obscore</span></code> contains <code class="docutils literal notranslate"><span class="pre">access_url</span></code> but lacks provenance. Attempting to scan <code class="docutils literal notranslate"><span class="pre">ivoa.obscore</span></code> directly for <code class="docutils literal notranslate"><span class="pre">access_url</span> <span class="pre">LIKE</span> <span class="pre">'%cspec%'</span></code> results in full-table scans that timeout with HTTP 504. Joining <code class="docutils literal notranslate"><span class="pre">dbo.obspointing</span></code> with <code class="docutils literal notranslate"><span class="pre">ivoa.obscore</span></code> on <code class="docutils literal notranslate"><span class="pre">obs_id</span></code> narrows rows cheaply before filtering.</p></li>
+<li><p><strong>Product deduplication and resume keys:</strong> MAST CAOM sometimes registers a single product under multiple observation IDs (e.g. initial target and reprocessed observations). The target query groups by <code class="docutils literal notranslate"><span class="pre">c.access_url</span></code> so each unique FITS product forms a single row and serves as an unambiguous resume key for <code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span> <span class="pre">hasp</span></code>. When runs are split into declination slices, observations with slightly differing coordinates at slice boundaries can occasionally produce residual duplicates across slices that should be deduplicated on <code class="docutils literal notranslate"><span class="pre">access_url</span></code> prior to retrieval.</p></li>
+<li><p><strong>No redshift attribute:</strong> Unlike cosmological redshift surveys, HASP coadds do not derive or report redshift values. HASP consequently carries no <code class="docutils literal notranslate"><span class="pre">catalog_filters</span></code> on redshift, and <code class="docutils literal notranslate"><span class="pre">redshift_rank</span></code> is set to null.</p></li>
+<li><p><strong>Flux calibration and quality masks:</strong> Fluxes in <code class="docutils literal notranslate"><span class="pre">*_cspec.fits</span></code> are absolutely calibrated in physical units of <span class="math notranslate nohighlight">\(\text{erg}\,\text{s}^{-1}\,\text{cm}^{-2}\,\text{Å}^{-1}\)</span> (scaled in MOSAICS by <span class="math notranslate nohighlight">\(1.0\times 10^{17}\)</span>). While HASP publishes an <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> column, it does not publish an intrinsic data quality mask; quality mask arrays are synthesized during decoding based on flux finiteness and signal-to-noise.</p></li>
+</ul>
+<section id="catalogue-dbo-obspointing">
+<h3>Catalogue: <code class="docutils literal notranslate"><span class="pre">dbo.ObsPointing</span></code><a class="headerlink" href="#catalogue-dbo-obspointing" title="Link to this heading">¶</a></h3>
+<p>MAST portal view of observations marked as science</p>
+<p><strong>Service URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://mast.stsci.edu/vo-tap/api/v0.1/caom/</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>UCD</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dataproduct_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.code.class</span></code></p></td>
+<td><p>type of product</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">calib_level</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.code;obs.calib</span></code></p></td>
+<td><p>calibration level (-1 through 5)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">obs_collection</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id</span></code></p></td>
+<td><p>name of data collection</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">obs_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id;meta.main</span></code></p></td>
+<td><p>internal dataset identifier</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">target_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id;src</span></code></p></td>
+<td><p>name of target</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s_ra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.ra;meta.main</span></code></p></td>
+<td><p>ra of central coordinates</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s_dec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.dec;meta.main</span></code></p></td>
+<td><p>dec of central coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">t_min</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">time.start;obs.exposure</span></code></p></td>
+<td><p>observation start mjd</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t_max</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">time.end;obs.exposure</span></code></p></td>
+<td><p>observation end mjd</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">t_exptime</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">time.duration;obs.exposure</span></code></p></td>
+<td><p>total exposure time</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wavelength_region</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">em.energy</span></code></p></td>
+<td><p>em region</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">filters</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">instr.bandpass</span></code></p></td>
+<td><p>em region</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">em_min</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">em.wl;stat.min</span></code></p></td>
+<td><p>minimum wavelength</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">em_max</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">em.wl;stat.max</span></code></p></td>
+<td><p>maximum wavelength</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">target_classification</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">src.class</span></code></p></td>
+<td><p>target classification from proposal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">obs_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.title</span></code></p></td>
+<td><p>proposal title</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t_obs_release</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">time.release;meta.dataset</span></code></p></td>
+<td><p>release date mjd</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">instrument_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">instr</span></code></p></td>
+<td><p>instrument name</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">proposal_pi</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id.PI</span></code></p></td>
+<td><p>proposal principal investigator name</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">proposal_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">obs.param</span></code></p></td>
+<td><p>collection specific proposal identifier</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">proposal_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">obs.param</span></code></p></td>
+<td><p>project that created observation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">provenance_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">obs.param</span></code></p></td>
+<td><p>process that created plane</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">project</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">obs.param</span></code></p></td>
+<td><p>project that created plane</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sequence_number</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.number</span></code></p></td>
+<td><p>sequence number assigned by observatory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s_region</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.outline;obs.field</span></code></p></td>
+<td><p>region bounded by observation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">jpegurl</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.ref.url</span></code></p></td>
+<td><p>url to download the data preview</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dataurl</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.ref.url</span></code></p></td>
+<td><p>url to download the data</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">datarights</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.code.status</span></code></p></td>
+<td><p>current data access rights</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mtflag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.code.status</span></code></p></td>
+<td><p>flag for moving target</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">srcden</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.number</span></code></p></td>
+<td><p>estimated source density per square degree</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">intenttype</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.code</span></code></p></td>
+<td><p>science/calibration purpose</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">obsid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.record</span></code></p></td>
+<td><p>internal observation id</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">objid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n.n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.record</span></code></p></td>
+<td><p>internal object id</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="images">
+<h3>Images<a class="headerlink" href="#images" title="Link to this heading">¶</a></h3>
+<p>No image cutout backends are configured for this survey.</p>
+</section>
+<section id="spectra">
+<h3>Spectra<a class="headerlink" href="#spectra" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Fibre diameter:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code> | <strong>Disperser:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code> | <strong>Redshift rank:</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code> | <strong>Flux calibration:</strong> <code class="docutils literal notranslate"><span class="pre">absolute</span></code> | <strong>Flux scale:</strong> <code class="docutils literal notranslate"><span class="pre">1e+17</span></code></p></li>
+<li><p><strong>Adapter <code class="docutils literal notranslate"><span class="pre">url</span></code>:</strong> decoder format <code class="docutils literal notranslate"><span class="pre">hasp</span></code>, output parallel arrays <code class="docutils literal notranslate"><span class="pre">['flux',</span> <span class="pre">'error',</span> <span class="pre">'wavelength',</span> <span class="pre">'mask']</span></code>, params <code class="docutils literal notranslate"><span class="pre">{'url_column':</span> <span class="pre">'hst_access_url'}</span></code>.</p>
+<ul>
+<li><p><strong>hdus:</strong> Binary table HDU 1 (<code class="docutils literal notranslate"><span class="pre">WAVELENGTH</span></code>, <code class="docutils literal notranslate"><span class="pre">FLUX</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, <code class="docutils literal notranslate"><span class="pre">DQ</span></code>).</p></li>
+<li><p><strong>wavelength_range_angstrom:</strong> 1150 - 10270 A (depends on COS/STIS grating combination)</p></li>
+<li><p><strong>resolution:</strong> R ~ 1500 - 45000 (mixed gratings)</p></li>
+<li><p><strong>flux_calibration:</strong> absolute (scaled by <code class="docutils literal notranslate"><span class="pre">1e17</span></code> to <code class="docutils literal notranslate"><span class="pre">10^-17</span> <span class="pre">erg</span> <span class="pre">s^-1</span> <span class="pre">cm^-2</span> <span class="pre">A^-1</span></code>)</p></li>
+<li><p><strong>arrays:</strong> [‘flux’, ‘error’, ‘wavelength’, ‘mask’]</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="references-and-acknowledgement">
+<h2>References and acknowledgement<a class="headerlink" href="#references-and-acknowledgement" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Debes, J. et al. (2024), <em>The Hubble Advanced Spectral Products (HASP) Program</em>, STScI Instrument Science Report COS 2024-01 / STIS 2024-01.</p></li>
+<li><p>HASP High-Level Science Product portal: <a class="reference external" href="https://archive.stsci.edu/hlsp/hasp">https://archive.stsci.edu/hlsp/hasp</a></p></li>
+<li><p>MAST CAOM TAP service: <a class="reference external" href="https://mast.stsci.edu/vo-tap/api/v0.1/caom/">https://mast.stsci.edu/vo-tap/api/v0.1/caom/</a></p></li>
+</ul>
+<p>Based on observations obtained with the NASA/ESA Hubble Space Telescope, retrieved from the Mikulski Archive for Space Telescopes (MAST) at the Space Telescope Science Institute (STScI). STScI is operated by the Association of Universities for Research in Astronomy, Inc. under NASA contract NAS 5-26555.</p>
+</section>
+<section id="provenance-of-this-page">
+<h2>Provenance of this page<a class="headerlink" href="#provenance-of-this-page" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source ID</p></th>
+<th class="head"><p>Kind</p></th>
+<th class="head"><p>Service / Endpoint</p></th>
+<th class="head"><p>Query or URL</p></th>
+<th class="head"><p>Retrieved (UTC)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catalog_hasp_obspointing</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tap_table</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://mast.stsci.edu/vo-tap/api/v0.1/caom/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">column_name,</span> <span class="pre">datatype,</span> <span class="pre">unit,</span> <span class="pre">ucd,</span> <span class="pre">description</span> <span class="pre">FROM</span> <span class="pre">TAP_SCHEMA.columns</span> <span class="pre">WHERE</span> <span class="pre">table_name</span> <span class="pre">=</span> <span class="pre">'dbo.ObsPointing'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2026-10-18T16:31:25Z</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spectra_hasp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spectrum_model</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://archive.stsci.edu/hlsp/hasp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://archive.stsci.edu/hlsp/hasp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2026-10-18T16:31:25Z</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /generated -->
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="hsc3.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="galex.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, N. M. Cardoso
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a><ul>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#the-shipped-file">The shipped file</a></li>
+<li><a class="reference internal" href="#schema-of-this-file">Schema of this file</a></li>
+<li><a class="reference internal" href="#adapter-parameters">Adapter parameters</a></li>
+<li><a class="reference internal" href="#common-changes">Common changes</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-served-by-the-archive">Data served by the archive</a><ul>
+<li><a class="reference internal" href="#catalogue-dbo-obspointing">Catalogue: <code class="docutils literal notranslate"><span class="pre">dbo.ObsPointing</span></code></a></li>
+<li><a class="reference internal" href="#images">Images</a></li>
+<li><a class="reference internal" href="#spectra">Spectra</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references-and-acknowledgement">References and acknowledgement</a></li>
+<li><a class="reference internal" href="#provenance-of-this-page">Provenance of this page</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c95eb2c2"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

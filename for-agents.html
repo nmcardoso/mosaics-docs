@@ -1,0 +1,467 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="prev" title="Post-Hoc Reports" href="reports/index.html">
+        <link rel="canonical" href="https://nmcardoso.github.io/mosaics-docs/for-agents.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Using This Documentation with an LLM Agent - MOSAICS 2.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">MOSAICS 2.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">MOSAICS 2.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/install.html">Installation &amp; Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/recipes.html">End-to-End Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/run-a-worker.html">Run a worker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts/runs.html">Long Runs, Resume &amp; Failure Sidecars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/archives.html">Archive Rate Limits, Mirrors &amp; Multi-Node Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/surveys-and-configs.html">Surveys, Entrypoints &amp; the Prefix Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/cutout-backends.html">Cutout Backends &amp; Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/spectra.html">Variable-Length Spectra &amp; Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/targets-pipeline.html">The Targets Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/crossmatch.html">Crossmatching a table of positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/datalab-healpix.html">Data Lab without a login: matching by index ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/field-of-view.html">Field of view: the size of a galaxy’s cutout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Command-line reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cli/cutout.html"><code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span></code> — Image Cutout Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/query.html"><code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> — Catalogue Queries &amp; SSA Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/spectrum.html"><code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> — 1D Spectrum Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/targets.html"><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> — Multi-Survey Target Selection &amp; Crossmatch Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/crossmatch.html"><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code> — Match a Table Against Surveys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/fov.html"><code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code> — Cutout Size for a Galaxy Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/hipscat.html"><code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span></code> — Aladin HiPS Catalogue Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/proxy.html"><code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span></code> — Distributed Multi-Node Request Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/reports.html"><code class="docutils literal notranslate"><span class="pre">mosaics-report</span></code> — Post-Hoc Scientific Reports</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data-model/inputs.html">Input Table Formats &amp; Coordinate Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-model/cutout-dataset.html">Cutout Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-model/spectrum-dataset.html">Spectrum Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-model/targets-catalogue.html">Targets Production Catalogue Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-model/crossmatch.html">Crossmatch Output Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-model/reading-outputs.html">Reading Output Datasets in Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration &amp; Surveys</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.html">Survey Configuration Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="surveys/index.html">Survey Reference</a><input aria-label="Toggle navigation of Survey Reference" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="surveys/2dfgrs.html">2dF Galaxy Redshift Survey (<code class="docutils literal notranslate"><span class="pre">2dfgrs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/6dfgs.html">6dF Galaxy Survey DR3 (<code class="docutils literal notranslate"><span class="pre">6dfgs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/delve2.html">DELVE DR2 (<code class="docutils literal notranslate"><span class="pre">delve2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/denis3.html">DENIS DR3 (<code class="docutils literal notranslate"><span class="pre">denis3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/desi1.html">DESI DR1 (<code class="docutils literal notranslate"><span class="pre">desi1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/euclidq1.html">Euclid Q1 (<code class="docutils literal notranslate"><span class="pre">euclidq1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/gaia3.html">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/galex.html">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/hasp.html">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/hsc3.html">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/hst2.html">Hubble Source Catalog v2 (<code class="docutils literal notranslate"><span class="pre">hst2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/kids3.html">Kilo-Degree Survey DR3 (<code class="docutils literal notranslate"><span class="pre">kids3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/lamost11.html">LAMOST DR11 MRS (<code class="docutils literal notranslate"><span class="pre">lamost11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/ls10.html">DESI Legacy Imaging Surveys DR10 (<code class="docutils literal notranslate"><span class="pre">ls10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/ls11.html">DESI Legacy Imaging Surveys DR11 (<code class="docutils literal notranslate"><span class="pre">ls11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/lsstdp1.html">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/lsstdp2.html">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/pristine1.html">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/ps1.html">Pan-STARRS1 (<code class="docutils literal notranslate"><span class="pre">ps1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/sdss16.html">Sloan Digital Sky Survey DR16 (<code class="docutils literal notranslate"><span class="pre">sdss16</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/sdss17.html">Sloan Digital Sky Survey DR17 (<code class="docutils literal notranslate"><span class="pre">sdss17</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/sdss20.html">Sloan Digital Sky Survey DR20 (<code class="docutils literal notranslate"><span class="pre">sdss20</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/skymapper4.html">SkyMapper DR4 (<code class="docutils literal notranslate"><span class="pre">skymapper4</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/twomass.html">2MASS Extended Source Catalog (<code class="docutils literal notranslate"><span class="pre">twomass</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/ukidss10.html">UKIDSS DR10 (<code class="docutils literal notranslate"><span class="pre">ukidss10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/ukidss11.html">UKIDSS DR11 (<code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/ukidss9.html">UKIDSS LAS DR9 (<code class="docutils literal notranslate"><span class="pre">ukidss9</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/unions.html">UNIONS DR5 (<code class="docutils literal notranslate"><span class="pre">unions</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/unwise.html">unWISE NEO11 (<code class="docutils literal notranslate"><span class="pre">unwise</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/vhs5.html">VISTA Hemisphere Survey DR5 (<code class="docutils literal notranslate"><span class="pre">vhs5</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/viking.html">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surveys/wise.html">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reports/index.html">Post-Hoc Reports</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Using This Documentation with an LLM Agent</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="using-this-documentation-with-an-llm-agent">
+<h1>Using This Documentation with an LLM Agent<a class="headerlink" href="#using-this-documentation-with-an-llm-agent" title="Link to this heading">¶</a></h1>
+<p>This documentation site is published in both human-readable HTML and machine-readable Markdown so that LLM coding agents, research assistants, and automated scripts can inspect <code class="docutils literal notranslate"><span class="pre">mosaics</span></code> CLI flags, survey configurations, and upstream archive data models without scraping HTML.</p>
+<section id="machine-readable-endpoints">
+<h2>Machine-Readable Endpoints<a class="headerlink" href="#machine-readable-endpoints" title="Link to this heading">¶</a></h2>
+<p>Every page on this site has a plain-Markdown twin, and the site root publishes two index files following the <code class="docutils literal notranslate"><span class="pre">llms.txt</span></code> standard:</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://nmcardoso.github.io/mosaics-docs/llms.txt"><code class="docutils literal notranslate"><span class="pre">llms.txt</span></code></a></strong> — Concise index of every documentation page with its title and direct <code class="docutils literal notranslate"><span class="pre">.md</span></code> URL. Point an agent here first so it can discover which page answers a question without loading the entire documentation into context.</p></li>
+<li><p><strong><a class="reference external" href="https://nmcardoso.github.io/mosaics-docs/llms-full.txt"><code class="docutils literal notranslate"><span class="pre">llms-full.txt</span></code></a></strong> — Single-file concatenation of the complete documentation in Markdown. Useful for long-context models or offline indexing.</p></li>
+<li><p><strong>Per-page <code class="docutils literal notranslate"><span class="pre">.md</span></code> twins</strong> — Replace <code class="docutils literal notranslate"><span class="pre">.html</span></code> with <code class="docutils literal notranslate"><span class="pre">.md</span></code> on any page URL (or append <code class="docutils literal notranslate"><span class="pre">index.md</span></code> to directory URLs) to fetch the raw Markdown source of that page, including all generated CLI tables, configuration schemas, and survey data-model tables:</p>
+<ul>
+<li><p><a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">for-agents.md</span></code></span></a> (this page in Markdown)</p></li>
+<li><p><a class="reference internal" href="surveys/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">surveys/index.md</span></code></span></a> (the survey capability matrix)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">surveys/&lt;slug&gt;.md</span></code> (for example, <a class="reference internal" href="surveys/ls11.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">surveys/ls11.md</span></code></span></a>, <a class="reference internal" href="surveys/desi1.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">surveys/desi1.md</span></code></span></a>, <a class="reference internal" href="surveys/lsstdp2.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">surveys/lsstdp2.md</span></code></span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cli/&lt;command&gt;.md</span></code> (for example, <a class="reference internal" href="cli/cutout.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/cutout.md</span></code></span></a>, <a class="reference internal" href="cli/targets.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/targets.md</span></code></span></a>, <a class="reference internal" href="cli/spectrum.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/spectrum.md</span></code></span></a>)</p></li>
+<li><p><a class="reference internal" href="configuration/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">configuration/index.md</span></code></span></a> (complete YAML schema and adapter parameter tables)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="step-by-step-workflow-for-agents">
+<h2>Step-by-Step Workflow for Agents<a class="headerlink" href="#step-by-step-workflow-for-agents" title="Link to this heading">¶</a></h2>
+<p>When asked to design, configure, or debug a <code class="docutils literal notranslate"><span class="pre">mosaics</span></code> data extraction run, an LLM agent should follow this sequence:</p>
+<section id="discover-available-surveys-and-capabilities">
+<h3>1. Discover Available Surveys and Capabilities<a class="headerlink" href="#discover-available-surveys-and-capabilities" title="Link to this heading">¶</a></h3>
+<p>Fetch <a class="reference internal" href="surveys/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">surveys/index.md</span></code></span></a> to inspect the <strong>Survey Capability Matrix</strong>. Identify which surveys provide:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">targets</span></code> stage-1 selection (<code class="docutils literal notranslate"><span class="pre">spectroscopic</span></code> or <code class="docutils literal notranslate"><span class="pre">photometric</span></code>),</p></li>
+<li><p>stage-3 photometric or stage-4 spectroscopic <code class="docutils literal notranslate"><span class="pre">catalog</span></code> crossmatching,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cutout</span></code> imaging stamps (and which backend: <code class="docutils literal notranslate"><span class="pre">hips</span></code>, <code class="docutils literal notranslate"><span class="pre">lsv</span></code>, or <code class="docutils literal notranslate"><span class="pre">nersc</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spectrum</span></code> 1D spectra (<code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">template</span></code>, <code class="docutils literal notranslate"><span class="pre">sparcl</span></code>, or <code class="docutils literal notranslate"><span class="pre">desi-healpix</span></code>).</p></li>
+</ul>
+</section>
+<section id="inspect-survey-schemas-and-shipped-yaml-sql">
+<h3>2. Inspect Survey Schemas and Shipped YAML/SQL<a class="headerlink" href="#inspect-survey-schemas-and-shipped-yaml-sql" title="Link to this heading">¶</a></h3>
+<p>For each survey <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> involved in the user’s task, fetch <code class="docutils literal notranslate"><span class="pre">surveys/&lt;slug&gt;.md</span></code> (for example, <a class="reference internal" href="surveys/euclidq1.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">surveys/euclidq1.md</span></code></span></a> or <a class="reference internal" href="surveys/ls11.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">surveys/ls11.md</span></code></span></a>). Each survey page contains:</p>
+<ul class="simple">
+<li><p>The <strong>exact shipped YAML configuration</strong> (<code class="docutils literal notranslate"><span class="pre">defs/surveys/&lt;slug&gt;.yaml</span></code>) and any <strong>SQL query</strong> (<code class="docutils literal notranslate"><span class="pre">defs/sql/&lt;slug&gt;.sql</span></code>).</p></li>
+<li><p>The <strong>Source Data Models</strong> table listing every column in the upstream archive table, its data type, physical unit, UCD, whether <code class="docutils literal notranslate"><span class="pre">mosaics</span></code> selects it by default, and what prefixed column name (<code class="docutils literal notranslate"><span class="pre">{prefix}&lt;col&gt;</span></code>) it maps to in the output dataset.</p></li>
+</ul>
+</section>
+<section id="construct-or-customise-a-configuration-file">
+<h3>3. Construct or Customise a Configuration File<a class="headerlink" href="#construct-or-customise-a-configuration-file" title="Link to this heading">¶</a></h3>
+<p>If the user needs additional archive columns, tighter quality constraints, or a subset of surveys:</p>
+<ol class="arabic simple">
+<li><p>Check <a class="reference internal" href="configuration/index.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">configuration/index.md</span></code></span></a> for the exact allowed keys in each section (<code class="docutils literal notranslate"><span class="pre">catalog</span></code>, <code class="docutils literal notranslate"><span class="pre">catalog_filters</span></code>, <code class="docutils literal notranslate"><span class="pre">column_mapping</span></code>, <code class="docutils literal notranslate"><span class="pre">cutout</span></code>, <code class="docutils literal notranslate"><span class="pre">spectra</span></code>, <code class="docutils literal notranslate"><span class="pre">target_selection</span></code>) and <code class="docutils literal notranslate"><span class="pre">adapter_params</span></code>.</p></li>
+<li><p>Remember the strict loader rules:</p>
+<ul class="simple">
+<li><p>Write the aliases in <code class="docutils literal notranslate"><span class="pre">column_mapping</span></code> <strong>without</strong> a prefix: the loader adds the survey’s (<code class="docutils literal notranslate"><span class="pre">{slug}_</span></code>, or <code class="docutils literal notranslate"><span class="pre">{slug}p_</span></code> / <code class="docutils literal notranslate"><span class="pre">{slug}s_</span></code> when a survey defines both photometric and spectroscopic catalogues), so <code class="docutils literal notranslate"><span class="pre">ra:</span> <span class="pre">ra</span></code> gives <code class="docutils literal notranslate"><span class="pre">{slug}_ra</span></code>. An alias that already starts with the prefix raises. Columns of a hosted survey go under a key named after its <code class="docutils literal notranslate"><span class="pre">provides</span></code> prefix.</p></li>
+<li><p>Unknown keys or invalid enum values (<code class="docutils literal notranslate"><span class="pre">pixel_unit</span></code>, <code class="docutils literal notranslate"><span class="pre">magnitude_system</span></code>, <code class="docutils literal notranslate"><span class="pre">wavelength_frame</span></code>, <code class="docutils literal notranslate"><span class="pre">error_representation</span></code>) will fail validation immediately.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="select-the-right-cli-command-and-flags">
+<h3>4. Select the Right CLI Command and Flags<a class="headerlink" href="#select-the-right-cli-command-and-flags" title="Link to this heading">¶</a></h3>
+<p>Fetch the relevant CLI reference page before proposing commands:</p>
+<ul class="simple">
+<li><p><strong>Cutouts:</strong> <a class="reference internal" href="cli/cutout.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/cutout.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span> <span class="pre">hips</span></code>, <code class="docutils literal notranslate"><span class="pre">lsv</span></code>, <code class="docutils literal notranslate"><span class="pre">nersc</span></code>, <code class="docutils literal notranslate"><span class="pre">full</span></code>, <code class="docutils literal notranslate"><span class="pre">peek</span></code>).</p></li>
+<li><p><strong>Spectra:</strong> <a class="reference internal" href="cli/spectrum.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/spectrum.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span> <span class="pre">fetch</span></code>, <code class="docutils literal notranslate"><span class="pre">discover</span></code>, <code class="docutils literal notranslate"><span class="pre">full</span></code>, <code class="docutils literal notranslate"><span class="pre">peek</span></code>).</p></li>
+<li><p><strong>Queries:</strong> <a class="reference internal" href="cli/query.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/query.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-query</span> <span class="pre">cone</span></code>, <code class="docutils literal notranslate"><span class="pre">region</span></code>, <code class="docutils literal notranslate"><span class="pre">download</span></code>, <code class="docutils literal notranslate"><span class="pre">sql</span></code>, <code class="docutils literal notranslate"><span class="pre">sweep</span></code>, <code class="docutils literal notranslate"><span class="pre">ssa</span></code>).</p></li>
+<li><p><strong>Targets Pipeline:</strong> <a class="reference internal" href="cli/targets.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/targets.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-targets</span> <span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">selection</span></code>, <code class="docutils literal notranslate"><span class="pre">ls11</span></code>, <code class="docutils literal notranslate"><span class="pre">photometric</span></code>, <code class="docutils literal notranslate"><span class="pre">spectroscopic</span></code>, <code class="docutils literal notranslate"><span class="pre">production</span></code>, <code class="docutils literal notranslate"><span class="pre">report</span></code>).</p></li>
+<li><p><strong>Crossmatch:</strong> <a class="reference internal" href="cli/crossmatch.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/crossmatch.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">run</span></code>, <code class="docutils literal notranslate"><span class="pre">moc</span></code>, <code class="docutils literal notranslate"><span class="pre">jobs</span></code>, <code class="docutils literal notranslate"><span class="pre">kill</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code>): a table of positions against any survey that has a <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> section, including the Rubin/LSST Data Previews. Concepts: <a class="reference internal" href="concepts/crossmatch.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">concepts/crossmatch.md</span></code></span></a>; Astro Data Lab without a login (<code class="docutils literal notranslate"><span class="pre">adl-healpix</span></code>, the adapter of <code class="docutils literal notranslate"><span class="pre">wise</span></code>, <code class="docutils literal notranslate"><span class="pre">gaia3</span></code> and <code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>): <a class="reference internal" href="concepts/datalab-healpix.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">concepts/datalab-healpix.md</span></code></span></a>.</p></li>
+<li><p><strong>Field of view:</strong> <a class="reference internal" href="cli/fov.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/fov.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code>): add the cutout size that frames each galaxy to any table with the Legacy Survey shape and <code class="docutils literal notranslate"><span class="pre">r</span></code> magnitude; <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">run</span> <span class="pre">--fov</span> <span class="pre">SURVEY</span></code> does the same after a match, and <code class="docutils literal notranslate"><span class="pre">--hle</span></code> (on <code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code>, <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">run</span> <span class="pre">--fov</span></code> and <code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code>) chooses the half-light-ellipse method alone; <code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span> <span class="pre">--default-fov</span></code> sizes the targets whose <code class="docutils literal notranslate"><span class="pre">fov</span></code> is empty. How it is computed: <a class="reference internal" href="concepts/field-of-view.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">concepts/field-of-view.md</span></code></span></a>.</p></li>
+<li><p><strong>HiPSCat:</strong> <a class="reference internal" href="cli/hipscat.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/hipscat.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span> <span class="pre">convert</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span></code>, <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code>, <code class="docutils literal notranslate"><span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">validate</span></code>).</p></li>
+<li><p><strong>Distributed Proxy:</strong> <a class="reference internal" href="cli/proxy.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/proxy.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span> <span class="pre">up</span></code>, <code class="docutils literal notranslate"><span class="pre">serve</span></code>, <code class="docutils literal notranslate"><span class="pre">worker</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">down</span></code>).</p></li>
+<li><p><strong>Reports:</strong> <a class="reference internal" href="cli/reports.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">cli/reports.md</span></code></span></a> (<code class="docutils literal notranslate"><span class="pre">mosaics-report</span> <span class="pre">targets</span></code>, <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code>, <code class="docutils literal notranslate"><span class="pre">compare-stamps</span></code>, <code class="docutils literal notranslate"><span class="pre">db-constraints</span></code>).</p></li>
+</ul>
+<p>Always include <code class="docutils literal notranslate"><span class="pre">--resume</span></code> on long-running extraction commands (<code class="docutils literal notranslate"><span class="pre">cutout</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, <code class="docutils literal notranslate"><span class="pre">targets</span></code>) so interrupted runs continue cleanly from their unique <code class="docutils literal notranslate"><span class="pre">--key-column</span></code>.</p>
+</section>
+<section id="verify-outputs-and-inspect-reports">
+<h3>5. Verify Outputs and Inspect Reports<a class="headerlink" href="#verify-outputs-and-inspect-reports" title="Link to this heading">¶</a></h3>
+<p>After a run finishes:</p>
+<ul class="simple">
+<li><p>Check <a class="reference internal" href="data-model/reading-outputs.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">data-model/reading-outputs.md</span></code></span></a> for Python recipes to read Lance cutout/spectrum datasets, distinguish failed rows (<code class="docutils literal notranslate"><span class="pre">null</span></code>) from empty spectra (<code class="docutils literal notranslate"><span class="pre">[]</span></code>), and inspect <code class="docutils literal notranslate"><span class="pre">&lt;dataset&gt;.failures.parquet</span></code>.</p></li>
+<li><p>If the pipeline generated a <code class="docutils literal notranslate"><span class="pre">report/md/</span></code> folder, read <code class="docutils literal notranslate"><span class="pre">report/md/index.md</span></code> and <code class="docutils literal notranslate"><span class="pre">report/md/chapters/*.md</span></code> to verify row counts, filter funnels, and scientific assessment checks.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="reports/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Post-Hoc Reports</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, N. M. Cardoso
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Using This Documentation with an LLM Agent</a><ul>
+<li><a class="reference internal" href="#machine-readable-endpoints">Machine-Readable Endpoints</a></li>
+<li><a class="reference internal" href="#step-by-step-workflow-for-agents">Step-by-Step Workflow for Agents</a><ul>
+<li><a class="reference internal" href="#discover-available-surveys-and-capabilities">1. Discover Available Surveys and Capabilities</a></li>
+<li><a class="reference internal" href="#inspect-survey-schemas-and-shipped-yaml-sql">2. Inspect Survey Schemas and Shipped YAML/SQL</a></li>
+<li><a class="reference internal" href="#construct-or-customise-a-configuration-file">3. Construct or Customise a Configuration File</a></li>
+<li><a class="reference internal" href="#select-the-right-cli-command-and-flags">4. Select the Right CLI Command and Flags</a></li>
+<li><a class="reference internal" href="#verify-outputs-and-inspect-reports">5. Verify Outputs and Inspect Reports</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=c95eb2c2"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>

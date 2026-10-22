@@ -1,0 +1,1379 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Pristine DR1 (pristine1)" href="pristine1.html"><link rel="prev" title="Rubin Observatory Data Preview 1 (lsstdp1)" href="lsstdp1.html">
+        <link rel="canonical" href="https://nmcardoso.github.io/mosaics-docs/surveys/lsstdp2.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Rubin Observatory Data Preview 2 (lsstdp2) - MOSAICS 2.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">MOSAICS 2.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">MOSAICS 2.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/install.html">Installation &amp; Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/recipes.html">End-to-End Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/run-a-worker.html">Run a worker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/runs.html">Long Runs, Resume &amp; Failure Sidecars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/archives.html">Archive Rate Limits, Mirrors &amp; Multi-Node Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/surveys-and-configs.html">Surveys, Entrypoints &amp; the Prefix Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/cutout-backends.html">Cutout Backends &amp; Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/spectra.html">Variable-Length Spectra &amp; Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/targets-pipeline.html">The Targets Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/crossmatch.html">Crossmatching a table of positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/datalab-healpix.html">Data Lab without a login: matching by index ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/field-of-view.html">Field of view: the size of a galaxy’s cutout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Command-line reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cutout.html"><code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span></code> — Image Cutout Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/query.html"><code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> — Catalogue Queries &amp; SSA Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/spectrum.html"><code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> — 1D Spectrum Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/targets.html"><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> — Multi-Survey Target Selection &amp; Crossmatch Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/crossmatch.html"><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code> — Match a Table Against Surveys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/fov.html"><code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code> — Cutout Size for a Galaxy Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/hipscat.html"><code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span></code> — Aladin HiPS Catalogue Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/proxy.html"><code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span></code> — Distributed Multi-Node Request Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/reports.html"><code class="docutils literal notranslate"><span class="pre">mosaics-report</span></code> — Post-Hoc Scientific Reports</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/inputs.html">Input Table Formats &amp; Coordinate Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/cutout-dataset.html">Cutout Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/spectrum-dataset.html">Spectrum Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/targets-catalogue.html">Targets Production Catalogue Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/crossmatch.html">Crossmatch Output Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/reading-outputs.html">Reading Output Datasets in Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration &amp; Surveys</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Survey Configuration Reference</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Survey Reference</a><input aria-label="Toggle navigation of Survey Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2dfgrs.html">2dF Galaxy Redshift Survey (<code class="docutils literal notranslate"><span class="pre">2dfgrs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6dfgs.html">6dF Galaxy Survey DR3 (<code class="docutils literal notranslate"><span class="pre">6dfgs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delve2.html">DELVE DR2 (<code class="docutils literal notranslate"><span class="pre">delve2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="denis3.html">DENIS DR3 (<code class="docutils literal notranslate"><span class="pre">denis3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desi1.html">DESI DR1 (<code class="docutils literal notranslate"><span class="pre">desi1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="euclidq1.html">Euclid Q1 (<code class="docutils literal notranslate"><span class="pre">euclidq1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gaia3.html">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="galex.html">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hasp.html">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hsc3.html">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hst2.html">Hubble Source Catalog v2 (<code class="docutils literal notranslate"><span class="pre">hst2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kids3.html">Kilo-Degree Survey DR3 (<code class="docutils literal notranslate"><span class="pre">kids3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lamost11.html">LAMOST DR11 MRS (<code class="docutils literal notranslate"><span class="pre">lamost11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls10.html">DESI Legacy Imaging Surveys DR10 (<code class="docutils literal notranslate"><span class="pre">ls10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls11.html">DESI Legacy Imaging Surveys DR11 (<code class="docutils literal notranslate"><span class="pre">ls11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lsstdp1.html">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pristine1.html">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ps1.html">Pan-STARRS1 (<code class="docutils literal notranslate"><span class="pre">ps1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss16.html">Sloan Digital Sky Survey DR16 (<code class="docutils literal notranslate"><span class="pre">sdss16</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss17.html">Sloan Digital Sky Survey DR17 (<code class="docutils literal notranslate"><span class="pre">sdss17</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss20.html">Sloan Digital Sky Survey DR20 (<code class="docutils literal notranslate"><span class="pre">sdss20</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skymapper4.html">SkyMapper DR4 (<code class="docutils literal notranslate"><span class="pre">skymapper4</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twomass.html">2MASS Extended Source Catalog (<code class="docutils literal notranslate"><span class="pre">twomass</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss10.html">UKIDSS DR10 (<code class="docutils literal notranslate"><span class="pre">ukidss10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss11.html">UKIDSS DR11 (<code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss9.html">UKIDSS LAS DR9 (<code class="docutils literal notranslate"><span class="pre">ukidss9</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unions.html">UNIONS DR5 (<code class="docutils literal notranslate"><span class="pre">unions</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unwise.html">unWISE NEO11 (<code class="docutils literal notranslate"><span class="pre">unwise</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vhs5.html">VISTA Hemisphere Survey DR5 (<code class="docutils literal notranslate"><span class="pre">vhs5</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viking.html">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wise.html">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reports/index.html">Post-Hoc Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for-agents.html">Using This Documentation with an LLM Agent</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="rubin-observatory-data-preview-2-lsstdp2">
+<h1>Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)<a class="headerlink" href="#rubin-observatory-data-preview-2-lsstdp2" title="Link to this heading">¶</a></h1>
+<!-- generated:survey-page -->
+<p>Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>) is a release of the Vera C. Rubin Observatory Legacy Survey of Space and Time (LSST): an optical wide-fast-deep survey of the southern sky made with the 8.4-metre Simonyi Survey Telescope at Cerro Pachón, Chile, through six broad bands (<span class="math notranslate nohighlight">\(u, g, r, i, z, y\)</span>, covering 3200–10800 Å). Early commissioning and validation products are released as Data Previews through the Rubin Science Platform (RSP). Data Preview 2 carries deep coadd images and all catalogs of its commissioning fields.</p>
+<p>In MOSAICS the file is a survey file like any other, matched by <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code>: the <code class="docutils literal notranslate"><span class="pre">dp2.Object</span></code> table is queried over the authenticated RSP TAP service with only <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">ra,</span> <span class="pre">dec)</span></code> sent, and the Object columns the file maps are joined back onto the table. It is left out of <code class="docutils literal notranslate"><span class="pre">defs/full.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">defs/targets.yaml</span></code>, because the RSP needs an access token and a targets run must not depend on one; a crossmatch job lists it itself (<code class="docutils literal notranslate"><span class="pre">surveys:</span> <span class="pre">[surveys/lsstdp2]</span></code>).</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>What MOSAICS extracts</p></td>
+<td><p>Catalogue: <code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code> (photometric, <code class="docutils literal notranslate"><span class="pre">lsst</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Archives</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data.lsst.cloud</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Bands / wavelength range</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>Used by</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Crossmatch radius</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> arcsec. No archive source was found for the PSF or the astrometric precision of Data Preview 2. Value set by the author (HG2, 2026-10-19); the research suggested the 1 arcsec of lsstdp1 as a reference.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<section id="the-shipped-file">
+<h3>The shipped file<a class="headerlink" href="#the-shipped-file" title="Link to this heading">¶</a></h3>
+<p>Source: <code class="docutils literal notranslate"><span class="pre">defs/surveys/lsstdp2.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rubin Observatory Data Preview 2 -- the Object table, crossmatch only.</span>
+<span class="c1">#</span>
+<span class="c1"># Not part of defs/full.yaml or defs/targets.yaml (full.yaml `exclude:`s it): the</span>
+<span class="c1"># RSP needs a token (LSST_TOKEN), and a targets run must not depend on one. Use it</span>
+<span class="c1"># from a crossmatch job:</span>
+<span class="c1">#</span>
+<span class="c1">#     surveys: [surveys/lsstdp2]</span>
+<span class="c1">#</span>
+<span class="c1"># Columns are what runs/gissel.sh asked the old LSST command for. Aliases carry no prefix:</span>
+<span class="c1"># the pipeline adds `lsstdp2_`. A pattern key selects every remote column it</span>
+<span class="c1"># matches; {1} is the text its wildcard matched (the band).</span>
+<span class="c1">#</span>
+<span class="c1"># `mosaics-crossmatch moc --survey surveys/lsstdp2 -o lsstdp2-moc.fits` builds the</span>
+<span class="c1"># footprint a job's `--filter-moc` reads (see `footprint_table`).</span>
+
+<span class="nt">survey_slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lsstdp2</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rubin Observatory Data Preview 2</span>
+
+<span class="nt">catalog</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lsstdp2</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">photometric</span>
+<span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lsst</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dp2</span>
+<span class="w">      </span><span class="nt">table</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dp2.Object</span>
+<span class="w">      </span><span class="nt">remote_ra_column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coord_ra</span>
+<span class="w">      </span><span class="nt">remote_dec_column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coord_dec</span>
+<span class="w">      </span><span class="nt">footprint_table</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dp2.CoaddPatches</span>
+<span class="w">      </span><span class="c1"># chunk_mib / use_async: the command line's defaults (28 MiB, measured).</span>
+
+<span class="nt">column_mapping</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">objectId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
+<span class="w">  </span><span class="nt">coord_ra</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ra</span>
+<span class="w">  </span><span class="nt">coord_dec</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dec</span>
+<span class="w">  </span><span class="s">'[ugrizy]_cModelMag'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mag_cmodel_{1}</span><span class="w">            </span><span class="c1"># -&gt; lsstdp2_mag_cmodel_u ... _y</span>
+<span class="w">  </span><span class="s">'[ugrizy]_cModelMagErr'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mag_cmodel_{1}_err</span>
+<span class="w">  </span><span class="s">'[ugrizy]_sersicFlux'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flux_sersic_{1}</span><span class="w">          </span><span class="c1"># nJy</span>
+<span class="w">  </span><span class="s">'[ugrizy]_sersicFluxErr'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flux_sersic_{1}_err</span>
+<span class="w">  </span><span class="nt">sersic_index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_index</span>
+<span class="w">  </span><span class="nt">sersic_indexErr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_index_err</span>
+<span class="w">  </span><span class="nt">sersic_ra</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_ra</span>
+<span class="w">  </span><span class="nt">sersic_dec</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_dec</span>
+<span class="w">  </span><span class="nt">sersic_raErr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_ra_err</span>
+<span class="w">  </span><span class="nt">sersic_decErr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_dec_err</span>
+<span class="w">  </span><span class="nt">sersic_ra_dec_Cov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_ra_dec_cov</span>
+<span class="w">  </span><span class="nt">sersic_reff_x</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_reff_x</span>
+<span class="w">  </span><span class="nt">sersic_reff_xErr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_reff_x_err</span>
+<span class="w">  </span><span class="nt">sersic_reff_y</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_reff_y</span>
+<span class="w">  </span><span class="nt">sersic_reff_yErr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_reff_y_err</span>
+<span class="w">  </span><span class="nt">sersic_reff_major</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_reff_major</span>
+<span class="w">  </span><span class="nt">sersic_reff_minor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_reff_minor</span>
+<span class="w">  </span><span class="nt">sersic_rho</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_rho</span>
+<span class="w">  </span><span class="nt">sersic_rhoErr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_rho_err</span>
+<span class="w">  </span><span class="nt">sersic_theta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_theta</span>
+<span class="w">  </span><span class="nt">sersic_n_eval_jac</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_n_eval_jac</span>
+<span class="w">  </span><span class="nt">sersic_n_iter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_n_iter</span>
+<span class="w">  </span><span class="nt">sersic_chi2_reduced</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_chi2_reduced</span>
+<span class="w">  </span><span class="nt">sersic_unknown_flag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_unknown_flag</span>
+<span class="w">  </span><span class="nt">sersic_no_data_flag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sersic_no_data_flag</span>
+<span class="w">  </span><span class="nt">shape_flag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shape_flag</span>
+<span class="w">  </span><span class="nt">ebv</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ebv</span>
+<span class="w">  </span><span class="nt">deblend_blendNChild</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deblend_blend_n_child</span>
+<span class="w">  </span><span class="nt">detect_fromBlend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detect_from_blend</span>
+<span class="w">  </span><span class="nt">detect_isIsolated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detect_is_isolated</span>
+
+<span class="nt">crossmatch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 arcsec</span>
+<span class="w">  </span><span class="nt">radius_note</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">No archive source was found for the PSF or the astrometric precision of Data Preview 2.</span>
+<span class="w">    </span><span class="no">Value set by the author (HG2, 2026-10-19); the research suggested the 1 arcsec of</span>
+<span class="w">    </span><span class="no">lsstdp1 as a reference.</span>
+</pre></div>
+</div>
+</section>
+<section id="schema-of-this-file">
+<h3>Schema of this file<a class="headerlink" href="#schema-of-this-file" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key present</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">survey_slug</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Canonical lowercase identifier for the survey and default column prefix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Human-readable survey and data-release name used in logs, plans, and reports.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catalog</span></code></p></td>
+<td><p>list of catalog entries</p></td>
+<td><p>no</p></td>
+<td><p>[]</p></td>
+<td><p>Remote or local catalogues queried for target extraction or crossmatching.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">column_mapping</span></code></p></td>
+<td><p>mapping (remote_column -&gt; alias)</p></td>
+<td><p>no</p></td>
+<td><p>{}</p></td>
+<td><p>Projection and column renaming applied when crossmatching against this survey’s photometric catalogue. The loader adds the catalog’s prefix to every alias, or the hosted survey’s for the columns under its <code class="docutils literal notranslate"><span class="pre">provides</span></code> key.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">crossmatch</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>How a table of positions is matched against this survey. Required for a survey with an <code class="docutils literal notranslate"><span class="pre">lsdb</span></code> catalog; <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> null removes it, and a survey without it takes no part in <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adapter-parameters">
+<h3>Adapter parameters<a class="headerlink" href="#adapter-parameters" title="Link to this heading">¶</a></h3>
+<p><strong>Catalogue <code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code> (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">lsst</span></code>):</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Allowed Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">release</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None (required unless <code class="docutils literal notranslate"><span class="pre">service</span></code> is given)</p></td>
+<td><p>Data release: <code class="docutils literal notranslate"><span class="pre">dp2</span></code>, <code class="docutils literal notranslate"><span class="pre">dp1</span></code>, <code class="docutils literal notranslate"><span class="pre">dp02</span></code> (<code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap</span></code>) or <code class="docutils literal notranslate"><span class="pre">dp03</span></code> (<code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/ssotap</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">table</span></code></p></td>
+<td><p>str</p></td>
+<td><p>—</p></td>
+<td><p>Remote table, e.g. <code class="docutils literal notranslate"><span class="pre">dp2.Object</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">service</span></code></p></td>
+<td><p>str</p></td>
+<td><p>the release’s endpoint</p></td>
+<td><p>A full TAP endpoint overriding the release’s, for a test archive or a non-standard service.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remote_ra_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>found by UCD (<code class="docutils literal notranslate"><span class="pre">pos.eq.ra</span></code>), then by name</p></td>
+<td><p>Remote right ascension column name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">remote_dec_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>found by UCD (<code class="docutils literal notranslate"><span class="pre">pos.eq.dec</span></code>), then by name</p></td>
+<td><p>Remote declination column name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">footprint_table</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None</p></td>
+<td><p>The release’s <code class="docutils literal notranslate"><span class="pre">CoaddPatches</span></code> table (<code class="docutils literal notranslate"><span class="pre">dp2.CoaddPatches</span></code>), from which <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">moc</span></code> builds the footprint.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">use_async</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>false (switches on by itself when the first upload chunk is large)</p></td>
+<td><p>Submit every upload as a server-side job instead of a synchronous query.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chunk_mib</span></code></p></td>
+<td><p>float</p></td>
+<td><p>28.0 (the command line’s <code class="docutils literal notranslate"><span class="pre">--chunk-mib</span></code>)</p></td>
+<td><p>Byte budget of one inline upload, in MiB. Rubin caps an upload at about 33 MiB.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="common-changes">
+<h3>Common changes<a class="headerlink" href="#common-changes" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p>Match a table against this release, with its radius and columns from the survey file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>surveys/lsstdp2<span class="w"> </span>-i<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>lsstdp2_matched.parquet
+</pre></div>
+</div>
+</li>
+<li><p>Build the release footprint once and pre-filter crossmatches to skip targets outside Rubin coverage:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>moc<span class="w"> </span>--survey<span class="w"> </span>surveys/lsstdp2<span class="w"> </span>-o<span class="w"> </span>lsstdp2-moc.fits
+</pre></div>
+</div>
+<p>then name the file under <code class="docutils literal notranslate"><span class="pre">overrides:</span></code> (<code class="docutils literal notranslate"><span class="pre">crossmatch:</span> <span class="pre">{moc:</span> <span class="pre">lsstdp2-moc.fits}</span></code>) and run with <code class="docutils literal notranslate"><span class="pre">--filter-moc</span></code>.</p>
+</li>
+<li><p>Ask for other Object columns (patterns are allowed) from the command line, without editing the file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>surveys/lsstdp2<span class="w"> </span>-i<span class="w"> </span>targets.parquet<span class="w"> </span>-o<span class="w"> </span>out.parquet<span class="w"> </span>--columns<span class="w"> </span>objectId<span class="w"> </span>coord_ra<span class="w"> </span>coord_dec<span class="w"> </span><span class="s1">'*_cModelMag'</span>
+</pre></div>
+</div>
+</li>
+<li><p>Tune upload chunk size and concurrency for the network you are on:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">--chunk-mib 1 -j 6 --limit-share 0.85</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Link to this heading">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>surveys/lsstdp2<span class="w"> </span>-i<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>lsstdp2_matched.parquet
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-served-by-the-archive">
+<h2>Data served by the archive<a class="headerlink" href="#data-served-by-the-archive" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>RSP token authentication:</strong> Unlike public TAP services that permit anonymous access, Rubin TAP requires an authenticated Rubin Science Platform (RSP) access token, read from <code class="docutils literal notranslate"><span class="pre">--lsst-token</span></code> or the environment (<code class="docutils literal notranslate"><span class="pre">LSST_TOKEN</span></code>, then <code class="docutils literal notranslate"><span class="pre">LSST_PASSWORD</span></code>, <code class="docutils literal notranslate"><span class="pre">LSST_PASS</span></code>). Authentication is transmitted via HTTP Basic with the literal username <code class="docutils literal notranslate"><span class="pre">x-oauth-basic</span></code> and the token as the password. A token is never read from a YAML file.</p></li>
+<li><p><strong>Rate limiting and concurrency budgets:</strong> Rubin enforces per-account rate limits of 1,000 requests per minute and a ceiling of 12 concurrent Qserv queries. The pipeline enforces these bounds locally through a windowed rate limiter, claiming a configurable fraction (default <code class="docutils literal notranslate"><span class="pre">--limit-share</span> <span class="pre">0.85</span></code>, or 850 requests/min and 10 concurrent slots) so that concurrent tools on a shared account are not starved.</p></li>
+<li><p><strong>Upload payload size limits:</strong> Rubin TAP enforces strict inline upload payload limits near 33 MiB. The crossmatch uploads positions in narrow batches containing only <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">ra,</span> <span class="pre">dec)</span></code>, budgeted by default to 28 MiB (<code class="docutils literal notranslate"><span class="pre">--chunk-mib</span> <span class="pre">28</span></code>), to maximize the number of target positions per chunk without exceeding the upload ceiling.</p></li>
+<li><p><strong>Footprint filtering with MOC:</strong> Because the Data Previews cover targeted commissioning fields rather than the full sky, crossmatching an all-sky target catalog directly sends hundreds of futile queries. <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span> <span class="pre">moc</span></code> builds a Multi-Order Coverage FITS map from the <code class="docutils literal notranslate"><span class="pre">dp2.CoaddPatches</span></code> table (<code class="docutils literal notranslate"><span class="pre">s_region</span></code> polygons at HEALPix order 10, <span class="math notranslate nohighlight">\(\sim 3.4'\)</span> resolution); <code class="docutils literal notranslate"><span class="pre">--filter-moc</span></code> excludes out-of-footprint targets locally before upload.</p></li>
+<li><p><strong>Synchronous vs asynchronous execution:</strong> Queries submit synchronously by default for fast turnaround, but switch automatically to asynchronous TAP jobs once payload sizes exceed upload thresholds or when <code class="docutils literal notranslate"><span class="pre">--use-async</span></code> is specified, preventing wall-clock query timeouts.</p></li>
+</ul>
+<section id="catalogue-dp2-coaddpatches">
+<h3>Catalogue: <code class="docutils literal notranslate"><span class="pre">dp2.CoaddPatches</span></code><a class="headerlink" href="#catalogue-dp2-coaddpatches" title="Link to this heading">¶</a></h3>
+<p>Static information about the subset of tracts and patches from the standard LSST skymap that apply to coadds in these catalogs.</p>
+<p><strong>Service URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap</span></code></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>UCD</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lsst_tract</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id;obs.field</span></code></p></td>
+<td><p>ID number of the top level, ‘tract’, within the standard LSST skymap</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lsst_patch</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id.part;obs.field</span></code></p></td>
+<td><p>ID number of the second level, ‘patch’, within the standard LSST skymap</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s_ra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.ra</span></code></p></td>
+<td><p>Central Spatial Position in ICRS; Right ascension</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s_dec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.dec</span></code></p></td>
+<td><p>Central Spatial Position in ICRS; Declination</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s_region</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.outline;obs.field</span></code></p></td>
+<td><p>Sky region covered by the coadd (expressed in ICRS frame)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="catalogue-dp2-object">
+<h3>Catalogue: <code class="docutils literal notranslate"><span class="pre">dp2.Object</span></code><a class="headerlink" href="#catalogue-dp2-object" title="Link to this heading">¶</a></h3>
+<p>Descriptions of static astronomical objects (or the static aspects of variable and slowly-moving objects) detected and measured on coadds.</p>
+<p><strong>Service URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap</span></code></p>
+<p><em>Showing 100 of 1248 total archive columns (all MOSAICS-mapped columns plus primary table fields; full 1248-column schema is stored in <code class="docutils literal notranslate"><span class="pre">docs/_data/sources/lsstdp2/lsst_dp2_object.json</span></code>).</em></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>UCD</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">objectId</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id;src</span></code></p></td>
+<td><p>Unique id. Unique ObjectID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">coord_ra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.ra;meta.main</span></code></p></td>
+<td><p>Fiducial ICRS Right Ascension of centroid used for database indexing</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">coord_dec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.dec;meta.main</span></code></p></td>
+<td><p>Fiducial ICRS Declination of centroid used for database indexing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModelMag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>AB magnitude of cModelFlux. Forced on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModelMagErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in magnitudes on cModelFlux. Forced on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">g_cModelMag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>AB magnitude of cModelFlux. Forced on g-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">g_cModelMagErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in magnitudes on cModelFlux. Forced on g-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">r_cModelMag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>AB magnitude of cModelFlux. Forced on r-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r_cModelMagErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in magnitudes on cModelFlux. Forced on r-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">i_cModelMag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>AB magnitude of cModelFlux. Forced on i-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">i_cModelMagErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in magnitudes on cModelFlux. Forced on i-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">z_cModelMag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>AB magnitude of cModelFlux. Forced on z-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">z_cModelMagErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in magnitudes on cModelFlux. Forced on z-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">y_cModelMag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>AB magnitude of cModelFlux. Forced on y-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">y_cModelMagErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in magnitudes on cModelFlux. Forced on y-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ebv</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>E(B-V) at coord_ra/coord_dec per Schlegel, Finkbeiner &amp; Davis (1998)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">detect_isIsolated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>This source is not a part of a blend.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">detect_fromBlend</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>This source is deblended from a parent with more than one child.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deblend_blendNChild</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Number of children in the deconvolved parent source that this source was deblended from.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shape_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>General failure flag, set if anything went wrong. Reference band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_ra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.ra</span></code></p></td>
+<td><p>Centroid (right ascension) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_raErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.error;pos.eq.ra</span></code></p></td>
+<td><p>Error on the centroid (right ascension) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_dec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.dec</span></code></p></td>
+<td><p>Centroid (declination) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_decErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.error;pos.eq.dec</span></code></p></td>
+<td><p>Error on the centroid (declination) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_ra_dec_Cov</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.covariance;pos.eq.ra;pos.eq.dec</span></code></p></td>
+<td><p>Covariance between right ascension and declination from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_reff_x</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Effective radius (x-axis) from the multiband Sersic model fit, prior to convolution with the PSF model (which is shrunk by 0.1 pixels in quadrature by default).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_reff_xErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the effective radius (x-axis) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_reff_y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Effective radius (y-axis) from the multiband Sersic model fit, prior to convolution with the PSF model (which is shrunk by 0.1 pixels in quadrature by default).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_reff_yErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the effective radius (y-axis) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_rho</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Ellipse rho (correlation coefficient) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_rhoErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on ellipse rho (correlation coefficient) from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_reff_major</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Effective radius (major axis) from the multiband Sersic model fit, prior to convolution with the PSF model (which is shrunk by 0.1 pixels in quadrature by default).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_reff_minor</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Effective radius (minor axis) from the multiband Sersic model fit, prior to convolution with the PSF model (which is shrunk by 0.1 pixels in quadrature by default).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_theta</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Position angle of the multiband Sersic fit ellipse.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_sersicFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>u-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_sersicFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the u-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">g_sersicFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>g-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">g_sersicFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the g-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r_sersicFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>r-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">r_sersicFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the r-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">i_sersicFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>i-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">i_sersicFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the i-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">z_sersicFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>z-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">z_sersicFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the z-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">y_sersicFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>y-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">y_sersicFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the y-band flux from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_index</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Sersic profile index parameter from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_indexErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Error on the Sersic profile index parameter from the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_n_eval_jac</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Number of Jacobian evaluations for the multiband Sersic model fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_n_iter</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Number of iterations in the non-linear fit for the multiband Sersic model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_chi2_reduced</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Reduced chi-squared of the best-fit model parameters (chi divided the number of data points) for the multiband Sersic model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_unknown_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flag set for failures with an unexpected or unknown cause for the multiband Sersic model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sersic_no_data_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flag set when there is insufficient data to fit for the multiband Sersic model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tract</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Skymap tract ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">patch</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Skymap patch ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">coord_raErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.error;pos.eq.ra;meta.main</span></code></p></td>
+<td><p>Angular error in fiducial ICRS Right Ascension (∂RA*cos(Dec)) of centroid</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">coord_decErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.error;pos.eq.dec;meta.main</span></code></p></td>
+<td><p>Error in fiducial ICRS Declination of centroid</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">coord_ra_dec_Cov</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.covariance;pos.eq.ra;pos.eq.dec;meta.main</span></code></p></td>
+<td><p>Covariance between fiducial ICRS Right Ascension (RA*cos(Dec)) and Declination of centroid</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">coord_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>General Failure Flag. Reference band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">refBand</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta.id;instr.bandpass</span></code></p></td>
+<td><p>Reference band - parameters measured on coadds of this band were used for multi-band forced photometry</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">refExtendedness</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux-ratio measure of whether an object is point-like (0) or extended (1). Reference band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">refSizeExtendedness</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Moments-based comparison of source size to the local PSF to estimate whether an object is point-like (0) or extended (1). Measured in the reference band; values range from 0 to 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">griz_model_extendedness</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Sersic model flux- and size-based estimate of whether the object is extended (resolved) or not, from 0 (compact) to 1 (extended). Uses griz-band fluxes; values range from 0 to 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_ra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.ra</span></code></p></td>
+<td><p>Position in right ascension, measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_dec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pos.eq.dec</span></code></p></td>
+<td><p>Position in declination, measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_raErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.error;pos.eq.ra</span></code></p></td>
+<td><p>Error in right ascension, measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_decErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.error;pos.eq.dec</span></code></p></td>
+<td><p>Error in declination, measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_ra_dec_Cov</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deg**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stat.covariance;pos.eq.ra;pos.eq.dec</span></code></p></td>
+<td><p>Covariance between right ascension and declination, measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_psfFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux derived from using the PSF model as a weight function. Forced on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_psfFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux uncertainty derived from using the PSF model as a weight function. Forced on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_psfMag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>AB magnitude of the u-band psfFlux.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_psfMagErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Uncertainty in magnitudes of the u-band psfFlux.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_free_psfFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux derived from using the PSF model as a weight function. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_free_psfFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux uncertainty derived from using the PSF model as a weight function. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_free_psfFlux_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flag set if the unforced PSF flux failed in this band for any reason. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_dev_reff_major</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Half-light ellipse of the de Vaucouleurs fit (major axis). Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_dev_reff_minor</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Half-light ellipse of the de Vaucouleurs fit (minor axis). Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_dev_theta</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Position angle of the de Vaucouleurs fit ellipse. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_exp_reff_major</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Half-light ellipse of the exponential fit (major axis). Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_exp_reff_minor</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arcsec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Half-light ellipse of the exponential fit (minor axis). Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_exp_theta</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Position angle of the exponential fit ellipse. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_chi2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>-ln(likelihood) (chi^2) in CModel fit. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_devFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux from the de Vaucouleurs fit. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_devFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux uncertainty from the de Vaucouleurs fit. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_expFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux from the exponential fit. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_cModel_expFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flux uncertainty from the exponential fit. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_gaapPsfFlux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>GAaP Flux with PSF aperture after reconvolving the image to a Gaussian PSF larger than the original by a factor of 1.15. Forced on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_gaapPsfFluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>GAaP Flux uncertainty with PSF aperture after multiplying the seeing by 1.15. Forced on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_gaap0p7Flux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>GAaP Flux with 0.7 arcsec aperture after reconvolving the image to a Gaussian PSF larger than the original by a factor of 1.15. Forced on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_gaap0p7FluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>GAaP Flux uncertainty with 0.7 arcsec aperture after multiplying the seeing by 1.15. Forced on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_gaap1p0Flux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>GAaP Flux with 1.0 arcsec aperture after reconvolving the image to a Gaussian PSF larger than the original by a factor of 1.15. Forced on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_gaap1p0FluxErr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nJy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>GAaP Flux uncertainty with 1.0 arcsec aperture after multiplying the seeing by 1.15. Forced on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_ixx</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Gaussian-weighted adaptive moments. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_iyy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Gaussian-weighted adaptive moments. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_ixy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Gaussian-weighted adaptive moments. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_i_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>General failure flag, set if anything went wrong. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_ixxPSF</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Gaussian-weighted adaptive moments of the PSF model at the position of this object. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_iyyPSF</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Gaussian-weighted adaptive moments of the PSF model at the position of this object. Measured on u-band.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_ixyPSF</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixel**2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Gaussian-weighted adaptive moments. Measured on u-band.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_iPSF_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>Flag set for any failure in the PSF model moments. Measured on u-band.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="images">
+<h3>Images<a class="headerlink" href="#images" title="Link to this heading">¶</a></h3>
+<p>No image cutout backends are configured for this survey.</p>
+</section>
+<section id="spectra">
+<h3>Spectra<a class="headerlink" href="#spectra" title="Link to this heading">¶</a></h3>
+<p>No 1D spectroscopic backends are configured for this survey.</p>
+</section>
+</section>
+<section id="references-and-acknowledgement">
+<h2>References and acknowledgement<a class="headerlink" href="#references-and-acknowledgement" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Ivezić, Ž. et al. (2019), <em>LSST: From Science Drivers to Reference Design and Anticipated Data Products</em>, ApJ, 873, 111 (<code class="docutils literal notranslate"><span class="pre">doi:10.3847/1538-4357/ab042c</span></code>).</p></li>
+<li><p>Rubin Observatory Data Preview documentation: <a class="reference external" href="https://dp2.lsst.io/">https://dp2.lsst.io/</a>.</p></li>
+<li><p>Rubin Science Platform TAP endpoint: <code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap</span></code>.</p></li>
+</ul>
+<p>This material is based upon work supported in part by the National Science Foundation through Cooperative Agreements AST-1258333 and AST-2241526 and Cooperative Support Agreements AST-1202910 and 2211468 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University. Additional Rubin Observatory funding comes from private donations, grants to universities, and in-kind support from LSST-DA Institutional Members. This research uses services or data provided by the Rubin Science Platform at NSF-DOE Vera C. Rubin Observatory, which is jointly funded by the U.S. National Science Foundation and the U.S. Department of Energy, Office of Science.</p>
+</section>
+<section id="provenance-of-this-page">
+<h2>Provenance of this page<a class="headerlink" href="#provenance-of-this-page" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source ID</p></th>
+<th class="head"><p>Kind</p></th>
+<th class="head"><p>Service / Endpoint</p></th>
+<th class="head"><p>Query or URL</p></th>
+<th class="head"><p>Retrieved (UTC)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lsst_dp2_coaddpatches</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lsst_tap</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap/tables/dp2.CoaddPatches</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2026-10-18T17:00:09Z</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lsst_dp2_object</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lsst_tap</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://data.lsst.cloud/api/tap/tables/dp2.Object</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2026-10-18T17:00:08Z</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /generated -->
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="pristine1.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="lsstdp1.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, N. M. Cardoso
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a><ul>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#the-shipped-file">The shipped file</a></li>
+<li><a class="reference internal" href="#schema-of-this-file">Schema of this file</a></li>
+<li><a class="reference internal" href="#adapter-parameters">Adapter parameters</a></li>
+<li><a class="reference internal" href="#common-changes">Common changes</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-served-by-the-archive">Data served by the archive</a><ul>
+<li><a class="reference internal" href="#catalogue-dp2-coaddpatches">Catalogue: <code class="docutils literal notranslate"><span class="pre">dp2.CoaddPatches</span></code></a></li>
+<li><a class="reference internal" href="#catalogue-dp2-object">Catalogue: <code class="docutils literal notranslate"><span class="pre">dp2.Object</span></code></a></li>
+<li><a class="reference internal" href="#images">Images</a></li>
+<li><a class="reference internal" href="#spectra">Spectra</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references-and-acknowledgement">References and acknowledgement</a></li>
+<li><a class="reference internal" href="#provenance-of-this-page">Provenance of this page</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c95eb2c2"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

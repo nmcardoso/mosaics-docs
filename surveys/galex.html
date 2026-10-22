@@ -1,0 +1,1400 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="HST Advanced Spectral Products (HASP) (hasp)" href="hasp.html"><link rel="prev" title="Gaia DR3 (gaia3)" href="gaia3.html">
+        <link rel="canonical" href="https://nmcardoso.github.io/mosaics-docs/surveys/galex.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>GALEX GR6+7 (galex) - MOSAICS 2.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">MOSAICS 2.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">MOSAICS 2.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/install.html">Installation &amp; Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/recipes.html">End-to-End Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/run-a-worker.html">Run a worker</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/runs.html">Long Runs, Resume &amp; Failure Sidecars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/archives.html">Archive Rate Limits, Mirrors &amp; Multi-Node Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/surveys-and-configs.html">Surveys, Entrypoints &amp; the Prefix Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/cutout-backends.html">Cutout Backends &amp; Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/spectra.html">Variable-Length Spectra &amp; Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/targets-pipeline.html">The Targets Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/crossmatch.html">Crossmatching a table of positions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/datalab-healpix.html">Data Lab without a login: matching by index ranges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/field-of-view.html">Field of view: the size of a galaxy’s cutout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Command-line reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cutout.html"><code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span></code> — Image Cutout Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/query.html"><code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> — Catalogue Queries &amp; SSA Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/spectrum.html"><code class="docutils literal notranslate"><span class="pre">mosaics-spectrum</span></code> — 1D Spectrum Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/targets.html"><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> — Multi-Survey Target Selection &amp; Crossmatch Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/crossmatch.html"><code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code> — Match a Table Against Surveys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/fov.html"><code class="docutils literal notranslate"><span class="pre">mosaics-fov</span></code> — Cutout Size for a Galaxy Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/hipscat.html"><code class="docutils literal notranslate"><span class="pre">mosaics-hipscat</span></code> — Aladin HiPS Catalogue Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/proxy.html"><code class="docutils literal notranslate"><span class="pre">mosaics-proxy</span></code> — Distributed Multi-Node Request Pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/reports.html"><code class="docutils literal notranslate"><span class="pre">mosaics-report</span></code> — Post-Hoc Scientific Reports</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/inputs.html">Input Table Formats &amp; Coordinate Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/cutout-dataset.html">Cutout Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/spectrum-dataset.html">Spectrum Lance Dataset Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/targets-catalogue.html">Targets Production Catalogue Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/crossmatch.html">Crossmatch Output Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-model/reading-outputs.html">Reading Output Datasets in Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration &amp; Surveys</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Survey Configuration Reference</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Survey Reference</a><input aria-label="Toggle navigation of Survey Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2dfgrs.html">2dF Galaxy Redshift Survey (<code class="docutils literal notranslate"><span class="pre">2dfgrs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6dfgs.html">6dF Galaxy Survey DR3 (<code class="docutils literal notranslate"><span class="pre">6dfgs</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delve2.html">DELVE DR2 (<code class="docutils literal notranslate"><span class="pre">delve2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="denis3.html">DENIS DR3 (<code class="docutils literal notranslate"><span class="pre">denis3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desi1.html">DESI DR1 (<code class="docutils literal notranslate"><span class="pre">desi1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="euclidq1.html">Euclid Q1 (<code class="docutils literal notranslate"><span class="pre">euclidq1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gaia3.html">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hasp.html">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hsc3.html">Subaru HSC-SSP PDR3 (<code class="docutils literal notranslate"><span class="pre">hsc3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hst2.html">Hubble Source Catalog v2 (<code class="docutils literal notranslate"><span class="pre">hst2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kids3.html">Kilo-Degree Survey DR3 (<code class="docutils literal notranslate"><span class="pre">kids3</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lamost11.html">LAMOST DR11 MRS (<code class="docutils literal notranslate"><span class="pre">lamost11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls10.html">DESI Legacy Imaging Surveys DR10 (<code class="docutils literal notranslate"><span class="pre">ls10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ls11.html">DESI Legacy Imaging Surveys DR11 (<code class="docutils literal notranslate"><span class="pre">ls11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lsstdp1.html">Rubin Observatory Data Preview 1 (<code class="docutils literal notranslate"><span class="pre">lsstdp1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lsstdp2.html">Rubin Observatory Data Preview 2 (<code class="docutils literal notranslate"><span class="pre">lsstdp2</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pristine1.html">Pristine DR1 (<code class="docutils literal notranslate"><span class="pre">pristine1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ps1.html">Pan-STARRS1 (<code class="docutils literal notranslate"><span class="pre">ps1</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss16.html">Sloan Digital Sky Survey DR16 (<code class="docutils literal notranslate"><span class="pre">sdss16</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss17.html">Sloan Digital Sky Survey DR17 (<code class="docutils literal notranslate"><span class="pre">sdss17</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdss20.html">Sloan Digital Sky Survey DR20 (<code class="docutils literal notranslate"><span class="pre">sdss20</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skymapper4.html">SkyMapper DR4 (<code class="docutils literal notranslate"><span class="pre">skymapper4</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twomass.html">2MASS Extended Source Catalog (<code class="docutils literal notranslate"><span class="pre">twomass</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss10.html">UKIDSS DR10 (<code class="docutils literal notranslate"><span class="pre">ukidss10</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss11.html">UKIDSS DR11 (<code class="docutils literal notranslate"><span class="pre">ukidss11</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukidss9.html">UKIDSS LAS DR9 (<code class="docutils literal notranslate"><span class="pre">ukidss9</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unions.html">UNIONS DR5 (<code class="docutils literal notranslate"><span class="pre">unions</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unwise.html">unWISE NEO11 (<code class="docutils literal notranslate"><span class="pre">unwise</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vhs5.html">VISTA Hemisphere Survey DR5 (<code class="docutils literal notranslate"><span class="pre">vhs5</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viking.html">VISTA Kilo-degree Infrared Galaxy Survey (<code class="docutils literal notranslate"><span class="pre">viking</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wise.html">AllWISE (<code class="docutils literal notranslate"><span class="pre">wise</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reports/index.html">Post-Hoc Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for-agents.html">Using This Documentation with an LLM Agent</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="galex-gr6-7-galex">
+<h1>GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)<a class="headerlink" href="#galex-gr6-7-galex" title="Link to this heading">¶</a></h1>
+<!-- generated:survey-page -->
+<p>The Galaxy Evolution Explorer (GALEX) Data Releases 6 and 7 (GR6+7) provide space-based ultraviolet imaging across the extragalactic sky. Launched by NASA, GALEX operated a 50-centimetre Ritchey-Chrétien telescope equipped with simultaneous Far-Ultraviolet (FUV, <span class="math notranslate nohighlight">\(\lambda_\text{eff} \approx 1538\text{ \AA}\)</span>, <span class="math notranslate nohighlight">\(1344\text{--}1786\text{ \AA}\)</span>) and Near-Ultraviolet (NUV, <span class="math notranslate nohighlight">\(\lambda_\text{eff} \approx 2316\text{ \AA}\)</span>, <span class="math notranslate nohighlight">\(1771\text{--}2831\text{ \AA}\)</span>) microchannel plate detectors. Its flagship All-Sky Imaging Survey (AIS) covered roughly 26,000 deg² down to typical <span class="math notranslate nohighlight">\(5\sigma\)</span> AB depths of 20.8 mag in NUV and 19.9 mag in FUV, complemented by deeper Medium (MIS) and Deep (DIS) Imaging Surveys reaching several magnitudes fainter over narrower footprints.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">mosaics</span></code>, GALEX provides ultraviolet photometric crossmatching (<code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> and <code class="docutils literal notranslate"><span class="pre">mosaics-query</span></code> via the LineA HATS partition of the 292-million-row merged catalogue) and image cutouts in NUV and FUV (<code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span> <span class="pre">full</span></code> via the Legacy Survey Viewer <code class="docutils literal notranslate"><span class="pre">lsv</span></code> adapter, with an alternative MAST SIA endpoint).</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>What MOSAICS extracts</p></td>
+<td><p>Catalogue: <code class="docutils literal notranslate"><span class="pre">galex</span></code> (photometric, <code class="docutils literal notranslate"><span class="pre">lsdb</span></code>); Cutouts: <code class="docutils literal notranslate"><span class="pre">lsv</span></code> (nuv,fuv), <code class="docutils literal notranslate"><span class="pre">sia</span></code> (nuv)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Archives</p></td>
+<td><p>HATS (<code class="docutils literal notranslate"><span class="pre">linea.data.lsdb.io</span></code>), Legacy Survey Viewer (<code class="docutils literal notranslate"><span class="pre">legacysurvey.org</span></code>), SIA (<code class="docutils literal notranslate"><span class="pre">mast.stsci.edu</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>Bands / wavelength range</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fuv</span></code> (<code class="docutils literal notranslate"><span class="pre">GALEX/GALEX.FUV</span></code>), <code class="docutils literal notranslate"><span class="pre">nuv</span></code> (<code class="docutils literal notranslate"><span class="pre">GALEX/GALEX.NUV</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Used by</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mosaics-targets</span></code> (crossmatch), <code class="docutils literal notranslate"><span class="pre">mosaics-cutout</span> <span class="pre">full</span></code>, <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Crossmatch radius</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code> arcsec. PSF FWHM 4.2 arcsec (FUV) and 4.9 arcsec (NUV) on one GALEX page, 4.5 and 5.4 arcsec on another; absolute positional uncertainty 0.5 arcsec rms (Morrissey et al. 2007, arXiv:0706.0755); 99.7 % of matches to SDSS lie within 3.4-3.6 arcsec (GALEX documentation, Chapter 106).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<section id="the-shipped-file">
+<h3>The shipped file<a class="headerlink" href="#the-shipped-file" title="Link to this heading">¶</a></h3>
+<p>Source: <code class="docutils literal notranslate"><span class="pre">defs/surveys/galex.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># GALEX GR6+7 -- ultraviolet photometry and cutouts.</span>
+
+<span class="nt">survey_slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galex</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GALEX GR6+7</span>
+
+<span class="nt">catalog</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galex</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">photometric</span>
+<span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lsdb</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># The Linea mirror of GALEX GR6+7: the collection</span>
+<span class="w">      </span><span class="c1"># https://linea.data.lsdb.io/hats/galex holds this catalogue and its</span>
+<span class="w">      </span><span class="c1"># 10-arcsec margin. It replaced the CDS mirror of GUVcat (VizieR II/335),</span>
+<span class="w">      </span><span class="c1"># which shared vizcat.cds.unistra.fr -- and so one --steps-per-source cap</span>
+<span class="w">      </span><span class="c1"># -- with sdss16, hst2 and vhs5, and which sends each partition whole.</span>
+<span class="w">      </span><span class="c1"># Linea answers range requests.</span>
+<span class="w">      </span><span class="c1">#</span>
+<span class="w">      </span><span class="c1"># Not the same product. GUVcat is one row per unique source; this is the</span>
+<span class="w">      </span><span class="c1"># merged catalogue, 292 million rows, one per detection per visit and</span>
+<span class="w">      </span><span class="c1"># tile, with `primary_flag` marking an object's primary detection and</span>
+<span class="w">      </span><span class="c1"># -999 / +-99 written for a missing value. The primary_galex reshaper</span>
+<span class="w">      </span><span class="c1"># keeps the primary rows and nulls the sentinels before the match; see</span>
+<span class="w">      </span><span class="c1"># mosaics/crossmatch/reshapers/galex.py.</span>
+<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://linea.data.lsdb.io/hats/galex/galex</span>
+<span class="w">      </span><span class="nt">margin_cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://linea.data.lsdb.io/hats/galex/galex_10arcs</span>
+<span class="w">      </span><span class="nt">reshape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">primary_galex</span>
+
+<span class="c1"># Crossmatch: the radius a table of positions is matched within, and what it rests on.</span>
+<span class="nt">crossmatch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3 arcsec</span>
+<span class="w">  </span><span class="nt">radius_note</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">PSF FWHM 4.2 arcsec (FUV) and 4.9 arcsec (NUV) on one GALEX page, 4.5 and 5.4 arcsec on</span>
+<span class="w">    </span><span class="no">another; absolute positional uncertainty 0.5 arcsec rms (Morrissey et al. 2007,</span>
+<span class="w">    </span><span class="no">arXiv:0706.0755); 99.7 % of matches to SDSS lie within 3.4-3.6 arcsec (GALEX</span>
+<span class="w">    </span><span class="no">documentation, Chapter 106).</span>
+
+<span class="nt">catalog_filters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">galex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galex_mag_nuv &lt;= 20.8 OR (galex_mag_nuv IS NULL AND galex_mag_fuv &lt;= 19.9)</span>
+<span class="w">  </span><span class="nt">galex_note</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">5 sigma, AB, the All-Sky Imaging Survey depth (Bianchi et al. 2017):</span>
+<span class="w">    </span><span class="no">NUV 20.8, FUV 19.9. NUV</span>
+<span class="w">    </span><span class="no">rather than FUV because it is the deeper of the two and the one almost</span>
+<span class="w">    </span><span class="no">every catalogue entry has. The Medium and Deep Imaging Surveys go three</span>
+<span class="w">    </span><span class="no">to five magnitudes fainter over a few per cent of the sky; a survey-wide</span>
+<span class="w">    </span><span class="no">number cannot express that, so this is the AIS figure.</span>
+
+<span class="nt">cutout</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lsv</span><span class="w">          </span><span class="c1"># VERIFIED LIVE 2026-08-25</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">layer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galex</span>
+<span class="w">      </span><span class="nt">bands</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n,f</span><span class="w">            </span><span class="c1"># NUV, FUV; the columns spell them out</span>
+<span class="w">    </span><span class="nt">bands</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">nuv</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fuv</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="c1"># One plane, but still a `stack` entry rather than a `nuv` key: the</span>
+<span class="w">  </span><span class="c1"># service is sent the Viewer's abbreviation `n` while the column is</span>
+<span class="w">  </span><span class="c1"># `cutout_galex_nuv`, and only a plane order can carry a spelling that</span>
+<span class="w">  </span><span class="c1"># differs from the column's. A key has to be its own column token.</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sia</span>
+<span class="w">    </span><span class="nt">adapter_params</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">service_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://mast.stsci.edu/portal_vo/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;</span>
+<span class="w">      </span><span class="nt">bands</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n</span><span class="w">              </span><span class="c1"># NUV only, so it fills cutout_galex_nuv alone</span>
+<span class="w">    </span><span class="nt">bands</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">nuv</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">        </span><span class="c1"># alternative path; enable to compare</span>
+
+<span class="nt">photometric_system</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">filters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">fuv</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GALEX/GALEX.FUV</span>
+<span class="w">    </span><span class="nt">nuv</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GALEX/GALEX.NUV</span>
+<span class="w">  </span><span class="nt">measurements</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># The calibrated flux for the default family, the AUTO magnitude for the</span>
+<span class="w">    </span><span class="c1"># other. The flux is preferred where it exists because it is linear and</span>
+<span class="w">    </span><span class="c1"># keeps its sign through a non-detection.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">system</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linear</span>
+<span class="w">      </span><span class="nt">apertures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">default</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span><span class="w">              </span><span class="c1"># fuv_flux and nuv_flux are microjanskys already</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">system</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ab_mag</span>
+<span class="w">      </span><span class="nt">apertures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">auto</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">pixel_unit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unknown</span>
+<span class="w">  </span><span class="nt">pixel_unit_note</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">    </span><span class="no">Two separate obstacles, and the second is the harder one.</span>
+
+<span class="w">    </span><span class="no">First, the Viewer states nothing: a fits-cutout of the galex layer</span>
+<span class="w">    </span><span class="no">carries WCS, SURVEY, BANDS and IMAGETYP and no BUNIT or zero point</span>
+<span class="w">    </span><span class="no">(checked 2026-09-04), and whether it passes GALEX's calibrated count</span>
+<span class="w">    </span><span class="no">rates through unchanged has not been verified against a standard.</span>
+
+<span class="w">    </span><span class="no">Second, GALEX's zero points are *per band* -- ZP_FUV 18.82 and ZP_NUV</span>
+<span class="w">    </span><span class="no">20.08 (Morrissey et al. 2007), held fixed across every release because</span>
+<span class="w">    </span><span class="no">calibration improvements were absorbed into the flat field -- while</span>
+<span class="w">    </span><span class="no">`zeropoint:` here is one number for the survey. So even a confirmed</span>
+<span class="w">    </span><span class="no">counts_per_s reading could not be written down without a per-band</span>
+<span class="w">    </span><span class="no">zeropoint, which the schema does not have and which no other survey</span>
+<span class="w">    </span><span class="no">needs. counts_per_s remains the one legal pixel unit no survey uses.</span>
+
+<span class="c1"># GALEX GR6+7 merged catalogue (MCAT), as the Linea HATS mirror publishes it:</span>
+<span class="c1"># FUV/NUV astrometry, photometry and morphology, one row per detection.</span>
+<span class="c1"># Catalog: https://linea.data.lsdb.io/hats/galex/galex, ra/dec = ra/dec.</span>
+<span class="c1"># Selected via LSDB, not turned into SQL. Upper-case names are the SExtractor</span>
+<span class="c1"># outputs, lower-case ones the pipeline's own; the aliases are the ones this</span>
+<span class="c1"># survey had against GUVcat, so nothing downstream changes. GUVcat's `Name`</span>
+<span class="c1"># and `OName` have no counterpart here and are gone.</span>
+<span class="nt">column_mapping</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># objid: 'id'                            # GALEX identifier for the detection</span>
+<span class="w">  </span><span class="nt">ra</span><span class="p">:</span><span class="w"> </span><span class="s">'ra'</span><span class="w">                                 </span><span class="c1"># right ascension, J2000 (ICRS), deg</span>
+<span class="w">  </span><span class="nt">dec</span><span class="p">:</span><span class="w"> </span><span class="s">'dec'</span><span class="w">                               </span><span class="c1"># declination, J2000 (ICRS), deg</span>
+<span class="w">  </span><span class="nt">primary_flag</span><span class="p">:</span><span class="w"> </span><span class="s">'flag_primary'</span><span class="w">             </span><span class="c1"># 1 on the primary detection; the reshaper keeps only those</span>
+<span class="w">  </span><span class="nt">E_bv</span><span class="p">:</span><span class="w"> </span><span class="s">'ebv'</span><span class="w">                              </span><span class="c1"># Galactic reddening E(B-V) from Schlegel+ 1998 maps, mag</span>
+<span class="w">  </span><span class="nt">band</span><span class="p">:</span><span class="w"> </span><span class="s">'band'</span><span class="w">                             </span><span class="c1"># bands with a detection: 1=NUV, 2=FUV, 3=both</span>
+<span class="w">  </span><span class="nt">isThereSpectrum</span><span class="p">:</span><span class="w"> </span><span class="s">'has_spectrum'</span><span class="w">          </span><span class="c1"># 1 if a low-resolution GALEX spectrum exists</span>
+<span class="w">  </span><span class="nt">fuv_mag</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_fuv'</span><span class="w">                       </span><span class="c1"># FUV calibrated magnitude, AB system</span>
+<span class="w">  </span><span class="nt">fuv_magerr</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_fuv_err'</span><span class="w">                </span><span class="c1"># FUV magnitude error</span>
+<span class="w">  </span><span class="nt">nuv_mag</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_nuv'</span><span class="w">                       </span><span class="c1"># NUV calibrated magnitude, AB system</span>
+<span class="w">  </span><span class="nt">nuv_magerr</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_nuv_err'</span><span class="w">                </span><span class="c1"># NUV magnitude error</span>
+<span class="w">  </span><span class="nt">FUV_MAG_AUTO</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_auto_fuv'</span><span class="w">             </span><span class="c1"># FUV Kron-like elliptical aperture (AUTO) magnitude</span>
+<span class="w">  </span><span class="nt">FUV_MAGERR_AUTO</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_auto_fuv_err'</span><span class="w">      </span><span class="c1"># FUV AUTO magnitude error</span>
+<span class="w">  </span><span class="nt">NUV_MAG_AUTO</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_auto_nuv'</span><span class="w">             </span><span class="c1"># NUV Kron-like elliptical aperture (AUTO) magnitude</span>
+<span class="w">  </span><span class="nt">NUV_MAGERR_AUTO</span><span class="p">:</span><span class="w"> </span><span class="s">'mag_auto_nuv_err'</span><span class="w">      </span><span class="c1"># NUV AUTO magnitude error</span>
+<span class="w">  </span><span class="nt">fuv_flux</span><span class="p">:</span><span class="w"> </span><span class="s">'flux_fuv'</span><span class="w">                     </span><span class="c1"># FUV calibrated flux, uJy</span>
+<span class="w">  </span><span class="nt">fuv_fluxerr</span><span class="p">:</span><span class="w"> </span><span class="s">'flux_fuv_err'</span><span class="w">              </span><span class="c1"># FUV flux error, uJy</span>
+<span class="w">  </span><span class="nt">nuv_flux</span><span class="p">:</span><span class="w"> </span><span class="s">'flux_nuv'</span><span class="w">                     </span><span class="c1"># NUV calibrated flux, uJy</span>
+<span class="w">  </span><span class="nt">nuv_fluxerr</span><span class="p">:</span><span class="w"> </span><span class="s">'flux_nuv_err'</span><span class="w">              </span><span class="c1"># NUV flux error, uJy</span>
+<span class="w">  </span><span class="nt">NUV_CLASS_STAR</span><span class="p">:</span><span class="w"> </span><span class="s">'class_star_nuv'</span><span class="w">         </span><span class="c1"># star/galaxy classifier from the NUV image</span>
+<span class="w">  </span><span class="nt">FUV_CLASS_STAR</span><span class="p">:</span><span class="w"> </span><span class="s">'class_star_fuv'</span><span class="w">         </span><span class="c1"># star/galaxy classifier from the FUV image</span>
+<span class="w">  </span><span class="nt">NUV_ELLIPTICITY</span><span class="p">:</span><span class="w"> </span><span class="s">'ellipticity_nuv'</span><span class="w">       </span><span class="c1"># ellipticity (1-b/a) in NUV</span>
+<span class="w">  </span><span class="nt">FUV_ELLIPTICITY</span><span class="p">:</span><span class="w"> </span><span class="s">'ellipticity_fuv'</span><span class="w">       </span><span class="c1"># ellipticity (1-b/a) in FUV</span>
+<span class="w">  </span><span class="nt">FUV_FWHM_WORLD</span><span class="p">:</span><span class="w"> </span><span class="s">'fwhm_fuv'</span><span class="w">               </span><span class="c1"># source FWHM in FUV, deg</span>
+<span class="w">  </span><span class="nt">NUV_FWHM_WORLD</span><span class="p">:</span><span class="w"> </span><span class="s">'fwhm_nuv'</span><span class="w">               </span><span class="c1"># source FWHM in NUV, deg</span>
+<span class="w">  </span><span class="nt">fuv_artifact</span><span class="p">:</span><span class="w"> </span><span class="s">'flag_artifact_fuv'</span><span class="w">        </span><span class="c1"># FUV artifact flag, logical OR of flags near the source</span>
+<span class="w">  </span><span class="nt">nuv_artifact</span><span class="p">:</span><span class="w"> </span><span class="s">'flag_artifact_nuv'</span><span class="w">        </span><span class="c1"># NUV artifact flag, logical OR of flags near the source</span>
+<span class="w">  </span><span class="nt">FUV_FLAGS</span><span class="p">:</span><span class="w"> </span><span class="s">'flag_extraction_fuv'</span><span class="w">         </span><span class="c1"># FUV SExtractor extraction flags</span>
+<span class="w">  </span><span class="nt">NUV_FLAGS</span><span class="p">:</span><span class="w"> </span><span class="s">'flag_extraction_nuv'</span><span class="w">         </span><span class="c1"># NUV SExtractor extraction flags</span>
+<span class="w">  </span><span class="c1"># nuv_poserr: 'poserr_nuv'                 # position error of the source in the NUV image, arcsec</span>
+<span class="w">  </span><span class="c1"># fuv_poserr: 'poserr_fuv'                 # position error of the source in the FUV image, arcsec</span>
+</pre></div>
+</div>
+</section>
+<section id="schema-of-this-file">
+<h3>Schema of this file<a class="headerlink" href="#schema-of-this-file" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key present</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">survey_slug</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Canonical lowercase identifier for the survey and default column prefix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>str</p></td>
+<td><p>yes</p></td>
+<td><p>—</p></td>
+<td><p>Human-readable survey and data-release name used in logs, plans, and reports.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catalog</span></code></p></td>
+<td><p>list of catalog entries</p></td>
+<td><p>no</p></td>
+<td><p>[]</p></td>
+<td><p>Remote or local catalogues queried for target extraction or crossmatching.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">crossmatch</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>How a table of positions is matched against this survey. Required for a survey with an <code class="docutils literal notranslate"><span class="pre">lsdb</span></code> catalog; <code class="docutils literal notranslate"><span class="pre">crossmatch</span></code> null removes it, and a survey without it takes no part in <code class="docutils literal notranslate"><span class="pre">mosaics-crossmatch</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catalog_filters</span></code></p></td>
+<td><p>mapping (prefix -&gt; SQL expression or note)</p></td>
+<td><p>no</p></td>
+<td><p>{}</p></td>
+<td><p>Post-hoc DuckDB SQL quality/depth/redshift cuts applied during production (nulls failing survey columns without dropping the row).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cutout</span></code></p></td>
+<td><p>list of cutout entries</p></td>
+<td><p>no</p></td>
+<td><p>[]</p></td>
+<td><p>Image cutout backends (<code class="docutils literal notranslate"><span class="pre">hips</span></code>, <code class="docutils literal notranslate"><span class="pre">lsv</span></code>, <code class="docutils literal notranslate"><span class="pre">nersc</span></code>, <code class="docutils literal notranslate"><span class="pre">sia</span></code>, <code class="docutils literal notranslate"><span class="pre">vsa</span></code>) serving this survey’s passbands.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">photometric_system</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>no</p></td>
+<td><p>None</p></td>
+<td><p>Passband SVO filter identifiers, flux/magnitude homogenisation rules, and image pixel calibration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">column_mapping</span></code></p></td>
+<td><p>mapping (remote_column -&gt; alias)</p></td>
+<td><p>no</p></td>
+<td><p>{}</p></td>
+<td><p>Projection and column renaming applied when crossmatching against this survey’s photometric catalogue. The loader adds the catalog’s prefix to every alias, or the hosted survey’s for the columns under its <code class="docutils literal notranslate"><span class="pre">provides</span></code> key.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adapter-parameters">
+<h3>Adapter parameters<a class="headerlink" href="#adapter-parameters" title="Link to this heading">¶</a></h3>
+<p><strong>Catalogue <code class="docutils literal notranslate"><span class="pre">galex</span></code> (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">lsdb</span></code>):</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Allowed Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
+<td><p>str</p></td>
+<td><p>—</p></td>
+<td><p>HTTP or S3 URI of the HATS catalogue root (may contain <code class="docutils literal notranslate"><span class="pre">{band}</span></code> or <code class="docutils literal notranslate"><span class="pre">{BAND}</span></code> when <code class="docutils literal notranslate"><span class="pre">per_band:</span> <span class="pre">true</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">margin_cache</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None</p></td>
+<td><p>URI of the HATS pre-computed margin cache table for boundary-safe spatial crossmatching.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">storage_options</span></code></p></td>
+<td><p>mapping</p></td>
+<td><p>{}</p></td>
+<td><p>Filesystem options forwarded to <code class="docutils literal notranslate"><span class="pre">upath</span></code>/<code class="docutils literal notranslate"><span class="pre">fsspec</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">{'anon':</span> <span class="pre">True}</span></code> for public S3 buckets).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reshape</span></code></p></td>
+<td><p>str</p></td>
+<td><p>None</p></td>
+<td><p>Optional post-read reshaping strategy for nested or multi-row HATS tables.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">per_band</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>false</p></td>
+<td><p>When <code class="docutils literal notranslate"><span class="pre">true</span></code>, opens one HATS catalogue per band by substituting <code class="docutils literal notranslate"><span class="pre">{band}</span></code>/<code class="docutils literal notranslate"><span class="pre">{BAND}</span></code> in <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remote_ra_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>HATS metadata default</p></td>
+<td><p>Override for the remote right ascension column name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">remote_dec_column</span></code></p></td>
+<td><p>str</p></td>
+<td><p>HATS metadata default</p></td>
+<td><p>Override for the remote declination column name.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>Cutout <code class="docutils literal notranslate"><span class="pre">None</span></code> (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">lsv</span></code>, bands <code class="docutils literal notranslate"><span class="pre">['nuv',</span> <span class="pre">'fuv']</span></code>):</strong> configured <code class="docutils literal notranslate"><span class="pre">adapter_params</span></code>: <code class="docutils literal notranslate"><span class="pre">layer='galex'</span></code>, <code class="docutils literal notranslate"><span class="pre">bands='n,f'</span></code>.</p></li>
+<li><p><strong>Cutout <code class="docutils literal notranslate"><span class="pre">None</span></code> (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">sia</span></code>, bands <code class="docutils literal notranslate"><span class="pre">['nuv']</span></code>):</strong> configured <code class="docutils literal notranslate"><span class="pre">adapter_params</span></code>: <code class="docutils literal notranslate"><span class="pre">service_url='https://mast.stsci.edu/portal_vo/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;'</span></code>, <code class="docutils literal notranslate"><span class="pre">bands='n'</span></code>.</p></li>
+</ul>
+</section>
+<section id="common-changes">
+<h3>Common changes<a class="headerlink" href="#common-changes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Adjusting depth threshold in catalog filters</strong>: The default filter enforces the AIS <span class="math notranslate nohighlight">\(5\sigma\)</span> point-source completeness limit (<code class="docutils literal notranslate"><span class="pre">galex_mag_nuv</span> <span class="pre">&lt;=</span> <span class="pre">20.8</span> <span class="pre">OR</span> <span class="pre">(galex_mag_nuv</span> <span class="pre">IS</span> <span class="pre">NULL</span> <span class="pre">AND</span> <span class="pre">galex_mag_fuv</span> <span class="pre">&lt;=</span> <span class="pre">19.9)</span></code>). For targets located in deeper Medium (MIS) or Deep (DIS) survey fields, relax or clear the filter by setting <code class="docutils literal notranslate"><span class="pre">overrides[surveys/galex].catalog_filters.galex:</span> <span class="pre">null</span></code>.</p></li>
+<li><p><strong>Selecting cutout providers</strong>: Cutouts default to the Legacy Survey Viewer (<code class="docutils literal notranslate"><span class="pre">adapter:</span> <span class="pre">lsv</span></code>, <code class="docutils literal notranslate"><span class="pre">layer:</span> <span class="pre">galex</span></code>, bands <code class="docutils literal notranslate"><span class="pre">[nuv,</span> <span class="pre">fuv]</span></code>). To query MAST directly via IVOA Simple Image Access, disable <code class="docutils literal notranslate"><span class="pre">lsv</span></code> (<code class="docutils literal notranslate"><span class="pre">cutout.0.enabled:</span> <span class="pre">false</span></code>) and enable the SIA adapter (<code class="docutils literal notranslate"><span class="pre">cutout.1.enabled:</span> <span class="pre">true</span></code>).</p></li>
+<li><p><strong>Astrometric positional errors</strong>: In <code class="docutils literal notranslate"><span class="pre">column_mapping</span></code>, uncomment <code class="docutils literal notranslate"><span class="pre">nuv_poserr</span></code> or <code class="docutils literal notranslate"><span class="pre">fuv_poserr</span></code> to extract positional uncertainties in arcseconds, or <code class="docutils literal notranslate"><span class="pre">objid</span></code> to extract the unique detection ID.</p></li>
+<li><p><strong>Disable catalogue crossmatching</strong>: Disable GALEX catalogue matching in an entrypoint configuration by setting <code class="docutils literal notranslate"><span class="pre">overrides[surveys/galex].catalog.0.enabled:</span> <span class="pre">false</span></code>.</p></li>
+</ul>
+</section>
+<section id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Link to this heading">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.cutout<span class="w"> </span>full<span class="w"> </span>-t<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>cutouts.lance<span class="w"> </span>--config<span class="w"> </span>defs/cutout.yaml<span class="w"> </span>--survey<span class="w"> </span>galex<span class="w"> </span>--plan
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.crossmatch.cli<span class="w"> </span>run<span class="w"> </span>--survey<span class="w"> </span>surveys/galex<span class="w"> </span>-i<span class="w"> </span>test/objects_sample_1k.csv<span class="w"> </span>-o<span class="w"> </span>galex_matched.parquet
+<span class="gp">$ </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>mosaics.cli.targets<span class="w"> </span>--config<span class="w"> </span>defs/targets.yaml<span class="w"> </span>-o<span class="w"> </span>./targets_run<span class="w"> </span>--dec-range<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>--plan<span class="w"> </span>plan.yaml
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-served-by-the-archive">
+<h2>Data served by the archive<a class="headerlink" href="#data-served-by-the-archive" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Merged catalogue (MCAT) vs GUVcat</strong>: MOSAICS queries the LineA HATS mirror of the GALEX merged catalogue (<code class="docutils literal notranslate"><span class="pre">galex/galex</span></code>, 292 million rows), which contains one record per detection per tile/visit. The built-in <code class="docutils literal notranslate"><span class="pre">primary_galex</span></code> reshaper filters rows by <code class="docutils literal notranslate"><span class="pre">primary_flag</span> <span class="pre">==</span> <span class="pre">1</span></code> to isolate unique primary detections and cleans missing-value sentinels (<code class="docutils literal notranslate"><span class="pre">-999</span></code> and <span class="math notranslate nohighlight">\(\pm 99\)</span>) to nulls before performing spatial crossmatches.</p></li>
+<li><p><strong>Photometric flux scale</strong>: Calibrated fluxes (<code class="docutils literal notranslate"><span class="pre">fuv_flux</span></code>, <code class="docutils literal notranslate"><span class="pre">nuv_flux</span></code>) are published in microjanskys (<span class="math notranslate nohighlight">\(\mu\text{Jy}\)</span>) on the AB scale (<code class="docutils literal notranslate"><span class="pre">system:</span> <span class="pre">linear</span></code>, <code class="docutils literal notranslate"><span class="pre">scale:</span> <span class="pre">1.0</span></code>). Magnitudes (<code class="docutils literal notranslate"><span class="pre">fuv_mag</span></code>, <code class="docutils literal notranslate"><span class="pre">nuv_mag</span></code>, <code class="docutils literal notranslate"><span class="pre">FUV_MAG_AUTO</span></code>, <code class="docutils literal notranslate"><span class="pre">NUV_MAG_AUTO</span></code>) are on the AB system. Physical count-rate zero points are band-dependent: <span class="math notranslate nohighlight">\(ZP_\text{FUV} = 18.82\)</span> and <span class="math notranslate nohighlight">\(ZP_\text{NUV} = 20.08\)</span> (Morrissey et al. 2007).</p></li>
+<li><p><strong>Cutout pixel units</strong>: Image cutouts from the Legacy Survey Viewer do not provide a standard FITS <code class="docutils literal notranslate"><span class="pre">BUNIT</span></code> or photometric zero-point header. Because zero points differ between the two bands, <code class="docutils literal notranslate"><span class="pre">pixel_unit</span></code> is recorded as <code class="docutils literal notranslate"><span class="pre">unknown</span></code>.</p></li>
+<li><p><strong>Artifact and extraction flags</strong>: The catalogue supplies artifact flags (<code class="docutils literal notranslate"><span class="pre">fuv_artifact</span></code>, <code class="docutils literal notranslate"><span class="pre">nuv_artifact</span></code>) recording proximity to bright stars, dichroic reflections, and field edges, alongside standard SExtractor extraction flags (<code class="docutils literal notranslate"><span class="pre">FUV_FLAGS</span></code>, <code class="docutils literal notranslate"><span class="pre">NUV_FLAGS</span></code>).</p></li>
+</ul>
+<section id="catalogue-ii-335-galex-ais">
+<h3>Catalogue: <code class="docutils literal notranslate"><span class="pre">II/335/galex_ais</span></code><a class="headerlink" href="#catalogue-ii-335-galex-ais" title="Link to this heading">¶</a></h3>
+<p>the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,992,086 sources)</p>
+<p><strong>Service URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://linea.data.lsdb.io/hats/galex/galex</span></code></p>
+<p><em>Showing 100 of 368 total archive columns (all MOSAICS-mapped columns plus primary table fields; full 368-column schema is stored in <code class="docutils literal notranslate"><span class="pre">docs/_data/sources/galex/hats_galex.json</span></code>).</em></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>UCD</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">band</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dec</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">E_bv</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">primary_flag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_flux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_fluxerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_magerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_flux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_fluxerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_magerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_artifact</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_artifact</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NUV_MAG_AUTO</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NUV_MAGERR_AUTO</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NUV_ELLIPTICITY</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NUV_FWHM_WORLD</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NUV_FLAGS</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int16</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NUV_CLASS_STAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FUV_MAG_AUTO</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FUV_MAGERR_AUTO</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FUV_ELLIPTICITY</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FUV_FWHM_WORLD</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FUV_FLAGS</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int16</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FUV_CLASS_STAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isThereSpectrum</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">objid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">photoExtractID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vsn</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tilenum</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ow</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prod</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">img</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">try</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">subvisit</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int16</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">leg</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int16</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">alpha_j2000_merged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">delta_j2000_merged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prob</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sep</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sep_img</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">glon</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">glat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fov_radius</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_det_x</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_det_y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_det_x</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_det_y</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chkobj_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chkobj_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chkobj_r</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chkobj_pa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">misc_flags</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_s2n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_s2n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_fcat_flux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_fcat_fluxerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ra_adj</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_dec_adj</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flags</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int16</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_magerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_s2n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_fcat_mag</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_fcat_magerr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nuv_fcat_s2n</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fwhm_image</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fwhm_world</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_radius_1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_radius_2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_radius_3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_radius_4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_radius_5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_aper_1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_aper_2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_aper_3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_aper_4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_aper_5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_aper_6</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_flux_aper_7</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr_aper_1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr_aper_2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr_aper_3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr_aper_4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr_aper_5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr_aper_6</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_fluxerr_aper_7</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag_aper_1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag_aper_2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag_aper_3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag_aper_4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag_aper_5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag_aper_6</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fuv_ncat_mag_aper_7</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">—</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="images">
+<h3>Images<a class="headerlink" href="#images" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Pixel unit:</strong> <code class="docutils literal notranslate"><span class="pre">unknown</span></code> | <strong>AB zero point:</strong> <code class="docutils literal notranslate"><span class="pre">—</span></code> | <strong>Calibration note:</strong> Two separate obstacles, and the second is the harder one.
+First, the Viewer states nothing: a fits-cutout of the galex layer carries WCS, SURVEY, BANDS and IMAGETYP and no BUNIT or zero point (checked 2026-09-04), and whether it passes GALEX’s calibrated count rates through unchanged has not been verified against a standard.
+Second, GALEX’s zero points are <em>per band</em> – ZP_FUV 18.82 and ZP_NUV 20.08 (Morrissey et al. 2007), held fixed across every release because calibration improvements were absorbed into the flat field – while <code class="docutils literal notranslate"><span class="pre">zeropoint:</span></code> here is one number for the survey. So even a confirmed counts_per_s reading could not be written down without a per-band zeropoint, which the schema does not have and which no other survey needs. counts_per_s remains the one legal pixel unit no survey uses.</p></li>
+<li><p><strong>Cutout service <code class="docutils literal notranslate"><span class="pre">None</span></code>:</strong> adapter <code class="docutils literal notranslate"><span class="pre">lsv</span></code>, bands <code class="docutils literal notranslate"><span class="pre">['nuv',</span> <span class="pre">'fuv']</span></code>, params <code class="docutils literal notranslate"><span class="pre">{'layer':</span> <span class="pre">'galex',</span> <span class="pre">'bands':</span> <span class="pre">'n,f'}</span></code>.</p></li>
+<li><p><strong>Cutout service <code class="docutils literal notranslate"><span class="pre">None</span></code>:</strong> adapter <code class="docutils literal notranslate"><span class="pre">sia</span></code>, bands <code class="docutils literal notranslate"><span class="pre">['nuv']</span></code>, params <code class="docutils literal notranslate"><span class="pre">{'service_url':</span> <span class="pre">'https://mast.stsci.edu/portal_vo/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;',</span> <span class="pre">'bands':</span> <span class="pre">'n'}</span></code>.</p></li>
+</ul>
+</section>
+<section id="spectra">
+<h3>Spectra<a class="headerlink" href="#spectra" title="Link to this heading">¶</a></h3>
+<p>No 1D spectroscopic backends are configured for this survey.</p>
+</section>
+</section>
+<section id="references-and-acknowledgement">
+<h2>References and acknowledgement<a class="headerlink" href="#references-and-acknowledgement" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Martin, D. C., et al. (2005), <em>ApJ</em>, 619, L1 (<code class="docutils literal notranslate"><span class="pre">doi:10.1086/430219</span></code>) — The Galaxy Evolution Explorer: A Space Ultraviolet Survey.</p></li>
+<li><p>Morrissey, P., et al. (2007), <em>ApJS</em>, 173, 682 (<code class="docutils literal notranslate"><span class="pre">doi:10.1086/520512</span></code>) — The Calibration and Data Products of GALEX.</p></li>
+<li><p>Bianchi, L., Shiao, B., &amp; Thilker, D. (2017), <em>ApJS</em>, 230, 24 (<code class="docutils literal notranslate"><span class="pre">doi:10.3847/1538-4365/aa7053</span></code>) — A Revised Catalog of GALEX Ultraviolet Sources for the Entire Sky (GUVcat_AIS).</p></li>
+<li><p>LineA HATS GALEX Collection: <a class="reference external" href="https://linea.data.lsdb.io/hats/galex/galex">https://linea.data.lsdb.io/hats/galex/galex</a>.</p></li>
+<li><p>MAST GALEX Archive: <a class="reference external" href="https://archive.stsci.edu/galex/">https://archive.stsci.edu/galex/</a>.</p></li>
+<li><p>MAST SIA Endpoint: <code class="docutils literal notranslate"><span class="pre">https://mast.stsci.edu/portal_vo/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;</span></code>.</p></li>
+</ul>
+<p>Based on observations made with the NASA Galaxy Evolution Explorer. GALEX was operated for NASA by the California Institute of Technology under NASA contract NAS5-98034. Authors should acknowledge NASA, the Mikulski Archive for Space Telescopes (MAST) at the Space Telescope Science Institute (STScI), and the LineA Science Server for HATS partitioning and hosting. Cite Martin et al. (2005) and Morrissey et al. (2007).</p>
+</section>
+<section id="provenance-of-this-page">
+<h2>Provenance of this page<a class="headerlink" href="#provenance-of-this-page" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source ID</p></th>
+<th class="head"><p>Kind</p></th>
+<th class="head"><p>Service / Endpoint</p></th>
+<th class="head"><p>Query or URL</p></th>
+<th class="head"><p>Retrieved (UTC)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cutout_galex</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sia</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://mast.stsci.edu/portal_vo/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://mast.stsci.edu/portal_vo/Mashup/VoQuery.asmx/SiaV1?MISSION=GALEX&amp;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2026-10-18T16:31:22Z</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hats_galex</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hats_catalog</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://linea.data.lsdb.io/hats/galex/galex</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://linea.data.lsdb.io/hats/galex/galex/properties</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2026-10-18T16:57:42Z</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /generated -->
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="hasp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">HST Advanced Spectral Products (HASP) (<code class="docutils literal notranslate"><span class="pre">hasp</span></code>)</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="gaia3.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Gaia DR3 (<code class="docutils literal notranslate"><span class="pre">gaia3</span></code>)</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, N. M. Cardoso
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">GALEX GR6+7 (<code class="docutils literal notranslate"><span class="pre">galex</span></code>)</a><ul>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#the-shipped-file">The shipped file</a></li>
+<li><a class="reference internal" href="#schema-of-this-file">Schema of this file</a></li>
+<li><a class="reference internal" href="#adapter-parameters">Adapter parameters</a></li>
+<li><a class="reference internal" href="#common-changes">Common changes</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-served-by-the-archive">Data served by the archive</a><ul>
+<li><a class="reference internal" href="#catalogue-ii-335-galex-ais">Catalogue: <code class="docutils literal notranslate"><span class="pre">II/335/galex_ais</span></code></a></li>
+<li><a class="reference internal" href="#images">Images</a></li>
+<li><a class="reference internal" href="#spectra">Spectra</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references-and-acknowledgement">References and acknowledgement</a></li>
+<li><a class="reference internal" href="#provenance-of-this-page">Provenance of this page</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c95eb2c2"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>
